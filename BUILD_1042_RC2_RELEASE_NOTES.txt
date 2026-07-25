@@ -1,0 +1,18 @@
+UNIVERSAL PROJECT CALCULATOR v1.0.1 RC2 — BUILD 1042
+
+FEATURE FREEZE INTEGRATION RELEASE
+
+Integrated cumulative corrections from Builds 1028 through 1041:
+- Live recalculation for quantity, tax, and pricing controls.
+- Quantity-aware blank and packaging costs.
+- Canonical pricing snapshot used by editor, project cards, Dashboard, Reports, CSV, and Scenario Builder.
+- Target Profit Margin pricing: Quote Before Tax = Production Cost / (1 - Target Margin).
+- Sales tax added after the quote and excluded from profit and margin.
+- Saved projects reopen from their stored pricing inputs/snapshot without hidden manual-price locking.
+- Material Library naming and unified add/edit workflow.
+- Scenario Builder uses Material as its product selector and includes Add New Material.
+- Sample business data retained.
+- Templates feature removed from navigation, Project Calculator, settings export, and application workflows.
+
+RC2 POLICY
+No new features after this build. Remaining changes are documentation, QA, and critical bug fixes only.

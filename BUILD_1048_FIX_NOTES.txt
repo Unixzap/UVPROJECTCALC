@@ -1,0 +1,39 @@
+Universal Project Calculator v1.0.1 — Build 1048
+Customers Library List and Sorting
+
+Purpose:
+- Improve Customers Library usability for businesses with large customer lists.
+
+Changes:
+- Replaced the Customers Library card layout with a compact table/list view.
+- Added a search field that filters by customer name, customer type, email address, or discount.
+- Added sortable Customer Name, Customer Type, Email, and Discount columns.
+- Clicking an active column heading reverses the sort direction.
+- Added a visible result count showing filtered and total customer records.
+- Preserved Edit and Delete actions on every customer row.
+- Added responsive customer rows for narrow screens and mobile devices.
+- Customer email addresses remain available and are now clickable mail links.
+- Updated visible build labels, script cache-busters, and the service-worker cache key to Build 1048.
+
+Not Changed:
+- Customer Add/Edit/Delete dialogs and validation.
+- Customer IDs, stored records, or browser storage format.
+- Customer import/export formats.
+- Email Quote customer lookup behavior.
+- Pricing engine, pricing formulas, tax calculations, or pricing snapshots.
+- Material Library, Scenario Builder, Projects, Dashboard, Reports, or sample business data.
+
+Testing:
+1. Open Customers Library and confirm customers appear in a compact table.
+2. Search by customer name, type, email, and discount.
+3. Sort each column in ascending and descending order.
+4. Edit and delete customers while the list is searched or sorted; confirm the correct record is affected.
+5. Add a customer and confirm it appears in the current sorted list.
+6. Resize to a narrow/mobile viewport and confirm each customer remains readable and actionable.
+7. Create an Email Quote and confirm the stored customer email is still selected.
+
+Regression Focus:
+- Customers Library Add/Edit/Delete.
+- Customer import/export and saved-data compatibility.
+- Email Quote customer email lookup.
+- Existing pricing and project calculations.

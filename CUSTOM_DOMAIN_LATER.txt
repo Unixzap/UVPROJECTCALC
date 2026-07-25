@@ -1,0 +1,2 @@
+When you are ready to connect UVPROJECTCALC.com, replace this file with a file named CNAME containing:
+UVPROJECTCALC.com

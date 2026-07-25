@@ -1,0 +1,40 @@
+UNIVERSAL PROJECT CALCULATOR v1.0.1 — BUILD 1046
+RELEASE POLISH PASS
+
+Purpose:
+- Improve visual and wording consistency before the final regression build.
+- Preserve the validated pricing engine and all existing data workflows.
+
+Changes:
+- Updated visible build labels, application build constant, script cache-buster, and service-worker cache key to Build 1046.
+- Standardized Add Customer and Add Material dialog titles with their action buttons.
+- Clarified Customers Library and Material Library delete confirmation wording.
+- Clarified the optional customer email placeholder in Email Quote.
+- Added accessible dialog descriptions to Email Quote, Customer, and Material panels.
+- Added consistent hover, keyboard-focus, and disabled-button states across the application.
+- Improved button wrapping and mobile dialog action layout.
+- Added a theme-aware panel background for the Email Quote project summary.
+- Improved modal scrolling on smaller screens and tightened shared dialog typography.
+- Corrected sample-data confirmation wording to say Customers Library consistently.
+
+Intentionally Not Changed:
+- No pricing formulas changed.
+- No canonical pricing snapshot logic changed.
+- No project, customer, material, printer, or settings storage schema changed.
+- No import/export data format changed.
+- No Email Quote calculation or email-generation logic changed.
+- No new application features were added.
+
+Regression Focus:
+1. Confirm Build 1046 appears in the sidebar, Help & Feedback, footer, diagnostics, and offline cache.
+2. Add, edit, and delete a customer; confirm the correct Customers Library panels and records are used.
+3. Add, edit, and delete a material; confirm the correct Material Library panels and records are used.
+4. Open Email Quote in dark and light themes; confirm the project summary and form remain readable.
+5. Use keyboard Tab navigation and confirm focused buttons and fields are clearly visible.
+6. Test modal action buttons at desktop and narrow/mobile widths.
+7. Create and reopen a priced project; confirm pricing values remain identical.
+8. Confirm Scenario Builder, Reports, CSV export, backup/import, and sample data still operate normally.
+
+Release Status:
+- Polish checkpoint only.
+- Proceed to full regression testing before publishing Version 1.0.1.

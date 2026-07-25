@@ -1,0 +1,43 @@
+UNIVERSAL PROJECT CALCULATOR v1.0.1 — BUILD 1049
+QA TEST CHECKLIST
+
+MATERIAL LIBRARY / PRICING WORKSPACE
+
+[ ] Open Pricing Workspace and confirm Material lists Material Library records.
+[ ] Select a material and confirm Blank Cost / Unit updates to its Unit Cost.
+[ ] Select Custom / Manual Cost and confirm Blank Cost / Unit can be entered manually.
+[ ] Save a project, reopen it, and confirm the material and saved Blank Cost / Unit are restored.
+[ ] Change the material's Unit Cost in Material Library, reopen the saved project, and confirm the historical project cost did not change.
+[ ] Add and edit a material and confirm Notes can be entered, saved, and edited.
+
+CUSTOMER LIBRARY / PRICING WORKSPACE
+
+[ ] Open Pricing Workspace and confirm Customer lists Customer Library records.
+[ ] Select a customer and confirm Customer Type, Customer Email, and Library Discount display correctly.
+[ ] Select Walk-in Customer and confirm the reference fields reset appropriately.
+[ ] Save a project, reopen it, and confirm the selected customer is restored.
+[ ] Edit the customer in Customer Library, reopen the saved project, and confirm the project retains its saved customer snapshot.
+[ ] Delete the selected customer from Customer Library, reopen the saved project, and confirm the saved customer name/details remain visible.
+[ ] Open an older project and confirm its existing customer name still loads.
+
+REGRESSION CHECKS
+
+[ ] Customer Library Add, Edit, Delete, Search, and Sorting still work.
+[ ] Material Library Add, Edit, Delete, Search, and Sorting still work.
+[ ] Pricing calculations remain unchanged.
+[ ] Sales tax remains unchanged.
+[ ] Target-margin pricing remains unchanged.
+[ ] Quantity calculations remain unchanged.
+[ ] Scenario Builder remains operational.
+[ ] Dashboard remains operational.
+[ ] Reports remain operational.
+[ ] Email Quote remains operational.
+[ ] Import / Export and Backup / Restore remain operational.
+
+RESULT: PASS / FAIL
+
+NOTES:
+
+____________________________________________________________
+____________________________________________________________
+____________________________________________________________

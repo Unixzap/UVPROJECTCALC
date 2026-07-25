@@ -1,0 +1,20 @@
+UNIVERSAL PROJECT CALCULATOR v1.0.1 — BUILD 1033
+PRICING ENGINE AUDIT
+
+Mission
+- Make one canonical pricing snapshot the source of truth for every saved project.
+
+Changes
+- Added createPricingSnapshot() as the single normalizer for production cost, quote before tax, tax, customer quote, profit, and achieved margin.
+- Project Editor saves use the canonical pricing snapshot.
+- Scenario Builder save and replace operations now store the same complete pricing snapshot, including tax and customer quote.
+- Project cards, Dashboard, Reports, totals, and CSV export all read through getProjectPricing().
+- CSV export now includes Production Cost, Quote Before Tax, Tax Rate, Tax Amount, Customer Quote, Profit, and Achieved Margin.
+- Legacy projects remain compatible through controlled fallback normalization.
+- Updated offline cache key to Build 1033.
+
+Definition of Done
+- Saving or reopening a project does not change pricing.
+- Project Editor and Project Card show identical pricing.
+- Dashboard and Reports use the same stored pricing values.
+- Scenario-created projects use the same pricing schema as regular projects.

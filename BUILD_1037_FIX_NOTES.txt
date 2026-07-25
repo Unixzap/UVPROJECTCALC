@@ -1,0 +1,15 @@
+Universal Project Calculator v1.0.1 — Build 1037
+Material Library Form Consistency Fix
+
+Changes:
+- The Material Library Add Material workflow now requests the complete material record in one pass:
+  Material Name, Category, Unit Cost, Supplier, SKU, and Notes.
+- Editing a material now uses the same complete field sequence.
+- Scenario Builder and Material Library therefore collect the same material information.
+- Existing material records, pricing calculations, projects, imports, exports, and storage keys remain compatible.
+
+Test:
+1. Open Material Library and choose Add Material.
+2. Confirm all six fields are requested before the material is saved.
+3. Edit the saved material and confirm the same six fields are available.
+4. Open Scenario Builder and confirm the material is available in the Material dropdown.

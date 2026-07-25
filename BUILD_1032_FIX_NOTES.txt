@@ -1,0 +1,21 @@
+Universal Project Calculator v1.0.1 — Build 1032
+
+PRICING METHOD CONFIRMED
+- Automatic pricing uses Option B: target profit margin.
+- Formula: Quote Before Tax = Production Cost / (1 - Target Margin).
+- Profit and margin exclude sales tax.
+
+CLARITY IMPROVEMENTS
+- Renamed project input to Target Profit Margin (%).
+- Renamed the default setting to Default Target Profit Margin %.
+- Cost Breakdown now shows Blank Cost as quantity × cost per unit.
+- Cost Breakdown now shows Packaging as quantity × packaging per unit.
+- Cost Breakdown now shows Total Job Ink as mL × ink rate per mL.
+- Customer Quote section identifies the Target Margin pricing method and target percentage.
+
+TEST CASE CONFIRMED
+- Production Cost: $25.65
+- 50% target margin gives an unrounded quote of $51.30.
+- With $1 upward rounding, Quote Before Tax is $52.00.
+- 5% sales tax is $2.60.
+- Customer Quote is $54.60.

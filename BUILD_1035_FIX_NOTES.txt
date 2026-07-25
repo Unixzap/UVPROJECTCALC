@@ -1,0 +1,15 @@
+UNIVERSAL PROJECT CALCULATOR v1.0.1 — BUILD 1035
+
+MATERIAL LIBRARY NAMING UPDATE
+
+Changes:
+- Renamed the main navigation item from “Materials” to “Material Library”.
+- Renamed the page heading from “Materials Library” to “Material Library”.
+- Updated the section description to clarify that it stores reusable blanks, supplies, suppliers, SKUs, and unit costs.
+- Renamed “Export Materials Library” to “Export Material Library”.
+- Updated visible build labels and cache-busting identifiers to Build 1035.
+
+Scope:
+- Naming and clarity only.
+- No pricing-engine, project, import/export data-format, or storage-key changes.
+- Existing material records and backups remain compatible.

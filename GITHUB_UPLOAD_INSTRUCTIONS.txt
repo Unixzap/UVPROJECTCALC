@@ -1,0 +1,30 @@
+Universal Project Calculator — GitHub Pages Deployment
+Version 1.0.1 · Build 1024
+
+Upload the CONTENTS of this folder to the root of your GitHub repository.
+
+Required files in repository root:
+- index.html
+- styles.css
+- app.js
+- storage.js
+- boot.js
+- service-worker.js
+- manifest.webmanifest
+- assets/
+- docs/
+- .nojekyll
+
+Deployment steps:
+1. Replace the existing repository files with every file and folder in this package.
+2. Commit the changes to the main branch.
+3. Wait for GitHub Pages to finish deploying.
+4. Open the hosted application and perform a hard refresh.
+5. Confirm the footer shows Version 1.0.1 · Build 1024.
+6. Test Create Backup Now, the Dashboard backup status, and protected import.
+
+Important:
+- Do not delete IndexedDB or browser site data during deployment testing.
+- Existing users should receive the update-time backup recommendation.
+- New users should receive the local-storage protection notice.
+- Do not send this ZIP to testers. Send the hosted GitHub Pages URL.

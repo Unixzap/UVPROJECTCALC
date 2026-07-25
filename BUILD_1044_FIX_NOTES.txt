@@ -1,0 +1,22 @@
+Universal Project Calculator v1.0.1 RC2 — Build 1044
+Customers Library UI Consistency Test Build
+
+Changes:
+- Renamed the Customers navigation item to “Customers Library”.
+- Replaced browser prompt sequences with a styled Add/Edit Customer modal matching the Material Library panel design.
+- Customer fields remain Customer Name, Customer Type, Discount %, and Email Address.
+- Add and Edit use the same customer form.
+- Added validation for customer name and discount range.
+- Added a styled Delete Customer confirmation panel.
+- Existing customer records, storage, imports, exports, projects, and sample data remain compatible.
+- Pricing engine and saved pricing snapshot logic were not changed.
+- Updated visible build labels, script cache-buster, and service-worker cache key to Build 1044.
+
+Testing:
+1. Open Customers Library and choose Add Customer.
+2. Add a customer and verify it appears in the card grid.
+3. Edit it and verify the same panel and fields appear.
+4. Delete it and verify the styled confirmation panel appears.
+5. Disable delete confirmations in Preferences and verify deletion still works directly.
+6. Refresh/reopen and verify customer records remain saved.
+7. Confirm Material Library and pricing calculations remain unchanged.

@@ -1,0 +1,9 @@
+Universal Project Calculator v1.0.1 — Build 1038
+
+SCENARIO BUILDER UI SIMPLIFICATION
+
+- Removed the Template field from Scenario Builder.
+- Scenario Builder now uses Material as the single product/material selection.
+- Existing Templates Library and the regular Project Calculator template workflow remain unchanged.
+- When a saved project is cloned into Scenario Builder, its saved blank and packaging inputs are used instead of a template preset.
+- Pricing Engine calculations remain unchanged.

@@ -1,0 +1,10 @@
+Universal Project Calculator v1.0.1 — Build 1031
+Pricing Engine Single Source of Truth
+
+- Added one canonical stored pricing snapshot per saved project.
+- Project editor and project cards now read the same before-tax price, tax, amount due, profit, and margin.
+- Centralized the project pricing formula in calculateProjectPricing().
+- Added quantity to captured pricing inputs.
+- Dashboard, recent projects, reports, and CSV exports now use the canonical pricing accessor.
+- Legacy projects remain supported through normalized fallback values.
+- Updated service-worker cache to Build 1031.

@@ -1,0 +1,7 @@
+Universal Project Calculator v1.0.1 Build 1027
+
+Fixes:
+- Sales Tax field now recalculates totals immediately when changed.
+- Saved projects now persist tax rate, tax amount, and customer total.
+- Project cards now distinguish pre-tax selling price from customer total.
+- Service worker/app cache version bumped to Build 1027.

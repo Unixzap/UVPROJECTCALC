@@ -1,0 +1,11 @@
+UNIVERSAL PROJECT CALCULATOR v1.0.1 — BUILD 1036 (REVISED)
+
+SCENARIO BUILDER MATERIAL WORKFLOW
+
+- Removed the duplicate editable Material Name field.
+- Renamed "Material Library Item" to the simpler "Material" label.
+- Added "+ Add New Material..." to the Material dropdown.
+- Selecting it collects a material name, category, unit cost, supplier, SKU, and notes.
+- The new record is saved permanently in the Material Library and selected immediately for the current scenario.
+- Existing materials still populate Blank Cost / Unit automatically.
+- Scenario-specific pricing fields remain editable and the validated pricing engine is unchanged.

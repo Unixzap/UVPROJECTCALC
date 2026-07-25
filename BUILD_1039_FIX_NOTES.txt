@@ -1,0 +1,9 @@
+Universal Project Calculator v1.0.1 — Build 1039
+
+Scenario Builder Material Dropdown Polish
+
+- Updated the Material dropdown action label to include visible dash separators.
+- The action now appears as: ---------- Add New Material... ----------
+- No disabled separator option was added.
+- Selecting the action still opens the complete Add New Material workflow.
+- Pricing calculations and saved data were not changed.

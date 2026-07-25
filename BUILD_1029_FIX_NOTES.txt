@@ -1,0 +1,16 @@
+Universal Project Calculator v1.0.1 Build 1029
+
+UPC-008 quantity and per-unit cost fix
+
+- Automatic pricing now remains active by default.
+- Manual Selling Price is disabled unless the user explicitly enables Price Override.
+- Quantity multiplies Blank Cost / Unit and Packaging / Unit in automatic pricing mode.
+- Legacy projects no longer silently inherit a hidden manual-price lock.
+- Updated application and service-worker build identifiers to 1029.
+
+Regression test:
+1. Leave Price Override unchecked.
+2. Set Blank Cost / Unit to $2.00.
+3. Set Packaging / Unit to $1.00.
+4. Change Quantity from 1 to 20.
+5. Total Production Cost and Customer Quote must increase immediately.

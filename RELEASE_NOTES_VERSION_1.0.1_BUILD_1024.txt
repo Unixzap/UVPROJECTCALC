@@ -1,0 +1,22 @@
+Universal Project Calculator
+Version 1.0.1 · Build 1024
+Backup Protection Update
+
+What’s New
+- Added an introductory notice explaining that application data is stored locally in the browser.
+- Added a complete-backup reminder when the application is updated.
+- Added Dashboard backup health states: Current, Aging, Recommended, and Never.
+- Added a Dashboard reminder when no backup exists or the latest backup is at least 30 days old.
+- Added a seven-day dismissal option for the Dashboard reminder.
+- Added import protection with options to export current data, continue, or cancel.
+- Complete backups now include version, build, schema, export date, and the full application state.
+- Complete backup filenames now contain a timestamp.
+- Updated the service-worker cache to Build 1024.
+
+Backup Timing
+- Current: less than 30 days old.
+- Aging: 30–89 days old.
+- Backup Recommended: 90 days or older.
+
+Deployment
+Upload every file in this folder to the root of the GitHub repository, replacing the existing files. Wait for GitHub Pages to redeploy, then perform a hard refresh before testing.

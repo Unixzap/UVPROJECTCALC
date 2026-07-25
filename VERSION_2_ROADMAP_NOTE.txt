@@ -1,0 +1,8 @@
+UNIVERSAL PROJECT CALCULATOR — VERSION 2.0 ROADMAP NOTE
+
+MATERIAL LIBRARY INTEGRATION
+- Remove hard-coded material names from Scenario Builder and project workflows.
+- Populate material choices directly from the Material Library.
+- Allow Material Library selections to copy blank cost and optional defaults into new projects and scenarios.
+- Preserve a price-and-name snapshot in saved projects so historical quotes do not change when the library is updated.
+- Keep manual override capability for one-off or custom materials.

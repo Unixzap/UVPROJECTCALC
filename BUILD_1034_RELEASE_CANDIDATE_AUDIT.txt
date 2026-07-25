@@ -1,0 +1,44 @@
+UNIVERSAL PROJECT CALCULATOR v1.0.1 — BUILD 1034
+RELEASE CANDIDATE AUDIT
+
+Mission
+- Freeze the validated pricing engine and run a full regression audit before release.
+
+Build scope
+- No pricing formula changes from Build 1033.
+- Updated all visible build labels and cache-busting identifiers to Build 1034.
+- Added this release-candidate test plan.
+
+Critical regression checks
+1. Pricing consistency
+   - Create a project, save it, compare the editor and project card, reopen it, and check Dashboard and Reports.
+   - Production Cost, Quote Before Tax, Sales Tax, Customer Quote, Profit, and Achieved Margin must remain identical.
+
+2. Project lifecycle
+   - Create, edit, duplicate, archive, restore if available, and delete a project.
+   - Confirm no unexpected changes to the original project's pricing.
+
+3. Customers and materials
+   - Create and edit entries.
+   - Test import and export.
+   - Check duplicate-name handling and data integrity.
+
+4. Scenario Builder
+   - Create a scenario and save/replace it as a project.
+   - Confirm it uses the same pricing values and tax behavior as the main Project Editor.
+
+5. Reports and exports
+   - Confirm totals equal the sum of saved projects.
+   - Confirm CSV values match the Project Editor and Project Card.
+
+6. Reset and persistence
+   - Refresh/reopen the application and confirm data remains intact.
+   - Test reset only after exporting a backup.
+
+7. Browser and offline behavior
+   - Test the primary supported browsers.
+   - Confirm Build 1034 appears in the footer and Help & Feedback screen.
+   - Confirm the latest build loads after refresh and the offline cache updates correctly.
+
+Release gate
+- PASS only if there are no critical data-loss, pricing, tax, save/reopen, import/export, or cross-screen consistency defects.

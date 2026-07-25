@@ -1,0 +1,17 @@
+{
+  "name": "UV Project Calculator Pro Community Edition",
+  "short_name": "UV Project Calc",
+  "description": "Business software for UV printing. Know your costs, price with confidence, and grow your UV printing business.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#07111f",
+  "theme_color": "#07111f",
+  "icons": [
+    {
+      "src": "assets/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

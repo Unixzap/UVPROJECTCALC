@@ -1,0 +1,12 @@
+Universal Project Calculator v1.0.1 — Build 1031
+
+Customer Quote clarity fix
+
+- Customer Quote now displays the final amount due, including sales tax.
+- Quote Before Tax remains visible for pricing and profit calculations.
+- Sales Tax is shown as its own line item.
+- Removed the duplicate Customer Total concept from the project summary.
+- Per-unit quote now displays the tax-inclusive amount.
+- Saved project cards now use Quote Before Tax and Customer Quote labels.
+- Profit and margin remain based on the pre-tax selling price; collected tax is not treated as revenue.
+- Service-worker cache advanced to Build 1031.

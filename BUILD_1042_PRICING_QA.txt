@@ -1,0 +1,14 @@
+BUILD 1042 RC2 PRICING VERIFICATION
+
+Canonical rules verified in source:
+1. Production cost includes quantity-aware blank and packaging costs.
+2. Automatic quote uses target-margin division, not markup multiplication.
+3. Profit = Quote Before Tax - Production Cost.
+4. Achieved Margin = Profit / Quote Before Tax.
+5. Sales Tax = Quote Before Tax × Tax Rate.
+6. Customer Quote = Quote Before Tax + Sales Tax.
+7. Dashboard, Projects, Reports, CSV, and Scenario Builder use canonical pricing snapshots.
+
+Reference test:
+Production Cost $25.65, target margin 50%, rounding upward to $1, tax 5%.
+Expected Quote Before Tax $52.00; Sales Tax $2.60; Customer Quote $54.60; Profit $26.35; Achieved Margin 50.6731%.

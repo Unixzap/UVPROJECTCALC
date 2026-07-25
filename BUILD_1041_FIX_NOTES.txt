@@ -1,0 +1,10 @@
+UNIVERSAL PROJECT CALCULATOR v1.0.1 — BUILD 1041
+
+SAMPLE BUSINESS DATA
+
+- Added Load Sample Business Data to Application Settings > Guided Setup.
+- Loads five sample customers, seven Material Library records, and five realistic projects.
+- Sample projects use the existing pricing snapshot engine and include saved pricing inputs.
+- Loading sample data requires confirmation and replaces the current customer, material, and project lists.
+- Epson Ink is not included.
+- No pricing formulas or database schema were changed.

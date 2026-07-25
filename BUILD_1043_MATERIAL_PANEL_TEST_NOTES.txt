@@ -1,0 +1,20 @@
+Universal Project Calculator v1.0.1 RC2 — Build 1043
+Material Panel Test Build
+
+Changes:
+- Replaced browser prompt sequence with a styled Add/Edit Material modal matching the application panels.
+- Material fields: Material Name, Category, Unit Cost, Supplier, and SKU.
+- Unit Cost includes an in-field dollar prefix.
+- Add and Edit use the same form.
+- Scenario Builder “Add New Material...” opens the same form and selects the saved material.
+- Added a styled Delete Material confirmation panel.
+- Corrected Material Library edit/delete row indexing while search or category filters are active.
+- Pricing engine and saved pricing snapshot logic were not changed.
+
+Testing:
+1. Material Library > New Material.
+2. Add a material and verify it appears in the table.
+3. Edit it and verify the same panel and fields appear.
+4. Filter/search the table, then edit/delete a row and confirm the correct material is affected.
+5. Scenario Builder > Material > Add New Material... and confirm the same panel opens.
+6. Save and confirm the new material is selected and its Unit Cost fills Blank Cost.

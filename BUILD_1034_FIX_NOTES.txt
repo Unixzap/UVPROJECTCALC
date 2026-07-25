@@ -1,0 +1,10 @@
+UNIVERSAL PROJECT CALCULATOR v1.0.1 — BUILD 1034
+RELEASE CANDIDATE AUDIT
+
+Changes
+- Preserved the validated Build 1033 pricing engine without formula changes.
+- Updated the application footer, sidebar, Help & Feedback badge, script cache-buster, and service-worker cache key to Build 1034.
+- Added a structured release-candidate regression test plan.
+
+Purpose
+- This build is for full application testing and release-readiness verification, not new feature development.

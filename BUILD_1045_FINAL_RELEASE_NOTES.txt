@@ -1,0 +1,27 @@
+UNIVERSAL PROJECT CALCULATOR v1.0.1 — BUILD 1045
+FINAL RELEASE
+
+EMAIL QUOTE WORKFLOW
+
+Changes:
+- Added an Email Quote action to every saved project card.
+- Added a styled quote-email preview matching the application UI.
+- Automatically fills the customer email when it exists in Customers Library.
+- Generates a customer-safe message containing quote reference, project, quantity, quote before tax, sales tax, total quote, validity period, business terms, and business contact information.
+- Opens the completed draft in the user’s default email program using a mailto link.
+- The application does not send email directly and does not collect or store email credentials.
+- Users may edit the recipient, subject, and message before opening the email program.
+
+RELEASE SAFETY
+- Pricing formulas and canonical pricing snapshots were not changed.
+- Production cost, profit, and margin are not included in the customer email.
+- Customer, project, material, import/export, and storage schemas were not changed.
+- Visible version labels and offline cache identifiers advanced to Version 1.0.1 Build 1045.
+
+Testing:
+1. Open Projects and select Email Quote on a project with a saved customer email.
+2. Confirm To, Subject, and Message are populated.
+3. Confirm Quote Before Tax, Sales Tax, and Total Quote match the project card.
+4. Confirm no production cost, profit, or margin appears in the customer message.
+5. Choose Open Email and confirm the default email program opens with the draft populated.
+6. Repeat with a customer that has no email; the email program should open with the To field available for entry.

@@ -1,0 +1,49 @@
+UNIVERSAL PROJECT CALCULATOR v1.0.1 — BUILD 1049
+
+PRICING WORKSPACE LIBRARY INTEGRATION RESTORATION
+
+MATERIAL LIBRARY
+
+- Restored a Material selector to the main Pricing Workspace.
+- The selector is populated from the existing Material Library.
+- Added a Custom / Manual Cost option for projects that do not use a saved library item.
+- Selecting a library material automatically copies its current Unit Cost into Blank Cost / Unit.
+- The selected material name is saved with new and edited projects.
+- The selected material name is restored when a saved project is reopened.
+- The project keeps its saved Blank Cost / Unit snapshot. Changing a Material Library price later does not silently reprice an existing saved project.
+- Duplicated projects retain the selected material and saved pricing inputs through the existing project duplication workflow.
+
+CUSTOMER LIBRARY
+
+- Replaced the free-entry Customer field in Pricing Workspace with a Customer Library selector.
+- The selector is populated from the existing Customer Library.
+- Walk-in Customer remains available for projects that are not tied to a saved customer record.
+- Selecting a customer displays the saved Customer Type, Email, and Library Discount for reference.
+- New and edited projects save a customer snapshot containing Name, Type, Email, and Discount.
+- Reopening a project restores its saved customer snapshot.
+- If a customer is later renamed, edited, or removed from Customer Library, the historical project keeps its saved customer information.
+- Existing projects that only contain a customer name remain compatible and reopen using that name.
+- Customer Library discounts are shown as reference data in this build; validated pricing formulas are not changed or silently discounted.
+
+MATERIAL LIBRARY FORM RESTORATION
+
+- Restored the Notes field to the styled Add Material dialog.
+- Restored the Notes field to the styled Edit Material dialog.
+- Existing material notes remain compatible and can now be viewed and edited again.
+- Existing materials without notes load with a blank Notes field.
+
+COMPATIBILITY AND SCOPE
+
+- Existing project records without a saved material name open using Custom / Manual Cost.
+- Existing project records without a customer snapshot remain compatible.
+- Existing material, customer, project, import/export, backup, and storage formats remain compatible.
+- Scenario Builder material selection remains unchanged.
+- Customer Library list/search/sorting from Build 1048 remains unchanged.
+- The validated pricing formulas were not changed.
+- Sales tax, target-margin pricing, quantity calculations, and canonical pricing snapshots were not changed.
+
+BUILD MAINTENANCE
+
+- Updated visible application build labels to Build 1049.
+- Updated JavaScript cache-busting identifiers to Build 1049.
+- Updated the service-worker cache identifier to Build 1049.

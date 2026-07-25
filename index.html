@@ -1,0 +1,1405 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#07111f">
+  <title>UV Project Calculator Pro — Community Edition</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xn1zsch849");
+</script>
+</head>
+<body>
+
+  <div class="brand-splash" id="brandSplash" tabindex="0" role="dialog" aria-modal="true" aria-label="Welcome to UV Project Calculator Pro">
+    <div class="splash-card">
+      <div class="splash-mark"><span>UV</span><small>PRO</small></div>
+      <span class="eyebrow">WELCOME TO THE COMMUNITY</span>
+      <h1>UV Project Calculator Pro</h1>
+      <h2>Community Edition · Business Software for UV Printing</h2>
+
+      <div class="splash-promise">
+        <strong>Know Your Costs.</strong>
+        <strong>Price With Confidence.</strong>
+        <strong>Grow Your UV Printing Business.</strong>
+      </div>
+
+      <p>Built by a UV printer owner for the UV printing community.</p>
+
+      <section class="community-update">
+        <span class="eyebrow">COMMUNITY UPDATE · VERSION 1.0.1</span>
+        <div class="community-update-grid">
+          <div>Business Dashboard</div>
+          <div>Pricing Workspace</div>
+          <div>Scenario Builder</div>
+          <div>Multi-printer support</div>
+          <div>Business Libraries</div>
+          <div>Local-first storage</div>
+        </div>
+
+  <script>
+  (() => {
+    const VERSION = '1.0.1';
+
+    function dismissWelcome() {
+      const splash = document.getElementById('brandSplash');
+      if (!splash || splash.dataset.dismissed === 'true') return;
+
+      splash.dataset.dismissed = 'true';
+
+      try {
+        localStorage.setItem('uvpc-last-welcome-version', VERSION);
+      } catch (error) {
+        console.warn('Could not save welcome-screen preference:', error);
+      }
+
+      splash.classList.add('hidden');
+
+      window.setTimeout(() => {
+        if (splash && splash.parentNode) splash.parentNode.removeChild(splash);
+      }, 450);
+    }
+
+    function initializeWelcomeControls() {
+      const splash = document.getElementById('brandSplash');
+      const button = document.getElementById('enterWorkspaceBtn');
+      if (!splash) return;
+
+      splash.addEventListener('click', (event) => {
+        if (event.target.closest('a')) return;
+        dismissWelcome();
+      });
+
+      if (button) {
+        button.addEventListener('click', (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+          dismissWelcome();
+        });
+      }
+
+      document.addEventListener('keydown', (event) => {
+        if (!document.getElementById('brandSplash')) return;
+        if (event.key === 'Enter' || event.key === ' ' || event.code === 'Space') {
+          event.preventDefault();
+          dismissWelcome();
+        }
+      });
+
+      splash.focus();
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initializeWelcomeControls, { once: true });
+    } else {
+      initializeWelcomeControls();
+    }
+
+    window.UVPCDismissWelcome = dismissWelcome;
+  })();
+  </script>
+
+      </section>
+
+      <button class="primary splash-enter" id="enterWorkspaceBtn">Enter Workspace</button>
+      <small class="splash-instruction">Click anywhere, or press Enter or Space, to continue.</small>
+      <small class="splash-support-note">Community Edition is free for local use. Optional support helps fund future development.</small>
+
+      <div class="founding-edition-line">Founding Community Test Team · Hosted RC1</div>
+      <div class="splash-footer"><span>Version 1.0.1</span><span>UVProjectCalc.com</span></div>
+    </div>
+  </div>
+  </div>
+
+  <div class="demo-ribbon">COMMUNITY EDITION · FREE LOCAL-FIRST BUSINESS SOFTWARE</div>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark"><span>UV</span><small>PRO</small></div>
+        <div><strong>UV Project</strong><span>Calculator Pro</span><small class="brand-edition">Community Edition</small></div>
+      </div>
+
+      <button class="new-project" id="newProjectBtn">＋ New Project</button>
+
+      <nav class="nav" aria-label="Main navigation"><div class="nav-label">BUSINESS</div>
+        <button class="nav-item active" data-view="dashboard"><span>▦</span>Business Dashboard</button>
+        <div class="nav-label">PROJECTS</div><button class="nav-item" data-view="projects"><span>▤</span>Projects</button>
+        <button class="nav-item" data-view="calculator"><span>⌗</span>Pricing Workspace</button>
+        <div class="nav-label">BUSINESS LIBRARIES</div>
+        <button class="nav-item" data-view="customers"><span>♙</span>Customers Library</button>
+        <button class="nav-item" data-view="materials"><span>◇</span>Material Library</button>
+        <div class="nav-label">ADMINISTRATION</div>
+        <button class="nav-item" data-view="global"><span>⚙</span>Application Settings</button>
+        <button class="nav-item" data-view="whatif"><span>↔</span>Scenario Builder</button>
+        <button class="nav-item" data-view="reports"><span>▥</span>Reports</button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <button class="nav-item help-nav-item" data-view="help"><span>?</span>Help & Feedback</button>
+        <button class="nav-item support-nav-item" data-view="support"><span>♥</span>Support the Project</button>
+        <button class="nav-item" data-view="about"><span>ⓘ</span>About</button>
+        <div class="version">Community Edition · Version 1.0.1 · Build 1049 · GitHub Pages</div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="icon-btn mobile-menu" id="menuBtn" aria-label="Open navigation">☰</button>
+        <div>
+          <h1 id="pageTitle">Business Dashboard</h1>
+          <p id="pageSubtitle">See project activity, quotes, profit, and margins at a glance.</p>
+        </div>
+        <div class="top-actions">
+          <span class="status-dot" id="storageStatusDot"></span><span class="saved-label" id="storageStatusLabel">Opening local database…</span>
+          <button class="account-chip" id="accountBtn" title="Local profile">
+            <span class="avatar" id="accountAvatar">DY</span>
+            <span><strong id="accountName">Donald</strong><small>Community Edition</small></span>
+          </button>
+          <button class="icon-btn" id="themeBtn" title="Toggle theme">◐</button>
+        </div>
+      </header>
+      <div class="active-printer-banner" id="activePrinterBanner">
+        <div class="active-printer-banner-main">
+          <span class="printer-banner-mark" id="activePrinterBannerMark">E1</span>
+          <div class="active-printer-banner-copy">
+            <span class="printer-banner-label">ACTIVE PRINTER</span>
+            <strong id="activePrinterName">EufyMake E1</strong>
+            <small id="activePrinterEdition">Standard UV Profile</small>
+          </div>
+        </div>
+        <div class="printer-capabilities" id="activePrinterCapabilities"></div>
+        <button class="secondary" id="changePrinterBtn">Change Printer</button>
+      </div>
+
+      <div class="content">
+        <section class="view active" id="view-dashboard">
+          <div class="backup-reminder-banner" id="dashboardBackupReminder" hidden>
+            <div class="backup-reminder-icon">!</div>
+            <div><strong id="dashboardBackupReminderTitle">Backup recommended</strong><p id="dashboardBackupReminderText">Your data is stored only in this browser. Create a backup to protect your projects and settings.</p></div>
+            <button class="primary small" id="dashboardBackupReminderBtn">Create Backup</button>
+            <button class="icon-btn backup-reminder-dismiss" id="dashboardBackupReminderDismiss" aria-label="Dismiss backup reminder">×</button>
+          </div>
+
+          <div class="dashboard-2-header">
+            <div>
+              <span class="eyebrow">UV PROJECT CALCULATOR PRO · COMMUNITY EDITION</span>
+              <h2 id="dashboardGreeting">Business Dashboard</h2>
+              <p>Know your costs. Price with confidence. Grow your UV printing business.</p>
+            </div>
+            <div class="dashboard-header-actions">
+              <label class="dashboard-project-picker">Current Project
+                <select id="dashboardProjectSelect"></select>
+              </label>
+              <button class="primary" id="dashboardNewProjectBtn">＋ New Project</button>
+            </div>
+          </div>
+
+          <article class="setup-banner" id="setupBanner">
+            <div>
+              <span class="eyebrow">GETTING STARTED</span>
+              <h3>Your UV printing business workspace is ready.</h3>
+              <p id="setupSummary">Complete Guided Setup to personalize printer costs, business rates, and pricing goals.</p>
+            </div>
+            <div class="setup-actions">
+              <div class="setup-progress"><span id="setupProgressBar"></span></div>
+              <button class="secondary" id="openSetupBtn">Guided Setup</button>
+            </div>
+          </article>
+
+          <div class="dashboard-hero-grid">
+            <article class="dashboard-price-hero">
+              <div class="hero-label-row">
+                <span>RECOMMENDED SELLING PRICE</span>
+                <span class="dashboard-health-pill" id="dashboardHealthPill">Healthy</span>
+              </div>
+              <strong id="dashboardHeroPrice">$0.00</strong>
+              <small id="dashboardHeroUnit">$0.00 per unit</small>
+              <p id="dashboardHeroMessage">Choose a project to review its recommended customer price.</p>
+              <div class="hero-project-line">
+                <span id="dashboardHeroProject">No project selected</span>
+                <span id="dashboardHeroStatus">Draft</span>
+              </div>
+              <div class="hero-printer-reference">
+                <span>Calculated using</span>
+                <strong id="dashboardHeroPrinter">—</strong>
+              </div>
+            </article>
+
+            <div class="dashboard-supporting-financials">
+              <article class="dashboard-financial-card">
+                <span>Production Cost</span>
+                <strong id="dashboardProductionCost">$0.00</strong>
+                <small>True project cost</small>
+              </article>
+              <article class="dashboard-financial-card profit">
+                <span>Expected Profit</span>
+                <strong id="dashboardExpectedProfit">$0.00</strong>
+                <small id="dashboardProfitPerUnit">$0.00 per item</small>
+              </article>
+              <article class="dashboard-financial-card">
+                <span>Profit Margin</span>
+                <strong id="dashboardProfitMargin">0.0%</strong>
+                <small id="dashboardMarginTarget">Target 0.0%</small>
+              </article>
+            </div>
+          </div>
+
+          <div class="dashboard-2-main-grid">
+            <article class="panel business-health-card" id="businessHealthCard">
+              <div class="panel-head">
+                <div>
+                  <span class="eyebrow">BUSINESS HEALTH</span>
+                  <h3 id="businessHealthTitle">No Project Selected</h3>
+                </div>
+                <span class="health-indicator" id="businessHealthIndicator">●</span>
+              </div>
+              <p id="businessHealthMessage">Select a project to receive a pricing and profitability assessment.</p>
+              <div class="business-recommendation">
+                <span>RECOMMENDATION</span>
+                <strong id="businessHealthRecommendation">Create or select a project to begin.</strong>
+              </div>
+            </article>
+
+            <article class="panel current-project-card">
+              <div class="panel-head">
+                <div><h3>Current Project</h3><p>The project driving the dashboard</p></div>
+                <button class="text-btn" id="dashboardOpenProjectBtn">Open Project →</button>
+              </div>
+              <div class="current-project-details">
+                <div><span>Project</span><strong id="currentProjectName">—</strong></div>
+                <div><span>Customer</span><strong id="currentProjectCustomer">—</strong></div>
+                <div><span>Printer</span><strong id="currentProjectPrinter">—</strong></div>
+                <div><span>Status</span><strong id="currentProjectStatus">—</strong></div>
+                <div><span>Quantity</span><strong id="currentProjectQuantity">—</strong></div>
+                <div><span>Project Date</span><strong id="currentProjectDate">—</strong></div>
+              </div>
+            </article>
+
+            <article class="panel dashboard-quick-actions">
+              <div class="panel-head"><div><h3>Quick Actions</h3><p>Common project tasks</p></div></div>
+              <div class="dashboard-action-grid">
+                <button class="dashboard-action primary-action" id="dashboardActionNew"><span>＋</span><strong>New Project</strong><small>Build a new quote</small></button>
+                <button class="dashboard-action" id="dashboardActionDuplicate"><span>⧉</span><strong>Duplicate</strong><small>Copy current project</small></button>
+                <button class="dashboard-action" id="dashboardActionScenario"><span>↔</span><strong>Scenario Builder</strong><small>Test changes safely</small></button>
+                <button class="dashboard-action" id="dashboardActionReports"><span>▥</span><strong>Reports</strong><small>Review performance</small></button>
+              </div>
+            </article>
+          </div>
+
+          <div class="dashboard-2-secondary-grid">
+            <article class="panel recent-projects-panel">
+              <div class="panel-head">
+                <div><h3>Recent Projects</h3><p>Your latest quotes and production jobs</p></div>
+                <button class="text-btn" data-view-target="projects">View All →</button>
+              </div>
+              <div class="table-wrap">
+                <table class="dashboard-project-table">
+                  <thead><tr><th>Project</th><th>Customer</th><th>Customer Quote</th><th>Profit</th><th>Margin</th><th>Status</th></tr></thead>
+                  <tbody id="recentProjectsBody"></tbody>
+                </table>
+              </div>
+            </article>
+
+            <div class="dashboard-status-stack">
+              <article class="panel active-printer-dashboard-card" id="activePrinterDashboardCard">
+                <div class="active-printer-card-top">
+                  <div>
+                    <span class="eyebrow">ACTIVE PRINTER</span>
+                    <h3 id="dashboardPrinterName">—</h3>
+                    <strong id="dashboardPrinterEdition">—</strong>
+                  </div>
+                  <button class="text-btn" id="dashboardChangePrinterBtn">Change →</button>
+                </div>
+                <div class="active-printer-identity">
+                  <span class="printer-identity-mark" id="dashboardPrinterMark">UV</span>
+                  <div>
+                    <span>Current Workflow</span>
+                    <strong id="dashboardPrinterWorkflow">—</strong>
+                  </div>
+                </div>
+                <div class="active-printer-meta">
+                  <div><span>Machine Rate</span><strong id="dashboardMachineRate">$0.00/hr</strong></div>
+                  <div><span>Pricing Source</span><strong>Active Cost Profile</strong></div>
+                </div>
+                <p class="active-printer-warning">All new project calculations use this printer profile and its saved cost rates.</p>
+              </article>
+
+              <article class="panel compact-status-card" id="dashboardBackupCard">
+                <div class="panel-head"><div><h3>Backup Status</h3><p>Protect your local browser data</p></div><button class="text-btn" id="dashboardBackupBtn">Back Up →</button></div>
+                <div class="backup-health-row">
+                  <span class="backup-health-dot" id="dashboardBackupDot"></span>
+                  <div><strong id="dashboardBackupHealth">Backup Needed</strong><small id="dashboardBackupLast">No backup recorded</small></div>
+                </div>
+                <p id="dashboardStorageHealth">IndexedDB local storage is active.</p>
+              </article>
+
+              <article class="panel compact-status-card community-update-card">
+                <span class="eyebrow">COMMUNITY UPDATE · 1.0.1</span>
+                <h3>Business Dashboard 2.0</h3>
+                <p>A clearer pricing command center with live project health, faster actions, and stronger backup visibility.</p>
+              </article>
+            </div>
+          </div>
+
+          <div class="dashboard-portfolio-strip">
+            <div><span>Total Projects</span><strong id="metricProjects">0</strong></div>
+            <div><span>Portfolio Selling Price</span><strong id="sumRevenue">$0.00</strong></div>
+            <div><span>Portfolio Profit</span><strong id="metricProfit">$0.00</strong></div>
+            <div><span>Average Margin</span><strong id="metricMargin">0.0%</strong></div>
+          </div>
+        </section>
+
+        <section class="view" id="view-projects">
+          <div class="section-head workspace-head">
+            <div><h2>Projects</h2><p>Search, review, duplicate, and manage saved estimates.</p></div>
+            <button class="primary" data-open-calculator>＋ New Project</button>
+          </div>
+          <div class="panel">
+            <div class="toolbar">
+              <input id="projectSearch" type="search" placeholder="Search projects or customers…">
+              <select id="projectFilter"><option value="all">All projects</option><option value="high">40%+ margin</option><option value="low">Under 40% margin</option></select>
+            </div>
+
+            <div class="project-visual-tools">
+              <div class="project-color-key" aria-label="Project color key">
+                <strong>Color Key</strong>
+                <span><i class="key-dot production"></i>Production</span>
+                <span><i class="key-dot scenario"></i>Scenario</span>
+                <span><i class="key-dot draft"></i>Draft</span>
+                <span><i class="key-dot estimate"></i>Estimate</span>
+                <span><i class="key-dot quoted"></i>Quoted</span>
+                <span><i class="key-dot approved"></i>Approved</span>
+                <span><i class="key-dot in-production"></i>In Production</span>
+                <span><i class="key-dot completed"></i>Completed</span>
+                <span><i class="key-dot cancelled"></i>Cancelled</span>
+              </div>
+
+              <div class="project-type-filters" aria-label="Project type filters">
+                <button class="project-filter-chip active" data-project-type-filter="all">All</button>
+                <button class="project-filter-chip" data-project-type-filter="production">Production</button>
+                <button class="project-filter-chip" data-project-type-filter="scenario">Scenarios</button>
+              </div>
+            </div>
+
+            <div class="project-cards" id="projectCards"></div>
+          </div>
+        </section>
+
+        <section class="view" id="view-calculator">
+          <div class="section-head workspace-head">
+            <div><h2>Pricing Workspace</h2><p>Understand your true costs and determine a profitable customer price.</p></div>
+            <div class="action-row"><button class="secondary" id="resetFormBtn">Clear</button><button class="primary" id="saveProjectBtn">Save Project Quote</button></div>
+          </div>
+
+          <div class="calculator-grid">
+            <div class="form-stack">
+              <article class="panel">
+                <div class="panel-head"><div><h3>Project Information</h3><p>Basic estimate details</p></div></div>
+                <div class="form-grid">
+                  <label class="span-2">Project Name<input id="projectName" value="4-Inch Ceramic Coaster"></label>
+                  <label>Customer<select id="customerName"><option value="__walkin__">Walk-in Customer</option></select></label>
+                  <label>Printer<div class="project-printer-field"><input id="projectPrinter" readonly><button type="button" class="secondary small" id="changeProjectPrinterBtn">Change</button></div></label><label>Project Status<select id="projectStatus"><option>Draft</option><option>Estimate</option><option>Quoted</option><option>Approved</option><option>In Production</option><option>Completed</option><option>Cancelled</option></select></label>
+                  <label>Customer Type<input id="projectCustomerType" value="Walk-in" readonly></label>
+                  <label>Customer Email<input id="projectCustomerEmail" value="" readonly placeholder="No email saved"></label>
+                  <label>Library Discount<input id="projectCustomerDiscount" value="0%" readonly></label>
+                  <label>Quantity<input id="quantity" type="number" min="1" step="1" value="1"></label>
+                  <label>Material<select id="projectMaterial"><option value="__custom__">Custom / Manual Cost</option></select></label>
+                  <label>Blank Cost / Unit<input id="blankCost" type="number" min="0" step=".01" value=".77"></label>
+                  <label class="span-2">Project Notes<textarea id="projectNotes" rows="3" placeholder="Customer requests, production notes, artwork details…"></textarea></label>
+                </div>
+              </article>
+
+              <article class="panel">
+                <div class="panel-head"><div><h3>Printer Job Estimate</h3><p>Enter totals for the complete production job</p></div><button class="secondary small" id="demoImportBtn">Load Sample Values</button></div>
+                <div class="form-grid three">
+                  <label>Total Ink Used for Job (mL)<input id="totalInk" type="number" min="0" step=".01" value=".50"></label>
+                  <label>Print Minutes for Job<input id="printMinutes" type="number" min="0" step=".1" value="16"></label>
+                  <label>Hands-On Minutes for Job<input id="laborMinutes" type="number" min="0" step=".1" value="12"></label>
+                  <label>Packaging / Unit<input id="packagingCost" type="number" min="0" step=".01" value=".70"></label>
+                </div>
+                <div class="import-note"><strong>Total job values:</strong> ink and print time are entered once for the complete run and are not multiplied again by quantity.</div>
+              </article>
+
+              <article class="panel">
+                <div class="panel-head"><div><h3>Pricing Controls</h3><p>Adjust costs, waste, and target margin</p></div></div>
+                <div class="form-grid three">
+                  <label>Primer & Cleaning<input id="primerCost" type="number" min="0" step=".01" value=".35"></label>
+                  <label>Other Fixed Costs<input id="otherCost" type="number" min="0" step=".01" value="0"></label>
+                  <label>Waste Allowance (%)<input id="wastePercent" type="number" min="0" max="100" step=".1" value="5"></label>
+                  <label>Target Profit Margin (%)<input id="profitMargin" type="number" min="1" max="95" step=".1" value="45"></label>
+                  <label>Sales Tax (%)<input id="projectTax" type="number" min="0" max="100" step=".001" value="0"></label>
+                  <label>Manual Selling Price<input id="manualPrice" type="number" min="0" step=".01" placeholder="Optional" disabled></label>
+                  <label class="manual-price-toggle"><span>Price Override</span><span><input id="useManualPrice" type="checkbox"> Use manual selling price</span></label>
+                  <label>Rounding<select id="rounding"><option value=".01">Nearest cent</option><option value=".50">Nearest $0.50</option><option value="1" selected>Nearest dollar</option><option value="5">Nearest $5</option></select></label>
+                </div>
+              </article>
+            </div>
+
+            <aside class="summary-stack">
+              <article class="panel sticky-summary">
+                <div class="panel-head"><div><h3>Cost Breakdown</h3><p>Live estimate</p></div><span class="live-pill">LIVE</span></div>
+                <div id="costBreakdown"></div>
+                <div class="price-result">
+                  <span>Customer Quote — Amount Due</span>
+                  <strong id="recommendedPrice">$0.00</strong>
+                  <small id="perUnitPrice">$0.00 per unit</small>
+                </div>
+                <div class="profit-grid">
+                  <div id="projectProfitCard"><span>Profit</span><strong id="projectProfit">$0.00</strong></div>
+                  <div><span>Margin</span><strong id="projectMargin">0%</strong></div>
+                </div>
+              </article>
+
+              <article class="panel quote-summary-card">
+                <div class="panel-head">
+                  <div>
+                    <h3>Project Financial Summary</h3>
+                    <p>The key numbers used to price and quote this project</p>
+                  </div>
+                  <span class="section-badge">READY TO QUOTE</span>
+                </div>
+
+                <div class="quote-summary-main">
+                  <span>Customer Quote — Amount Due</span>
+                  <strong id="quoteOrderTotal">$0.00</strong>
+                  <small id="quoteQuantityLine">1 item at $0.00 each</small>
+                </div>
+
+                <div class="quote-summary-grid">
+                  <div><span>Quote Before Tax / Unit</span><strong id="quoteUnitPrice">$0.00</strong></div>
+                  <div><span>Production Cost</span><strong id="quoteProductionCost">$0.00</strong></div>
+                  <div id="quoteProfitCard"><span>Gross Profit</span><strong id="quoteProfit">$0.00</strong></div>
+                  <div><span>Profit Margin</span><strong id="quoteMargin">0.0%</strong></div>
+                  <div><span>Sales Tax</span><strong id="quoteSalesTax">$0.00</strong></div>
+                  <div id="quoteProfitPerUnitCard"><span>Profit / Unit</span><strong id="quoteProfitPerUnit">$0.00</strong></div>
+                </div>
+
+                <div class="quote-guidance">
+                  <strong>Customer pricing guidance</strong>
+                  <p id="quoteGuidanceText">Sell this order for $0.00 total.</p><div class="profitability-alert" id="profitabilityAlert" role="status"><strong id="profitabilityAlertTitle">Pricing status</strong><span id="profitabilityAlertText">Enter project details to review profitability.</span></div>
+                </div>
+              </article>
+            </aside>
+          </div>
+        </section>
+
+        <section class="view" id="view-customers">
+          <div class="section-head workspace-head"><div><h2>Customers Library</h2><p>Manage customer records, discounts, and contact details used in project quotes.</p></div><button class="primary" id="addCustomerBtn">＋ Add Customer</button></div>
+          <div class="panel">
+            <div class="toolbar customer-library-toolbar">
+              <input id="customerSearch" type="search" placeholder="Search customer names, types, or email addresses…" aria-label="Search Customers Library">
+              <span class="library-count" id="customerResultCount" aria-live="polite"></span>
+            </div>
+            <div class="table-wrap">
+              <table class="customer-library-table">
+                <thead><tr>
+                  <th><button class="table-sort" type="button" data-customer-sort="name">Customer Name <span aria-hidden="true">↕</span></button></th>
+                  <th><button class="table-sort" type="button" data-customer-sort="type">Customer Type <span aria-hidden="true">↕</span></button></th>
+                  <th><button class="table-sort" type="button" data-customer-sort="email">Email <span aria-hidden="true">↕</span></button></th>
+                  <th><button class="table-sort" type="button" data-customer-sort="discount">Discount <span aria-hidden="true">↕</span></button></th>
+                  <th>Actions</th>
+                </tr></thead>
+                <tbody id="customerBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="view" id="view-materials">
+          <div class="section-head workspace-head">
+            <div><h2>Material Library</h2><p>Maintain reusable blanks, supplies, suppliers, SKUs, and unit costs.</p></div>
+            <button class="primary" id="addLibraryMaterialBtn">＋ Add Material</button>
+          </div>
+          <div class="panel">
+            <div class="toolbar">
+              <input id="libraryMaterialSearch" type="search" placeholder="Search materials, categories, suppliers…">
+              <select id="libraryMaterialCategory"><option value="all">All categories</option></select>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Material</th><th>Category</th><th>Supplier</th><th>SKU</th><th>Unit Cost</th><th>Actions</th></tr></thead>
+                <tbody id="materialsBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="view" id="view-global">
+          <div class="section-head workspace-head">
+            <div><h2>Application Settings</h2><p>Manage cost rates, printer details, business information, backup, preferences, appearance, setup, readiness, and reset options.</p></div>
+            <div class="action-row">
+              <button class="secondary" id="exportSettingsBtn">Export Setup</button>
+              <button class="primary" id="saveGlobalWorkspaceBtn">Save Application Settings</button>
+            </div>
+          </div>
+
+          <div class="global-workspace">
+            <aside class="settings-tabs" aria-label="Global cost categories">
+              <button class="settings-tab active" data-settings-panel="costs"><span>$</span><div><strong>Cost Rates</strong><small>All pricing inputs in one place</small></div></button>
+              <button class="settings-tab" data-settings-panel="printer"><span>▣</span><div><strong>Printer</strong><small>Model and printer profile</small></div></button>
+              <button class="settings-tab" data-settings-panel="business"><span>▤</span><div><strong>Business</strong><small>Identity and quote defaults</small></div></button>
+              <button class="settings-tab" data-settings-panel="transfer"><span>⇅</span><div><strong>Backup & Transfer</strong><small>Back up, import, and export</small></div></button>
+              <button class="settings-tab" data-settings-panel="preferences"><span>⚙</span><div><strong>Preferences</strong><small>Currency, defaults, display</small></div></button>
+              <button class="settings-tab" data-settings-panel="appearance"><span>◐</span><div><strong>Appearance</strong><small>Theme and navigation layout</small></div></button>
+              <button class="settings-tab" data-settings-panel="setup"><span>✓</span><div><strong>Guided Setup</strong><small>Rerun onboarding and identity</small></div></button>
+              <button class="settings-tab" data-settings-panel="readiness"><span>◎</span><div><strong>Product Readiness</strong><small>Prototype and cloud status</small></div></button>
+              <button class="settings-tab danger-tab" data-settings-panel="reset"><span>↺</span><div><strong>Reset</strong><small>Restore defaults safely</small></div></button>
+            </aside>
+
+            <div class="settings-content">
+              <section class="settings-panel active" id="settings-costs">
+                <div class="panel-head">
+                  <div><h3>Cost Rates</h3><p>Every setting that directly affects project cost, selling price, and profit is grouped here.</p></div>
+                  <span class="section-badge" id="costPrinterBadge">EufyMake E1</span>
+                </div>
+                <div class="cost-category-nav">
+                  <a href="#cost-ink">Ink</a>
+                  <a href="#cost-production">Production</a>
+                  <a href="#cost-job">Per-Job Costs</a>
+                  <a href="#cost-pricing">Pricing Defaults</a>
+                </div>
+                <div class="settings-card-grid">
+                  <article class="subpanel" id="cost-ink">
+                    <h4>Ink & Cleaning Cartridge Costs</h4>
+                    <p>The active printer profile converts cartridge price and capacity into a cost per mL. Pricing Workspace uses one total job ink value.</p>
+                    <div class="form-grid three">
+                      <label>Ink Cartridge Price<input id="inkCartridgePrice" type="number" min="0" step=".01"></label>
+                      <label>Ink Cartridge Capacity (mL)<input id="inkCartridgeCapacity" type="number" min="1" step="1"></label>
+                      <label>Calculated Ink Cost / mL<input id="rateInk" type="number" step=".0001" readonly></label>
+                      <label>Cleaning Cartridge Price<input id="cleaningCartridgePrice" type="number" min="0" step=".01"></label>
+                      <label>Cleaning Cartridge Capacity (mL)<input id="cleaningCartridgeCapacity" type="number" min="1" step="1"></label>
+                      <label>Cleaning Allowance / Job<input id="rateCleaning" type="number" min="0" step=".01"></label>
+                    </div>
+                    <div class="settings-help">
+                      <strong>EufyMake E1 default</strong>
+                      <p>CMYKWG cartridges are priced equally, so the calculator only needs the total ink used for the complete job.</p>
+                    </div>
+                  </article>
+
+                  <article class="subpanel" id="cost-production">
+                    <h4>Production Rates</h4>
+                    <p>Hourly costs for labor, printer operation, electricity, overhead, and long-term service reserve.</p>
+                    <div class="form-grid">
+                      <label>Labor Rate / Hour<input id="rateLabor" type="number" step=".01"></label>
+                      <label>Machine Cost / Hour<input id="rateMachine" type="number" step=".01"></label>
+                      <label>Electricity / Hour<input id="rateElectric" type="number" step=".01"></label>
+                      <label>Overhead / Hour<input id="rateOverhead" type="number" step=".01"></label>
+                      <label>Service Reserve / Hour<input id="rateServiceReserve" type="number" step=".01"></label>
+                    </div>
+                  </article>
+
+                  <article class="subpanel" id="cost-job">
+                    <h4>Per-Job Costs</h4>
+                    <p>Default costs added to each project before profit and margin are calculated.</p>
+                    <div class="form-grid">
+                      <label>Maintenance Allowance / Job<input id="rateMaintenance" type="number" step=".01"></label>
+                      <label>Primer Default / Job<input id="ratePrimerDefault" type="number" step=".01"></label>
+                      <label>Default Shipping / Order<input id="rateShipping" type="number" step=".01"></label>
+                    </div>
+                  </article>
+
+                  <article class="subpanel" id="cost-pricing">
+                    <h4>Pricing Defaults</h4>
+                    <p>Defaults used when creating a new project or scenario.</p>
+                    <div class="form-grid">
+                      <label>Default Waste %<input id="rateWaste" type="number" step=".1"></label>
+                      <label>Default Target Profit Margin %<input id="rateMargin" type="number" step=".1"></label>
+                      <label>Sales Tax %<input id="rateTax" type="number" step=".001"></label>
+                      <label>Deposit Requirement %<input id="depositPercent" type="number" step="1"></label>
+                    </div>
+                  </article>
+                </div>
+                <div class="settings-help">
+                  <strong>How these settings work</strong>
+                  <p>Changes are saved when you click <b>Save Application Settings</b>. New projects use these defaults, while existing saved project totals remain unchanged until recalculated.</p>
+                </div>
+              </section>
+
+              <section class="settings-panel" id="settings-printer"><div class="panel-head"><div><h3>Printer Profiles</h3><p>Select the printer and edition used for new projects and scenarios.</p></div><span class="section-badge">ACTIVE</span></div><div class="printer-profile-layout"><article class="subpanel"><h4>Active Printer</h4><div class="form-grid"><label>Printer Family<select id="printerFamily"><option value="eufymake-e1">EufyMake E1</option><option value="xtool-o1">xTool O1 Omni Printer</option></select></label><label>Printer Edition<select id="printerEdition"></select></label><label>Profile Name<input id="printerProfileName" value="Main Printer"></label><label>Default Workflow<select id="printerWorkflow"></select></label></div><div class="printer-switch-warning">Switching profiles changes the active cost rates and available options for new calculations. Existing saved project totals remain unchanged.</div></article><article class="subpanel"><h4>Profile Capabilities</h4><div class="profile-capability-grid" id="printerProfileCapabilities"></div><p class="profile-source-note" id="printerProfileNote"></p></article><article class="subpanel"><h4>Profile Cost Status</h4><div class="cost-status-card" id="printerCostStatus"></div><button class="secondary" data-open-settings-panel="costs">Review Active Cost Rates</button></article></div></section>
+
+              <section class="settings-panel" id="settings-business">
+                <div class="panel-head"><div><h3>Business</h3><p>Manage company identity and customer quote defaults.</p></div></div>
+                <div class="settings-card-grid">
+                  <article class="subpanel">
+                    <h4>Business Identity</h4>
+                    <div class="form-grid">
+                      <label>Business Name<input id="businessName"></label>
+                      <label>Owner / Contact<input id="businessOwner"></label>
+                      <label>Email<input id="businessEmail" type="email" placeholder="Optional"></label>
+                      <label>Phone<input id="businessPhone" placeholder="Optional"></label>
+                      <label class="span-2">Website<input id="businessWebsite" placeholder="Optional"></label>
+                    </div>
+                  </article>
+                  <article class="subpanel">
+                    <h4>Quote Defaults</h4>
+                    <div class="form-grid">
+                      <label>Quote Valid For<select id="quoteValidity"><option>7 days</option><option selected>14 days</option><option>30 days</option><option>60 days</option></select></label>
+                      <label class="span-2">Default Terms<textarea id="defaultTerms" rows="4"></textarea></label>
+                    </div>
+                  </article>
+                  <article class="subpanel">
+                    <h4>Where Pricing Is Managed</h4>
+                    <p>Labor, overhead, waste, margin, tax, shipping, and deposit defaults are now grouped under <b>Cost Rates</b>.</p>
+                    <button class="secondary" data-open-settings-panel="costs">Open Cost Rates</button>
+                  </article>
+                </div>
+              </section>
+
+              <section class="settings-panel" id="settings-transfer">
+                <div class="panel-head"><div><h3>Backup & Transfer</h3><p>Back up the application or move selected data between browsers.</p>
+                <div class="storage-health-card">
+                  <div><span>Storage Engine</span><strong id="storageEngineName">IndexedDB</strong></div>
+                  <div><span>Database Version</span><strong id="storageSchemaVersion">1</strong></div>
+                  <div><span>Last Automatic Save</span><strong id="lastAutoSave">Not yet</strong></div>
+                  <div><span>Last Backup</span><strong id="backupStatusValue">Never</strong></div>
+                </div></div><div class="local-data-warning"><strong>Your data lives in this browser.</strong><p>Clearing this site’s browser data may remove projects and settings. Create regular backups and keep them somewhere safe.</p></div></div>
+                <div class="transfer-grid">
+                  <article class="subpanel">
+                    <h4>Export</h4>
+                    <p>Download JSON files that can be imported into another copy of the web application.</p>
+                    <div class="stack-buttons">
+                      <button class="secondary" data-export-kind="all">Export Complete Setup</button>
+                      <button class="secondary" data-export-kind="materials">Export Material Library</button>
+                      <button class="secondary" data-export-kind="customers">Export Customers Library</button>
+                      <button class="secondary" data-export-kind="printer">Export Printer Settings</button>
+                    </div>
+                  </article>
+                  <article class="subpanel">
+                    <h4>Import</h4>
+                    <p>Select a previously exported UV Project Calculator Pro JSON file.</p>
+                    <label class="file-drop">
+                      <input id="importSetupFile" type="file" accept=".json,application/json">
+                      <span>Choose JSON File</span>
+                      <small>Data will be reviewed before replacing current records.</small>
+                    </label>
+                    <div class="privacy-note">Backup files are imported locally. Nothing is uploaded to UVProjectCalc.com.</div>
+                  </article>
+                  <article class="subpanel">
+                    <h4>Quick Backup</h4>
+                    <p>Download a timestamped backup containing projects and all settings.</p>
+                    <button class="primary" id="quickBackupBtn">Create Backup Now</button>
+                    <small id="lastBackupLabel">No backup created in this session.</small>
+                  </article>
+                </div>
+              </section>
+
+              <section class="settings-panel" id="settings-preferences">
+                <div class="panel-head"><div><h3>Preferences</h3><p>Choose default display, pricing, and workflow behavior.</p></div></div>
+                <div class="settings-card-grid">
+                  <article class="subpanel">
+                    <h4>Regional</h4>
+                    <div class="form-grid">
+                      <label>Currency<select id="prefCurrency"><option value="USD">USD — US Dollar</option><option value="CAD">CAD — Canadian Dollar</option><option value="GBP">GBP — British Pound</option><option value="EUR">EUR — Euro</option><option value="AUD">AUD — Australian Dollar</option></select></label>
+                      <label>Number Format<select id="prefNumberFormat"><option value="us">1,234.56</option><option value="eu">1.234,56</option></select></label>
+                    </div>
+                  </article>
+                  <article class="subpanel">
+                    <h4>Calculator Behavior</h4>
+                    <div class="toggle-list">
+                      <label><span><strong>Auto-save drafts</strong><small>Save changes while typing</small></span><input id="prefAutosave" type="checkbox" checked></label>
+                      <label><span><strong>Use last customer</strong><small>Preselect the most recent customer</small></span><input id="prefLastCustomer" type="checkbox"></label>
+                      <label><span><strong>Show internal costs on reports</strong><small>Useful for owner-only job sheets</small></span><input id="prefShowCosts" type="checkbox" checked></label>
+                      <label><span><strong>Confirm destructive actions</strong><small>Ask before deleting or resetting</small></span><input id="prefConfirmDelete" type="checkbox" checked></label>
+                    </div>
+                  </article>
+                  <article class="subpanel">
+                    <h4>Startup Experience</h4>
+                    <div class="form-grid">
+                      <label>Welcome Screen
+                        <select id="prefWelcomeMode">
+                          <option value="always">Always show</option>
+                          <option value="updates" selected>Show after updates</option>
+                          <option value="never">Never show</option>
+                        </select>
+                      </label>
+                    </div>
+                    <p>The recommended setting shows the Welcome screen once for each new Community Edition update.</p>
+                  </article>
+
+                  <article class="subpanel">
+                    <h4>Default Project Values</h4>
+                    <div class="form-grid">
+                      <label>Default Project Status<select id="prefDefaultStatus"><option>Draft</option><option>Estimate</option><option>Quoted</option></select></label>
+                      <label>Default Rounding<select id="prefRounding"><option value=".01">Nearest cent</option><option value=".50">Nearest $0.50</option><option value="1">Nearest dollar</option><option value="5">Nearest $5</option></select></label>
+                    </div>
+                  </article>
+                </div>
+              </section>
+
+              
+              <section class="settings-panel" id="settings-appearance">
+                <div class="panel-head"><div><h3>Appearance</h3><p>Control the visual theme and sidebar layout.</p></div></div>
+                <div class="settings-card-grid">
+                  <article class="subpanel">
+                    <h4>Theme</h4>
+                    <div class="toggle-list">
+                      <label><span><strong>Dark Appearance</strong><small>Use the familiar dark E1 interface</small></span><input id="darkToggleSettings" type="checkbox" checked></label>
+                      <label><span><strong>Compact Sidebar</strong><small>Use a narrower navigation layout</small></span><input id="compactToggleSettings" type="checkbox"></label>
+                    </div>
+                  </article>
+                  <article class="subpanel">
+                    <h4>Interface Guidance</h4>
+                    <p>The web application keeps the same dark blue visual language as the Mac version so existing users feel comfortable moving between them.</p>
+                  </article>
+                </div>
+              </section>
+
+              <section class="settings-panel" id="settings-setup">
+                <div class="panel-head"><div><h3>Guided Setup</h3><p>Rerun onboarding to update identity, region, rates, and starting data.</p></div></div>
+                <div class="settings-card-grid">
+                  <article class="subpanel">
+                    <h4>Current Profile</h4>
+                    <div class="customer-detail-grid">
+                      <div><span>Display Name</span><strong id="setupProfileName">Donald</strong></div>
+                      <div><span>Business</span><strong id="setupProfileBusiness">UV Project Calculator Pro</strong></div>
+                      <div><span>Country</span><strong id="setupProfileCountry">United States</strong></div>
+                      <div><span>Currency</span><strong id="setupProfileCurrency">USD</strong></div>
+                    </div>
+                    <div class="action-row">
+                      <button class="primary" id="runGuidedSetupBtn">Run Guided Setup</button>
+                      <button class="secondary" id="loadSampleBusinessDataBtn">Load Sample Business Data</button>
+                    </div>
+                    <small>Sample data replaces the current customer, material, and project lists after confirmation.</small>
+                  </article>
+                  <article class="subpanel">
+                    <h4>What Guided Setup Changes</h4>
+                    <p>Business identity, country, currency, labor rate, machine rate, waste allowance, margin target, and whether sample projects are retained.</p>
+                  </article>
+                </div>
+              </section>
+
+              <section class="settings-panel" id="settings-readiness">
+                <div class="panel-head"><div><h3>Product Readiness</h3><p>See what works in this prototype and what belongs to the future cloud phase.</p></div></div>
+                <article class="readiness-card">
+            <div class="panel-head"><div><h3>Product Readiness</h3><p>What this prototype already proves, and what still requires cloud services.</p></div></div>
+            <div class="readiness-grid">
+              <div><span class="ready-dot done"></span><strong>Interface & calculations</strong><small>Working in this package</small></div>
+              <div><span class="ready-dot done"></span><strong>Local project storage</strong><small>Working in this browser</small></div>
+              <div><span class="ready-dot next"></span><strong>Secure user accounts</strong><small>Next cloud phase</small></div>
+              <div><span class="ready-dot next"></span><strong>Multi-device syncing</strong><small>Next cloud phase</small></div>
+              <div><span class="ready-dot later"></span><strong>PDF quote service</strong><small>Production phase</small></div>
+              <div><span class="ready-dot later"></span><strong>Screenshot OCR</strong><small>Production phase</small></div>
+            </div>
+          </article>
+              </section>
+
+              <section class="settings-panel" id="settings-reset">
+                <div class="panel-head"><div><h3>Reset & Restore</h3><p>Reset only the area you choose, or restore the complete workspace.</p></div></div>
+                <div class="reset-grid">
+                  <button class="reset-card" data-reset-kind="printer"><span>▣</span><div><strong>Reset Printer</strong><small>Restore ink and machine defaults</small></div></button>
+                  <button class="reset-card" data-reset-kind="business"><span>▤</span><div><strong>Reset Business</strong><small>Restore rates and quote defaults</small></div></button>
+                  <button class="reset-card" data-reset-kind="projects"><span>▤</span><div><strong>Clear Projects</strong><small>Remove saved project estimates</small></div></button>
+                  <button class="reset-card warning" data-reset-kind="factory"><span>!</span><div><strong>Factory Reset</strong><small>Restore the complete workspace</small></div></button>
+                </div>
+              </section>
+            </div>
+          </div>
+        </section>
+
+        <section class="view" id="view-whatif">
+          <div class="section-head workspace-head">
+            <div>
+              <span class="eyebrow">VERSION 4 SIGNATURE FEATURE</span>
+              <h2>Scenario Builder</h2>
+              <p>Experiment freely without changing the original project until you decide what to keep.</p>
+            </div>
+            <div class="action-row">
+              <button class="secondary" id="discardScenarioBtn">Discard Changes</button>
+              <button class="secondary" id="replaceOriginalBtn">Replace Original Project</button>
+              <button class="primary" id="saveScenarioBtn">Save as New Project</button>
+            </div>
+          </div>
+
+          <div class="scenario-source-bar">
+            <label>Original Project
+              <select id="scenarioProjectSelect"></select>
+            </label>
+            <div class="scenario-name-wrap">
+              <label>Scenario Name<input id="scenarioName" value="Scenario A"></label>
+            </div>
+            <button class="secondary" id="cloneCurrentProjectBtn">Clone Selected Project</button>
+            <span class="scenario-status" id="scenarioStatus">Working copy is separate from the original</span>
+          </div>
+
+          <div class="scenario-layout">
+            <div class="scenario-controls">
+              <article class="panel">
+                <div class="panel-head"><div><h3>Project & Customer</h3><p>Adjust order size, customer, material, and selling strategy.</p></div></div>
+                <div class="form-grid three">
+                  <label>Project Name<input id="scProjectName"></label>
+                  <label>Customer<input id="scCustomer"></label>
+                  <label>Printer<input id="scPrinter" readonly></label><label>Project Status<select id="scStatus"><option>Draft</option><option>Estimate</option><option>Quoted</option><option>Approved</option><option>In Production</option><option>Completed</option><option>Cancelled</option></select></label>
+                  <label>Quantity<input id="scQuantity" type="number" min="1" step="1"></label>
+                  <label>Material<select id="scMaterial"></select></label>
+                  <label>Blank Cost / Unit<input id="scBlankCost" type="number" min="0" step=".01"></label>
+                  <label>Packaging / Unit<input id="scPackaging" type="number" min="0" step=".01"></label>
+                  <label>Shipping / Order<input id="scShipping" type="number" min="0" step=".01"></label>
+                </div>
+              </article>
+
+              <article class="panel">
+                <div class="panel-head"><div><h3>Production</h3><p>Adjust machine time, labor, ink, cleaning, and waste assumptions.</p></div></div>
+                <div class="form-grid three">
+                  <label>Total Ink Used for Job (mL)<input id="scTotalInk" type="number" min="0" step=".01"></label>
+                  <label>Print Minutes<input id="scPrintMinutes" type="number" min="0" step=".1"></label>
+                  <label>Hands-On Minutes<input id="scLaborMinutes" type="number" min="0" step=".1"></label>
+                  <label>Extra Setup Minutes<input id="scSetupMinutes" type="number" min="0" step=".1"></label>
+                  <label>Primer & Cleaning<input id="scPrimer" type="number" min="0" step=".01"></label>
+                  <label>Maintenance / Job<input id="scMaintenance" type="number" min="0" step=".01"></label>
+                  <label>Waste Allowance (%)<input id="scWaste" type="number" min="0" max="100" step=".1"></label>
+                </div>
+              </article>
+
+              <article class="panel">
+                <div class="panel-head"><div><h3>Business & Pricing</h3><p>Test changes to labor, overhead, discounts, margin, tax, and price.</p></div></div>
+                <div class="form-grid three">
+                  <label>Labor Rate / Hour<input id="scLaborRate" type="number" min="0" step=".01"></label>
+                  <label>Machine Rate / Hour<input id="scMachineRate" type="number" min="0" step=".01"></label>
+                  <label>Overhead / Hour<input id="scOverheadRate" type="number" min="0" step=".01"></label>
+                  <label>Pricing Method<select id="scPricingMode"><option value="margin">Target Margin</option><option value="manual">Manual Order Price</option><option value="profit">Desired Profit</option></select></label>
+                  <label>Target Profit Margin (%)<input id="scTargetMargin" type="number" min="1" max="95" step=".1"></label>
+                  <label>Customer Discount (%)<input id="scDiscount" type="number" min="0" max="100" step=".1"></label>
+                  <label>Sales Tax (%)<input id="scTax" type="number" min="0" max="100" step=".001"></label>
+                  <label>Manual Order Price<input id="scManualPrice" type="number" min="0" step=".01" placeholder="Used only in Manual mode"></label>
+                  <label>Desired Profit<input id="scDesiredProfit" type="number" min="0" step=".01" placeholder="Used only in Desired Profit mode"></label>
+                  <label>Rounding<select id="scRounding"><option value=".01">Nearest cent</option><option value=".50">Nearest $0.50</option><option value="1">Nearest dollar</option><option value="5">Nearest $5</option></select></label>
+                </div>
+              </article>
+
+              <article class="panel">
+                <div class="panel-head"><div><h3>Budget Goal</h3><p>See whether the scenario fits a customer's maximum order budget.</p></div></div>
+                <div class="form-grid">
+                  <label>Maximum Customer Budget<input id="scBudget" type="number" min="0" step=".01" placeholder="Optional"></label>
+                  <label>Minimum Profit Goal<input id="scMinimumProfit" type="number" min="0" step=".01" placeholder="Optional"></label>
+                </div>
+                <div class="pricing-mode-note" id="pricingModeNote">Target Margin mode is active. Changes apply instantly.</div><div class="budget-advisor" id="budgetAdvisor">Enter a customer budget or profit goal to receive guidance.</div>
+              </article>
+            </div>
+
+            <aside class="scenario-results">
+              <article class="panel sticky-summary">
+                <div class="panel-head">
+                  <div><h3>Original vs. Scenario</h3><p>Live side-by-side comparison</p></div>
+                  <span class="live-pill">LIVE</span>
+                </div>
+                <div class="comparison-table" id="scenarioComparison"></div>
+                <div class="scenario-recommendation">
+                  <span>Scenario Customer Quote</span>
+                  <strong id="scRecommendedTotal">$0.00</strong>
+                  <small id="scRecommendedUnit">$0.00 per unit</small>
+                </div>
+                <div class="scenario-metrics">
+                  <div><span>Production Cost</span><strong id="scTotalCost">$0.00</strong></div>
+                  <div><span>Profit</span><strong class="positive" id="scProfit">$0.00</strong></div>
+                  <div><span>Margin</span><strong id="scMargin">0.0%</strong></div>
+                  <div><span>Profit / Item</span><strong id="scProfitPerItem">$0.00</strong></div>
+                  <div><span>Profit / Labor Hour</span><strong id="scProfitPerHour">$0.00</strong></div>
+                  <div><span>Total With Tax</span><strong id="scWithTax">$0.00</strong></div>
+                </div>
+              </article>
+
+              <article class="panel">
+                <div class="panel-head"><div><h3>Why the Price Changed</h3><p>Largest differences from the original</p></div></div>
+                <div class="change-explanation" id="changeExplanation"></div>
+              </article>
+
+              <article class="panel">
+                <div class="panel-head"><div><h3>Pricing Advisor</h3><p>Useful price points for this scenario</p></div></div>
+                <div class="advisor-grid">
+                  <div><span>Minimum Sustainable</span><strong id="scMinimumPrice">$0.00</strong></div>
+                  <div><span>Target Margin Price</span><strong id="scTargetPrice">$0.00</strong></div>
+                  <div><span>Desired Profit Price</span><strong id="scDesiredPrice">—</strong></div>
+                  <div><span>Wholesale Reference</span><strong id="scWholesalePrice">$0.00</strong></div>
+                </div>
+              </article>
+            </aside>
+          </div>
+        </section>
+
+        <section class="view" id="view-reports">
+          <div class="section-head workspace-head"><div><h2>Reports</h2><p>Review project performance and export project data.</p></div><button class="primary" id="exportCsvBtn">⇩ Export CSV</button></div>
+          <div class="metric-grid">
+            <article class="metric-card"><span>Projects</span><strong id="reportProjects">0</strong></article>
+            <article class="metric-card"><span>Total Selling Price</span><strong id="reportRevenue">$0.00</strong></article>
+            <article class="metric-card"><span>Cost</span><strong id="reportCost">$0.00</strong></article>
+            <article class="metric-card"><span>Profit</span><strong class="positive" id="reportProfit">$0.00</strong></article>
+          </div>
+          <article class="panel"><div class="bar-chart" id="barChart"></div></article>
+        </section>
+
+
+        
+        <section class="view" id="view-help">
+          <div class="section-head workspace-head">
+            <div>
+              <span class="eyebrow">FOUNDING COMMUNITY TEST TEAM</span>
+              <h2>Help & Feedback</h2>
+              <p>Report problems, suggest improvements, or contact support directly from the application.</p>
+            </div>
+            <span class="feedback-build-badge">Version 1.0.1 · Build 1049 · GitHub Pages</span>
+          </div>
+
+          <div class="feedback-intro panel">
+            <div class="feedback-intro-icon">?</div>
+            <div>
+              <h3>Thank you for helping shape Version 1.0</h3>
+              <p>Your reports will include the application version, build number, browser, operating system, active printer, current screen, and date automatically. Please describe what you experienced as clearly as possible.</p>
+            </div>
+          </div>
+
+          <article class="panel user-guide-callout">
+            <div class="user-guide-icon">📖</div>
+            <div>
+              <span class="eyebrow">USER GUIDE</span>
+              <h3>Learn UV Project Calculator Pro</h3>
+              <p>Open the complete printable guide with step-by-step instructions, pricing explanations, examples, troubleshooting, and best practices.</p>
+            </div>
+            <a class="primary user-guide-button" href="docs/UV_Project_Calculator_Pro_User_Guide.pdf" target="_blank" rel="noopener">Open User Guide (PDF)</a>
+          </article>
+
+          <div class="feedback-action-grid">
+            <button class="feedback-action-card bug" id="openBugReportBtn">
+              <span class="feedback-action-icon">!</span>
+              <strong>Report a Bug</strong>
+              <small>Tell us what failed, what you were doing, and what you expected.</small>
+              <b>Open Bug Report →</b>
+            </button>
+
+            <button class="feedback-action-card feature" id="openFeatureRequestBtn">
+              <span class="feedback-action-icon">＋</span>
+              <strong>Request a Feature</strong>
+              <small>Suggest a workflow improvement or request support for another printer.</small>
+              <b>Open Feature Request →</b>
+            </button>
+
+            <button class="feedback-action-card support" id="contactSupportBtn">
+              <span class="feedback-action-icon">@</span>
+              <strong>Contact Support</strong>
+              <small>Ask a question that is not a bug report or feature request.</small>
+              <b>Email Support →</b>
+            </button>
+          </div>
+
+          <div class="feedback-resource-grid">
+            <article class="panel">
+              <span class="eyebrow">GETTING STARTED</span>
+              <h3>Testing Suggestions</h3>
+              <p>Try creating, editing, duplicating, and deleting projects. Change printer profiles, test pricing, build scenarios, manage libraries, export backups, refresh the browser, and verify that your data remains.</p>
+            </article>
+
+            <article class="panel">
+              <span class="eyebrow">COMMUNITY UPDATES</span>
+              <h3>Current Test Focus</h3>
+              <p>Dashboard 2.0, local browser storage, printer profiles, Pricing Workspace calculations, Scenario Builder, Backup & Restore, and the support links.</p>
+            </article>
+
+            <article class="panel">
+              <span class="eyebrow">PRIVACY</span>
+              <h3>No Diagnostics Are Sent Automatically</h3>
+              <p>The application prepares an email in your default mail program. You can review or remove any diagnostic information before sending it.</p>
+            </article>
+          </div>
+
+          <article class="panel diagnostic-preview-panel">
+            <div class="panel-head">
+              <div>
+                <h3>Diagnostic Preview</h3>
+                <p>This information will be included with reports.</p>
+              </div>
+              <button class="secondary small" id="copyDiagnosticsBtn">Copy Diagnostics</button>
+            </div>
+            <pre id="feedbackDiagnosticsPreview">Preparing diagnostics…</pre>
+          </article>
+        </section>
+
+        <section class="view" id="view-support">
+          <div class="support-hero">
+            <div class="support-heart">♥</div>
+            <span class="eyebrow">OPTIONAL COMMUNITY SUPPORT</span>
+            <h2>Support UV Project Calculator Pro</h2>
+            <p>UV Project Calculator Pro Community Edition is available without a required payment or subscription. If the application saves you time, improves your pricing, or helps your UV printing business, an optional contribution can help support continued development.</p>
+          </div>
+
+          <div class="support-layout">
+            <article class="panel support-message">
+              <div class="panel-head">
+                <div>
+                  <h3>A Note from Don Youngner</h3>
+                  <p>Creator of UV Project Calculator Pro</p>
+                </div>
+              </div>
+              <p>I originally created this calculator because I needed a better way to understand the real cost of my own UV printing projects. As the application grew, I realized it could help other makers and small businesses price their work with more confidence.</p>
+              <p>Your optional support helps cover website expenses, testing, documentation, new printer profiles, and continued improvements. There is absolutely no obligation to contribute—the Community Edition remains fully usable whether you support the project or not.</p>
+              <p class="support-thanks">Thank you for using UV Project Calculator Pro and for being part of its development.</p>
+            </article>
+
+            <article class="panel">
+              <div class="panel-head">
+                <div>
+                  <h3>Ways to Support</h3>
+                  <p>Choose whichever method is most convenient.</p>
+                </div>
+              </div>
+              <div class="support-methods">
+                <a class="support-method paypal" id="supportPayPalBtn"
+                   href="https://www.paypal.com/ncp/payment/QDN4D4CWH7Y7C"
+                   target="_blank" rel="noopener noreferrer">
+                  <span class="support-method-icon">P</span>
+                  <span><strong>PayPal</strong><small id="supportPayPalStatus">Secure support page</small></span>
+                  <b>Visit</b>
+                </a>
+                <a class="support-method coffee" id="supportCoffeeBtn"
+                   href="https://buymeacoffee.com/wetthefsce"
+                   target="_blank" rel="noopener noreferrer">
+                  <span class="support-method-icon">☕</span>
+                  <span><strong>Buy Me a Coffee</strong><small id="supportCoffeeStatus">Secure support page</small></span>
+                  <b>Visit</b>
+                </a>
+              </div>
+              <div class="support-disclaimer">
+                <strong>No purchase is required.</strong>
+                <p>Contributions do not unlock features, alter calculations, or change access to the Community Edition. Payments are voluntary support for continued development.</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="support-impact-grid">
+            <article class="impact-card"><span>▣</span><strong>New Printer Profiles</strong><small>Research and testing for requested UV printers</small></article>
+            <article class="impact-card"><span>✓</span><strong>Testing & Reliability</strong><small>Browser, device, storage, and upgrade testing</small></article>
+            <article class="impact-card"><span>?</span><strong>Documentation</strong><small>User guides, tutorials, and support resources</small></article>
+            <article class="impact-card"><span>⌂</span><strong>Website Costs</strong><small>Keeping UVProjectCalc.com available and maintained</small></article>
+          </div>
+
+          <article class="panel support-privacy">
+            <h3>Payment Privacy</h3>
+            <p>UV Project Calculator Pro does not process or store payment information. PayPal and Buy Me a Coffee open their own secure websites in a separate browser tab. The calculator does not receive banking credentials, card details, or payment account information.</p>
+          </article>
+        </section>
+
+        <section class="view" id="view-about">
+          <article class="about-card">
+            <div class="brand-mark large"><span>UV</span><small>PRO</small></div>
+            <span class="eyebrow">WEB APPLICATION CONCEPT</span>
+            <h2>UV Project Calculator Pro</h2>
+            <p class="about-lead">A familiar browser-based evolution of the macOS application for pricing and managing EufyMake E1 projects.</p>
+            <div class="about-details">
+              <div><span>Concept Version</span><strong>Version 1.0.1 · Final Release · GitHub Pages</strong></div>
+              <div><span>Based On</span><strong>Version 3.0</strong></div>
+              <div><span>Created By</span><strong>Donald Youngner</strong></div>
+              <div><span>Community Storage</span><strong>Local to this browser</strong></div>
+            </div>
+            <div class="about-support-callout"><strong>Enjoying the application?</strong><button class="secondary small" data-view-target="support">Support continued development</button></div>
+            <p>UV Project Calculator Pro Community Edition is business software for UV printing—built by a UV printer owner for the UV printing community. It helps users understand true costs, create confident customer quotes, manage projects and business libraries, compare pricing scenarios, and protect profitability. Community Edition stores business data locally in this browser and does not require an account or subscription.</p>
+          </article>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="welcomeModal" hidden>
+    <div class="wizard">
+      <div class="wizard-brand">
+        <div class="brand-mark large"><span>UV</span><small>PRO</small></div>
+        <div><span class="eyebrow">WELCOME TO THE COMMUNITY</span><h2>UV Project Calculator Pro</h2><p>This guided setup personalizes the Community Edition workspace. Nothing is uploaded.</p></div>
+      </div>
+      <div class="wizard-steps">
+        <span class="active" data-step-dot="0">1</span><i></i><span data-step-dot="1">2</span><i></i><span data-step-dot="2">3</span>
+      </div>
+      <section class="wizard-page active" data-step="0">
+        <h3>Welcome, Donald</h3>
+        <p>Set the name and business identity used throughout your workspace.</p>
+        <div class="form-grid">
+          <label>Display Name<input id="setupName" value="Donald"></label>
+          <label>Business Name<input id="setupBusiness" value="UV Project Calculator Pro"></label>
+          <label>Country<select id="setupCountry"><option selected>United States</option><option>Canada</option><option>United Kingdom</option><option>Australia</option><option>Other</option></select></label>
+          <label>Currency<select id="setupCurrency"><option selected>USD — US Dollar</option><option>CAD — Canadian Dollar</option><option>GBP — British Pound</option><option>AUD — Australian Dollar</option><option>EUR — Euro</option></select></label>
+        </div>
+      </section>
+      <section class="wizard-page" data-step="1">
+        <h3>Set your production defaults</h3>
+        <p>These can be changed later under Global Cost Rates.</p>
+        <div class="form-grid">
+          <label>Labor Rate / Hour<input id="setupLabor" type="number" step=".01" value="27"></label>
+          <label>Machine Rate / Hour<input id="setupMachine" type="number" step=".01" value="5"></label>
+          <label>Default Waste %<input id="setupWaste" type="number" step=".1" value="5"></label>
+          <label>Target Profit Margin %<input id="setupMargin" type="number" step=".1" value="45"></label>
+        </div>
+      </section>
+      <section class="wizard-page" data-step="2">
+        <h3>Choose how to explore</h3>
+        <p>Sample projects can help you explore reports, margins, and project management before creating your own work.</p>
+        <div class="choice-grid">
+          <label class="choice-card"><input type="radio" name="demoChoice" value="samples" checked><span>Keep Sample Projects</span><small>Best for reviewing the full prototype</small></label>
+          <label class="choice-card"><input type="radio" name="demoChoice" value="clean"><span>Start With a Clean Workspace</span><small>Remove sample projects and begin fresh</small></label>
+        </div>
+        <div class="privacy-note">The Community Edition stores projects in this browser using IndexedDB. It does not create an online account or send information to a server. Use Backup & Transfer regularly so you can restore your work on another device.</div>
+      </section>
+      <div class="wizard-actions">
+        <button class="secondary" id="wizardBack">Cancel</button>
+        <button class="primary" id="wizardNext">Continue</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="account-menu" id="accountMenu" hidden>
+    <strong id="menuAccountName">Donald</strong>
+    <span id="menuBusinessName">UV Project Calculator Pro</span>
+    <hr>
+    <button id="rerunSetupBtn">Run Guided Setup</button>
+    <button id="accountSettingsBtn">Open Settings</button>
+  </div>
+
+
+  <div class="modal-backdrop" id="resetCompleteModal" hidden>
+    <div class="wizard reset-confirmation">
+      <div class="wizard-brand">
+        <div class="brand-mark large"><span>UV</span><small>PRO</small></div>
+        <div>
+          <span class="eyebrow">RESET COMPLETE</span>
+          <h2>Workspace restored</h2>
+          <p>All browser-saved projects, settings, materials and customers have been restored to the built-in defaults.</p>
+        </div>
+      </div>
+      <div class="wizard-actions">
+        <span></span>
+        <button class="primary" id="restartAfterResetBtn">Restart Setup</button>
+      </div>
+    </div>
+  </div>
+  <div class="milestone-support" id="milestoneSupport" hidden>
+    <button class="milestone-close" id="closeMilestoneBtn" aria-label="Dismiss">×</button>
+    <span class="milestone-icon">♥</span>
+    <div>
+      <strong id="milestoneTitle">UV Project Calculator Pro is helping you work.</strong>
+      <p id="milestoneText">If the software has been useful, consider supporting continued development.</p>
+    </div>
+    <button class="secondary small" id="milestoneSupportBtn">Support the Project</button>
+  </div>
+
+
+
+  <div class="modal-backdrop" id="localStorageNoticeModal" hidden>
+    <div class="wizard backup-protection-modal">
+      <div class="wizard-brand">
+        <div class="feedback-modal-mark backup">⇩</div>
+        <div><span class="eyebrow">PROTECT YOUR WORK</span><h2>Your data is saved in this browser</h2><p>Universal Project Calculator automatically saves your projects and settings locally. Clearing browser data, changing devices, or losing access to this browser can remove that information.</p></div>
+      </div>
+      <div class="backup-modal-content">
+        <div class="local-data-warning"><strong>Create regular backup files.</strong><p>Use Backup &amp; Transfer to download a complete copy of your projects, customers, materials, printer profiles, and settings.</p></div>
+        <label class="backup-checkbox"><input type="checkbox" id="doNotShowStorageNotice"> <span>Do not show this introductory notice again</span></label>
+      </div>
+      <div class="wizard-actions"><button class="secondary" id="storageNoticeLaterBtn">Remind Me Later</button><button class="primary" id="storageNoticeBackupBtn">Open Backup &amp; Transfer</button></div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="updateBackupModal" hidden>
+    <div class="wizard backup-protection-modal">
+      <div class="wizard-brand">
+        <div class="feedback-modal-mark backup">↻</div>
+        <div><span class="eyebrow">VERSION 1.0.1 UPDATE</span><h2>Backup recommended before continuing</h2><p>The application has been updated. Your browser data will remain in place, but creating a backup before working in the new version is the safest choice.</p></div>
+      </div>
+      <div class="local-data-warning"><strong>This backup includes the complete workspace.</strong><p>Projects, customers, materials, printer profiles, business settings, preferences, and saved application data are included.</p></div>
+      <div class="wizard-actions"><button class="secondary" id="updateContinueBtn">Continue Without Backup</button><button class="primary" id="updateBackupBtn">Create Backup Now</button></div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="importProtectionModal" hidden>
+    <div class="wizard backup-protection-modal">
+      <div class="wizard-brand">
+        <div class="feedback-modal-mark backup">!</div>
+        <div><span class="eyebrow">IMPORT PROTECTION</span><h2>Protect your current workspace first</h2><p>Importing a backup may replace matching projects, libraries, printer settings, and preferences currently stored in this browser.</p></div>
+      </div>
+      <div class="local-data-warning"><strong>Recommended:</strong><p>Export your current data before importing so you can restore it if the imported file is incorrect or incomplete.</p></div>
+      <div class="wizard-actions three-actions"><button class="secondary" id="cancelImportBtn">Cancel</button><button class="secondary" id="continueImportBtn">Continue Import</button><button class="primary" id="backupBeforeImportBtn">Export Current Data</button></div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="projectPrinterModal" hidden>
+    <div class="wizard project-printer-modal">
+      <div class="wizard-brand">
+        <div class="feedback-modal-mark printer">↻</div>
+        <div><span class="eyebrow">PROJECT PRINTER</span><h2>Change Printer for This Project</h2><p>The project details stay in place. Printer cost rates are loaded and the quote recalculates immediately.</p></div>
+      </div>
+      <div class="feedback-form">
+        <label>Printer Family<select id="projectPrinterFamily"></select></label>
+        <label>Printer Edition<select id="projectPrinterEdition"></select></label>
+        <div class="printer-change-warning">Changing the printer also changes the application's active cost profile. Review the recalculated project before saving.</div>
+      </div>
+      <div class="wizard-actions"><button class="secondary" id="cancelProjectPrinterBtn">Cancel</button><button class="primary" id="applyProjectPrinterBtn">Apply Printer & Recalculate</button></div>
+    </div>
+  </div>
+
+
+
+
+  <div class="modal-backdrop" id="emailQuoteModal" hidden>
+    <div class="wizard email-quote-modal" role="dialog" aria-modal="true" aria-labelledby="emailQuoteTitle" aria-describedby="emailQuoteDescription">
+      <div class="wizard-brand">
+        <div class="feedback-modal-mark email-quote">✉</div>
+        <div><span class="eyebrow">CUSTOMER QUOTE</span><h2 id="emailQuoteTitle">Email Quote</h2><p id="emailQuoteDescription">Review the message, then open it in your default email program. The application does not send email or store email credentials.</p></div>
+      </div>
+      <div class="email-quote-project"><span>Project</span><strong id="emailQuoteProjectName">—</strong></div>
+      <form class="feedback-form email-quote-form" id="emailQuoteForm">
+        <label>To<input id="emailQuoteTo" type="email" autocomplete="email" placeholder="Customer email (optional)"></label>
+        <label>Subject<input id="emailQuoteSubject" type="text" required></label>
+        <label>Message<textarea id="emailQuoteBody" rows="16" required></textarea></label>
+        <div class="customer-form-error" id="emailQuoteError" hidden></div>
+      </form>
+      <div class="wizard-actions"><button class="secondary" type="button" id="cancelEmailQuoteBtn">Cancel</button><button class="primary" type="button" id="openEmailQuoteBtn">Open Email</button></div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="customerModal" hidden>
+    <div class="wizard customer-modal" role="dialog" aria-modal="true" aria-labelledby="customerModalTitle" aria-describedby="customerModalDescription">
+      <div class="wizard-brand">
+        <div class="feedback-modal-mark customer">♙</div>
+        <div><span class="eyebrow">CUSTOMERS LIBRARY</span><h2 id="customerModalTitle">Add Customer</h2><p id="customerModalDescription">Add a reusable customer record for projects and quotes.</p></div>
+      </div>
+      <form class="feedback-form customer-form" id="customerForm">
+        <label>Customer Name<input id="customerNameInput" type="text" autocomplete="off" required placeholder="Example: Smith Photography"></label>
+        <div class="customer-form-grid">
+          <label>Customer Type<input id="customerTypeInput" type="text" autocomplete="off" placeholder="Example: Retail"></label>
+          <label>Discount %<input id="customerDiscountInput" type="number" min="0" max="100" step="0.01" inputmode="decimal" required placeholder="0"></label>
+        </div>
+        <label>Email Address<input id="customerEmailInput" type="email" autocomplete="email" placeholder="Optional"></label>
+        <div class="customer-form-error" id="customerFormError" hidden></div>
+      </form>
+      <div class="wizard-actions"><button class="secondary" type="button" id="cancelCustomerBtn">Cancel</button><button class="primary" type="submit" form="customerForm" id="saveCustomerBtn">Add Customer</button></div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="deleteCustomerModal" hidden>
+    <div class="wizard customer-delete-modal" role="dialog" aria-modal="true" aria-labelledby="deleteCustomerTitle">
+      <div class="wizard-brand">
+        <div class="feedback-modal-mark customer-delete">!</div>
+        <div><span class="eyebrow">CUSTOMERS LIBRARY</span><h2 id="deleteCustomerTitle">Delete Customer?</h2><p>This removes the customer from Customers Library. Existing saved projects will keep the customer name stored with each project.</p></div>
+      </div>
+      <div class="customer-delete-summary"><span>Customer</span><strong id="deleteCustomerName">—</strong></div>
+      <div class="wizard-actions"><button class="secondary" type="button" id="cancelDeleteCustomerBtn">Cancel</button><button class="danger" type="button" id="confirmDeleteCustomerBtn">Delete Customer</button></div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="materialModal" hidden>
+    <div class="wizard material-modal" role="dialog" aria-modal="true" aria-labelledby="materialModalTitle" aria-describedby="materialModalDescription">
+      <div class="wizard-brand">
+        <div class="feedback-modal-mark material">◇</div>
+        <div><span class="eyebrow">MATERIAL LIBRARY</span><h2 id="materialModalTitle">Add Material</h2><p id="materialModalDescription">Add a reusable material to your library for projects and scenarios.</p></div>
+      </div>
+      <form class="feedback-form material-form" id="materialForm">
+        <label>Material Name<input id="materialNameInput" type="text" autocomplete="off" required placeholder="Example: 20oz White Tumbler"></label>
+        <div class="material-form-grid">
+          <label>Category<input id="materialCategoryInput" type="text" autocomplete="off" placeholder="Example: Drinkware"></label>
+          <label>Unit Cost (USD)<input id="materialCostInput" type="number" min="0" step="0.01" inputmode="decimal" required placeholder="0.00"></label>
+          <label>Supplier<input id="materialSupplierInput" type="text" autocomplete="off" placeholder="Optional"></label>
+          <label>SKU<input id="materialSkuInput" type="text" autocomplete="off" placeholder="Optional"></label>
+          <label class="span-2">Notes<textarea id="materialNotesInput" rows="3" placeholder="Optional material details, size, finish, or purchasing notes"></textarea></label>
+        </div>
+        <div class="material-form-error" id="materialFormError" hidden></div>
+      </form>
+      <div class="wizard-actions"><button class="secondary" type="button" id="cancelMaterialBtn">Cancel</button><button class="primary" type="submit" form="materialForm" id="saveMaterialBtn">Add Material</button></div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="deleteMaterialModal" hidden>
+    <div class="wizard material-delete-modal" role="dialog" aria-modal="true" aria-labelledby="deleteMaterialTitle">
+      <div class="wizard-brand">
+        <div class="feedback-modal-mark material-delete">!</div>
+        <div><span class="eyebrow">MATERIAL LIBRARY</span><h2 id="deleteMaterialTitle">Delete Material?</h2><p>This removes the material from Material Library. Existing saved projects will keep their stored pricing information.</p></div>
+      </div>
+      <div class="material-delete-summary"><span>Material</span><strong id="deleteMaterialName">—</strong></div>
+      <div class="wizard-actions"><button class="secondary" type="button" id="cancelDeleteMaterialBtn">Cancel</button><button class="danger" type="button" id="confirmDeleteMaterialBtn">Delete Material</button></div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="bugReportModal" hidden>
+    <div class="wizard feedback-modal">
+      <div class="wizard-brand">
+        <div class="feedback-modal-mark bug">!</div>
+        <div>
+          <span class="eyebrow">FOUNDING COMMUNITY TEST TEAM</span>
+          <h2>Report a Bug</h2>
+          <p>Describe the problem so it can be reproduced and corrected.</p>
+        </div>
+      </div>
+
+      <div class="feedback-form">
+        <label>What were you doing?
+          <textarea id="bugDoing" rows="3" placeholder="Example: I selected the xTool O1 profile and opened the Pricing Workspace."></textarea>
+        </label>
+        <label>What happened?
+          <textarea id="bugHappened" rows="4" placeholder="Describe exactly what went wrong, including any message you saw."></textarea>
+        </label>
+        <label>What did you expect to happen?
+          <textarea id="bugExpected" rows="3" placeholder="Describe the result you expected."></textarea>
+        </label>
+        <label class="feedback-checkbox">
+          <input id="bugIncludeDiagnostics" type="checkbox" checked>
+          <span>Include automatic diagnostic information</span>
+        </label>
+      </div>
+
+      <div class="wizard-actions">
+        <button class="secondary" data-close-feedback-modal="bugReportModal">Cancel</button>
+        <button class="primary" id="sendBugReportBtn">Prepare Email</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="featureRequestModal" hidden>
+    <div class="wizard feedback-modal feature-request-modal">
+      <div class="wizard-brand">
+        <div class="feedback-modal-mark feature">＋</div>
+        <div>
+          <span class="eyebrow">FOUNDING COMMUNITY TEST TEAM</span>
+          <h2>Request a Feature</h2>
+          <p>Tell us how the idea would help a UV printing business work smarter, price better, or grow.</p>
+        </div>
+      </div>
+
+      <div class="feedback-form">
+        <label>Feature title
+          <input id="featureTitle" placeholder="Example: Add support for a Roland UV printer">
+        </label>
+        <label>Describe the feature
+          <textarea id="featureDescription" rows="3" placeholder="What should the application do?"></textarea>
+        </label>
+        <label>How would this improve your workflow?
+          <textarea id="featureBenefit" rows="2" placeholder="Explain the business problem this would solve."></textarea>
+        </label>
+        <label>Priority
+          <select id="featurePriority">
+            <option>Nice to Have</option>
+            <option selected>Useful</option>
+            <option>Essential</option>
+          </select>
+        </label>
+        <label class="feedback-checkbox">
+          <input id="featureIncludeDiagnostics" type="checkbox" checked>
+          <span>Include automatic diagnostic information</span>
+        </label>
+      </div>
+
+      <div class="wizard-actions">
+        <button class="secondary" data-close-feedback-modal="featureRequestModal">Cancel</button>
+        <button class="primary" id="sendFeatureRequestBtn">Prepare Email</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="app-build-footer">
+    <span>UV Project Calculator Pro · Community Edition</span>
+    <strong>Version 1.0.1 · Build 1049 · GitHub Pages</strong>
+  <span class="hosted-build-note">Hosted on GitHub Pages</span></footer>
+
+  <div class="toast" id="toast"></div>
+  <script src="storage.js"></script>
+  <script src="boot.js"></script>
+</body>
+</html>

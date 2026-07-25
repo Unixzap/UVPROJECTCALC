@@ -1,0 +1,26 @@
+UNIVERSAL PROJECT CALCULATOR v1.0.1 — BUILD 1047
+
+MATERIAL LIBRARY UNIT COST DISPLAY FIX
+
+Fixed:
+- Removed the floating dollar-sign prefix from the Material Library Add/Edit Material dialog.
+- Renamed the field label from "Unit Cost" to "Unit Cost (USD)" so the currency remains clear without placing a symbol inside the numeric input.
+- Preserved the Unit Cost field as a numeric input with a minimum value of 0 and 0.01 increments.
+
+Build updates:
+- Updated visible build labels, application build constant, script cache-buster, and service-worker cache key to Build 1047.
+
+Not changed:
+- Pricing engine or calculation formulas.
+- Material cost values or storage format.
+- Material Library add, edit, delete, search, filter, import, or export behavior.
+- Scenario Builder material selection or automatic Blank Cost population.
+- Projects, Customers Library, Reports, Email Quote, or saved pricing snapshots.
+
+Regression focus:
+1. Open Material Library and choose Add Material.
+2. Confirm the field label reads "Unit Cost (USD)" and no dollar sign floats inside the input.
+3. Enter 0.25, save the material, and confirm the value is stored correctly.
+4. Edit the material and confirm 0.25 loads correctly with no floating symbol.
+5. Use Add New Material from Scenario Builder and confirm the same corrected dialog appears.
+6. Confirm the saved Unit Cost still fills Blank Cost / Unit when the material is selected.
