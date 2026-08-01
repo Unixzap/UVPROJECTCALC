@@ -1,0 +1,70 @@
+UNIVERSAL PROJECT CALCULATOR v1.0.1 - BUILD 1055
+
+XTOOL RETAIL CONSUMABLE PRICING
+
+PRICING POLICY
+
+- Project costing now uses regular retail prices supplied by the project owner.
+- Temporary preorder and promotional prices are not used.
+- This prevents short-term discounts from understating future customer quotes.
+
+CONFIRMED UV ESSENTIAL SET
+
+- Retail price: $120.99
+- Contents: six 125 mL inks
+  White, Black, Magenta, Yellow, Cyan, and 3-in-1 Varnish
+- Total volume: 750 mL
+- Calculated set-average cost: $0.16132 per mL
+- Because every included bottle is 125 mL, the set cost is allocated equally:
+  $20.165 per bottle before display rounding.
+
+CONFIRMED DT FABRIC SET
+
+- Retail price: $104.99
+- Modeled contents: CMYK at 125 mL each and White at 290 mL
+- Total volume: 790 mL
+- Calculated set-average cost: approximately $0.1328987 per mL
+- DT Cyan, Magenta, Yellow, Black, and White are tracked separately.
+
+OTHER CONFIRMED CONSUMABLES
+
+- UV Maintenance Tank: $31.99 each
+- DT Maintenance Tank: $31.99 each
+- UV Printing Primer Wipes: $15.00 per package of 50
+- Calculated primer-wipe cost: $0.30 each
+
+PROFILE INTEGRATION
+
+- Single UV receives the UV Essential Set, UV Maintenance Tank, and Primer Wipes.
+- Dual-Head UV receives the same confirmed items.
+- UV + DT Fabric additionally receives the DT Fabric Set and DT Maintenance
+  Tank.
+- Detailed project usage can include fractional maintenance tanks and individual
+  primer wipes when estimating a complete job.
+- Dual-head Expansion Set prices remain editable assumptions because a retail
+  price for that separate set has not yet been supplied.
+
+SAFE DATA UPGRADE
+
+- Old placeholder essential-ink rates automatically upgrade to confirmed retail
+  rates.
+- User-edited rates that differ from the old placeholders are preserved.
+- Existing inventory capacity changes preserve the percentage remaining.
+- Legacy DT Color records migrate to DT Cyan while the other confirmed DT
+  channels are added separately.
+
+BUILD MAINTENANCE
+
+- Incremented application labels and cache identifiers to Build 1055.
+- Existing EufyMake, project, inventory, and transaction data remains
+  compatible.
+- No public-release manual was generated for this interim build.
+
+VERIFICATION
+
+- JavaScript syntax checks passed.
+- Build 1051 through Build 1054 regression suites passed.
+- UV Essential Set component prices total $120.99.
+- DT Fabric component prices total $104.99.
+- Primer wipes calculate to $0.30 each.
+- Legacy-placeholder replacement and user-edited-rate preservation passed.

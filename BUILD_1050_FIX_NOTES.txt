@@ -1,0 +1,82 @@
+UNIVERSAL PROJECT CALCULATOR v1.0.1 — BUILD 1050
+
+PRICING CONSISTENCY AND SCENARIO ACCURACY
+
+MAIN PRICING WORKSPACE
+
+- Added configured Overhead / Hour to production cost.
+- Added configured Service Reserve / Hour to production cost.
+- Added configured Cleaning Allowance / Job to fixed job cost.
+- Added configured Default Shipping / Order to fixed job cost.
+- Renamed the project-level "Primer & Cleaning" field to "Primer / Pretreatment"
+  so the project input is not confused with the separately configured cleaning
+  allowance.
+- Expanded the visible cost breakdown so all applied costs are shown.
+- New and edited projects now snapshot ink, labor, machine, electricity,
+  maintenance, overhead, shipping, cleaning, and service-reserve rates.
+
+PRICING FORMULA
+
+- Quantity-based costs:
+  blanks = quantity × blank cost per unit
+  packaging = quantity × packaging cost per unit
+- Job-based costs:
+  ink = total job ink × ink cost per mL
+  labor = hands-on hours × labor rate
+  machine = print hours × machine rate
+  electricity = print hours × electricity rate
+  overhead = (print hours + hands-on hours) × overhead rate
+  service reserve = print hours × service-reserve rate
+  maintenance, cleaning, primer, shipping, and other costs are applied per job.
+- Waste is applied to the complete production-cost base.
+- Target-margin price remains:
+  production cost ÷ (1 − target margin)
+- Sales tax remains excluded from profit and margin calculations.
+
+SCENARIO BUILDER
+
+- Fixed project cloning so saved project ink, print time, labor time, packaging,
+  primer, other fixed costs, waste, target margin, tax, rounding, and manual
+  price are restored instead of being replaced by generic defaults.
+- Fixed project cloning so the saved cost-rate snapshot is used for ink, labor,
+  machine, electricity, maintenance, overhead, shipping, cleaning, and service
+  reserve.
+- Added editable Scenario Builder fields for ink rate, electricity rate,
+  cleaning allowance, other fixed costs, and service reserve.
+- Scenario calculations now use the same cost categories as Pricing Workspace.
+- Saved scenarios retain a complete scenario-input snapshot so reopening or
+  replacing a project does not lose the scenario assumptions.
+
+INPUT SAFETY
+
+- Added calculation-level guards in addition to the existing HTML controls.
+- Negative cost, time, rate, and price values are treated as zero.
+- Quantity is constrained to a whole number of at least one.
+- Waste, target margin, discount, and sales tax are constrained to their
+  supported ranges.
+- Invalid or non-positive rounding values safely fall back to one cent.
+- Target margin remains capped at 95 percent to prevent division by zero.
+
+BUILD MAINTENANCE
+
+- Incremented the application build from 1049 to 1050.
+- Updated visible build labels to Build 1050.
+- Updated JavaScript cache-busting identifiers to Build 1050.
+- Updated the service-worker cache identifier to Build 1050.
+
+VERIFICATION
+
+- JavaScript syntax checks passed.
+- Automated calculation regression checks passed.
+- Controlled Build 1050 regression cases verified production cost,
+  target-margin price, sales tax, amount due, profit, margin, rounding, and
+  manual pricing.
+- Pricing Workspace and Scenario Builder cost totals were checked for parity
+  using identical inputs and rates.
+
+COMPATIBILITY
+
+- Existing saved pricing snapshots remain readable.
+- Older projects without the new rate fields use the current configured rate as
+  a compatibility fallback when opened in Scenario Builder.
+- No browser storage schema migration is required.

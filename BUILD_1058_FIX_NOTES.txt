@@ -1,0 +1,69 @@
+UNIVERSAL PROJECT CALCULATOR v1.0.1 - BUILD 1058
+
+QUANTITY PRICING CORRECTION
+
+ISSUE
+
+- Changing a project from quantity 1 to quantity 25 multiplied only blank and
+  packaging costs.
+- Ink, printing time, hands-on labor, and several other values remained fixed
+  because they were interpreted as totals for the complete job.
+- This could turn a $13 one-item quote into an unrealistically low order quote
+  instead of the expected $13 × 25 = $325.
+
+NEW QUANTITY PRICING MODES
+
+1. Per Item — repeat unit quote
+   - Default for all newly created projects.
+   - Ink, detailed consumables, printing time, hands-on labor, maintenance,
+     cleaning, primer, shipping, other costs, and packaging scale with quantity.
+   - The recommended one-item selling price is rounded first and then multiplied
+     by quantity.
+   - A $13 unit quote at quantity 25 therefore produces exactly $325 before any
+     separately applicable tax.
+   - Manual selling price is interpreted as the price per item.
+
+2. Batch Job — enter run totals
+   - Preserves the former calculation method.
+   - Ink, print time, and hands-on time are entered once for the complete run.
+   - Useful when the user already knows total production measurements for a
+     multi-item batch.
+   - Manual selling price is interpreted as the complete batch price.
+
+ONE-TIME SETUP
+
+- Added One-Time Setup Minutes.
+- Setup labor and overhead are charged once regardless of quantity.
+- This supports realistic batch efficiencies without silently treating all
+  production work as fixed.
+
+INVENTORY INTEGRATION
+
+- In Per Item mode, detailed consumable usage is entered per item.
+- Availability checks multiply usage by quantity.
+- Completed-project inventory deductions multiply per-item usage by quantity.
+- Batch Job mode continues deducting the entered complete-job amounts once.
+
+BACKWARD COMPATIBILITY
+
+- Existing saved projects default to Batch Job mode.
+- Inputs that predate Build 1058 and contain no quantity mode retain the former
+  Batch Job calculation.
+- Historical saved totals are not silently recalculated.
+- New projects default to the safer, more intuitive Per Item mode.
+
+BUILD MAINTENANCE
+
+- Incremented application and cache identifiers to Build 1058.
+- Retained Microsoft Clarity project ID xs2n3qhjcn.
+- Retained all EufyMake and xTool profile, pricing, and inventory data.
+- No public-release manual was generated for this interim build.
+
+VERIFICATION
+
+- Confirmed $13 per item × 25 items = $325.
+- Confirmed manual $13 per-item price × 25 items = $325.
+- Confirmed Batch Job mode retains the legacy result for the same inputs.
+- Confirmed missing legacy mode defaults to Batch Job.
+- Confirmed one-time setup is not multiplied by quantity.
+- Build 1051-1056 regression suites remain passing.

@@ -1,0 +1,35 @@
+UNIVERSAL PROJECT CALCULATOR v1.0.1 - BUILD 1058
+QUANTITY PRICING QA
+
+AUTOMATED RESULTS
+
+[PASS] JavaScript syntax validation
+[PASS] $13 one-item quote remains $13 at quantity 1
+[PASS] $13 per item multiplied by 25 produces exactly $325
+[PASS] Manual $13 per-item price multiplied by 25 produces exactly $325
+[PASS] Batch Job mode retains legacy total-job behavior
+[PASS] Mode-less legacy inputs default to Batch Job
+[PASS] One-time setup minutes are charged once
+[PASS] Per-item detailed consumables scale with quantity
+[PASS] Per-item inventory deductions scale with quantity
+[PASS] Build 1051-1056 regression suites
+[PASS] Build labels and caches use Build 1058
+[PASS] Microsoft Clarity project ID remains xs2n3qhjcn
+
+MANUAL ACCEPTANCE CHECKLIST
+
+[ ] Create a new project and confirm Per Item is selected by default.
+[ ] Produce a $13 quote at quantity 1.
+[ ] Change only quantity to 25 and confirm the quote becomes $325.
+[ ] Confirm the displayed unit price remains $13.
+[ ] Enter a manual unit price of $13 and confirm quantity 25 totals $325.
+[ ] Switch to Batch Job and confirm ink/time labels change to batch totals.
+[ ] Add setup minutes and confirm they are charged once.
+[ ] Use detailed consumables in Per Item mode and verify total availability.
+[ ] Complete the project and verify quantity-scaled inventory deductions.
+[ ] Open an older project and confirm it uses Batch Job mode.
+
+NOTE
+
+The Scenario Builder retains its existing explicit total-job controls in this
+build. Its labels already identify Total Job Ink and total scenario time values.

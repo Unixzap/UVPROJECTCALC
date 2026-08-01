@@ -1,0 +1,39 @@
+UNIVERSAL PROJECT CALCULATOR v1.0.1 - BUILD 1054
+XTOOL OMNI PROFILE QA
+
+AUTOMATED RESULTS
+
+[PASS] JavaScript syntax validation
+[PASS] Existing pricing and detailed-consumables regressions
+[PASS] Existing inventory deduction and double-deduction protection
+[PASS] Existing profile/physical-printer selection behavior
+[PASS] All three xTool Omni editions are installed
+[PASS] One-head and two-head specifications are assigned correctly
+[PASS] Working areas and 720 × 1440 dpi resolution are recorded
+[PASS] Standard xTool ink capacity is 125 mL
+[PASS] High-capacity white is 290 mL where applicable
+[PASS] Edition-specific ink fields and readable labels are generated
+[PASS] Existing user-edited profile rates survive the specification upgrade
+[PASS] Untouched beta xTool inventory migrates to confirmed capacities
+[PASS] Partially used beta balances are preserved
+[PASS] Legacy Gloss ledger references migrate to 3-in-1 Varnish
+[PASS] Build labels and cache identifiers use Build 1054
+
+MANUAL ACCEPTANCE CHECKLIST
+
+[ ] Review each xTool edition in Settings > Printer Profiles.
+[ ] Confirm Best for, Working area, Print head, Resolution, and Ink channels.
+[ ] Add one physical printer for each xTool edition.
+[ ] Confirm Single UV uses 125 mL supplies.
+[ ] Confirm Dual-Head UV exposes rigid/flexible white and both fluorescent inks.
+[ ] Confirm Dual-Head white capacities use 290 mL where configured.
+[ ] Confirm UV + DT Fabric includes its DT supplies and DTG platen dimensions.
+[ ] Confirm the cost panel warns that prices are planning values.
+[ ] Enter real package prices when available and verify calculated cost per mL.
+[ ] Confirm xTool inventories remain separate from EufyMake E1 inventory.
+
+LIMITATION
+
+Official ink package prices and measured production-consumption data were not
+included in the supplied comparison. Cost rates therefore remain editable
+planning assumptions and must be reviewed before quoting customers.

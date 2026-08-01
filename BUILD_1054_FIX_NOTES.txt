@@ -1,0 +1,73 @@
+UNIVERSAL PROJECT CALCULATOR v1.0.1 - BUILD 1054
+
+XTOOL OMNI LINEUP PROFILE EXPANSION
+
+SOURCE
+
+- Added the three xTool Omni editions from the comparison information supplied
+  by the project owner on July 25, 2026.
+- Hardware specifications are treated as confirmed from that supplied source.
+- Ink prices and operating costs remain editable planning assumptions until
+  official retail pricing is available.
+
+SUPPORTED EDITIONS
+
+1. Single UV Edition
+   Best for: Entry-level rigid-material personalization
+   Print head: 1 × Epson F1080
+   Resolution: 720 × 1440 dpi
+   Working area: 13 × 4.8 in standard; 13 × 16.5 in large
+   Ink: CMYKWW plus 3-in-1 varnish
+   Capacity: 125 mL standard ink
+
+2. Dual-Head UV Edition
+   Best for: Advanced UV applications and neon effects
+   Print heads: 2 × Epson F1080
+   Resolution: 720 × 1440 dpi
+   Working area: 13 × 4.8 in standard; 13 × 16.5 in large
+   Ink: CMYKWW, rigid white, flexible white, fluorescent red, fluorescent
+        yellow, and 3-in-1 varnish
+   Capacity: 125 mL standard ink; 290 mL high-capacity white
+
+3. UV + DT Fabric Edition
+   Best for: Apparel and hard-goods printing
+   Print heads: 2 × Epson F1080
+   Resolution: 720 × 1440 dpi
+   Working area: 13 × 4.8 in standard; 13 × 16.5 in large;
+                 11.8 × 15.4 in DTG platen
+   Ink: UV CMYKWWDT, fabric CMYKWW, and 3-in-1 varnish
+   Capacity: 125 mL standard ink; 290 mL high-capacity white
+
+PROFILE AND INVENTORY BEHAVIOR
+
+- Profile Capabilities now displays best use, working area, print-head count,
+  resolution, and ink-channel information for each xTool edition.
+- New xTool physical printers receive edition-specific consumables and
+  capacities.
+- Added separate rigid white, flexible white, fluorescent red, fluorescent
+  yellow, DT color, DT white, and 3-in-1 varnish inventory items where relevant.
+- Existing beta xTool physical printers are upgraded non-destructively:
+  untouched 100 mL placeholder levels become the confirmed capacities;
+  partially used balances are retained.
+- Legacy Gloss inventory and ledger references migrate to 3-in-1 Varnish.
+- User-edited profile cost rates are preserved during the specification upgrade.
+
+COST SAFETY
+
+- The cost panel explicitly identifies xTool values as planning values.
+- Users are instructed to enter current package prices before customer quoting.
+- No unofficial price is described as confirmed.
+
+BUILD MAINTENANCE
+
+- Incremented visible application labels from Build 1053 to Build 1054.
+- Updated application, cachebuster, and service-worker build identifiers.
+- Existing EufyMake and prior xTool workspace data remains compatible.
+
+VERIFICATION
+
+- JavaScript syntax validation passed.
+- Build 1051 through Build 1053 regression suites passed.
+- Build 1054 confirmed-profile, capacity, migration, and rate-preservation tests
+  passed.
+- No public-release manual was generated for this interim build.

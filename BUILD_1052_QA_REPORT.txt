@@ -1,0 +1,39 @@
+UNIVERSAL PROJECT CALCULATOR v1.0.1 - BUILD 1052
+PRINTER PROFILE / PHYSICAL INVENTORY SYNCHRONIZATION QA
+
+AUTOMATED RESULTS
+
+[PASS] JavaScript syntax validation
+[PASS] Build 1051 standard pricing regression case
+[PASS] Build 1051 detailed consumable pricing regression case
+[PASS] Build 1051 completed-job inventory deduction regression case
+[PASS] Double-deduction protection
+[PASS] Active xTool profile selects the matching xTool physical printer
+[PASS] Returning to EufyMake E1 selects the matching E1 physical printer
+[PASS] No-match guidance and all-printers controls are present
+[PASS] HTML element IDs are unique
+[PASS] JavaScript literal element references resolve to HTML controls
+[PASS] Build labels, cache key, and JavaScript cachebuster use Build 1052
+
+MANUAL ACCEPTANCE CHECKLIST
+
+[ ] Open Consumables & Ink Center with EufyMake E1 active.
+[ ] Confirm the active profile and displayed physical printer both identify E1.
+[ ] Note an E1 ink balance.
+[ ] Change the active pricing profile to xTool.
+[ ] Confirm only matching xTool physical printers appear.
+[ ] If no xTool physical printer exists, confirm no E1 inventory is displayed.
+[ ] Use "Add Printer for Active Profile" and confirm xTool supplies appear.
+[ ] Change an xTool balance and confirm the E1 balance is unaffected.
+[ ] Switch back to EufyMake E1 and confirm the noted E1 balance is unchanged.
+[ ] Enable "Show printers from all profiles" and review another printer.
+[ ] Disable it and confirm the active-profile printer is immediately restored.
+[ ] Confirm project pricing and completed-job deductions still use the physical
+    printer explicitly assigned to that project.
+
+LIMITATION
+
+The available sandbox blocked both binding a localhost server and opening a
+local file URL in the browser-testing surface. The automated source, state
+transition, regression, and HTML integrity checks above passed. The manual
+acceptance checklist remains for a hosted or unrestricted local-browser pass.

@@ -1,0 +1,25 @@
+UNIVERSAL PROJECT CALCULATOR v1.0.1 - BUILD 1057
+
+MICROSOFT CLARITY PROJECT UPDATE
+
+- Replaced the previous Microsoft Clarity project ID:
+  xn1zsch849
+
+- New Microsoft Clarity project ID:
+  xs2n3qhjcn
+
+- Retained one Clarity tracking script in the document head.
+- Did not add a second script, preventing duplicate analytics sessions.
+- Incremented application, cachebuster, and service-worker identifiers to
+  Build 1057.
+- All Build 1056 printer profiles, retail consumable prices, maintenance-tank
+  specifications, inventory functionality, and project calculations remain
+  included.
+
+PUBLIC RELEASE NOTE
+
+- Microsoft Clarity analytics should be disclosed in the site's privacy notice.
+- Cookie or consent requirements should be reviewed for the regions where the
+  public site is offered.
+
+- No public-release manual was generated for this interim build.

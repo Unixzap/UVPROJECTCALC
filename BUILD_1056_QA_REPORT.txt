@@ -1,0 +1,24 @@
+UNIVERSAL PROJECT CALCULATOR v1.0.1 - BUILD 1056
+MAINTENANCE TANK SPECIFICATION QA
+
+AUTOMATED RESULTS
+
+[PASS] JavaScript syntax validation
+[PASS] Build 1051-1055 regression suites
+[PASS] UV Maintenance Tank capacity is 260 mL
+[PASS] DT Maintenance Tank capacity is 260 mL
+[PASS] Both maintenance tanks use $31.99 retail
+[PASS] Maintenance tank cost computes to approximately $0.12304 per mL
+[PASS] DT Fabric total volume remains 790 mL
+[PASS] DT White remains 290 mL
+[PASS] Application and cache identifiers use Build 1056
+
+MANUAL ACCEPTANCE CHECKLIST
+
+[ ] Open a new xTool physical printer in Consumables & Ink Center.
+[ ] Confirm the UV Maintenance Tank displays 260 mL at full capacity.
+[ ] Open a UV + DT Fabric printer.
+[ ] Confirm both UV and DT Maintenance Tanks display 260 mL.
+[ ] Record maintenance-tank usage in mL and confirm the balance changes.
+[ ] Install a replacement tank and confirm the balance returns to 260 mL.
+[ ] Confirm DT CMYK use 125 mL and DT White uses 290 mL.

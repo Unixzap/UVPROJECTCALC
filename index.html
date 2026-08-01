@@ -135,6 +135,7 @@
         <div class="nav-label">BUSINESS LIBRARIES</div>
         <button class="nav-item" data-view="customers"><span>♙</span>Customers Library</button>
         <button class="nav-item" data-view="materials"><span>◇</span>Material Library</button>
+        <button class="nav-item" data-view="inventory"><span>◉</span>Consumables & Ink Center</button>
         <div class="nav-label">ADMINISTRATION</div>
         <button class="nav-item" data-view="global"><span>⚙</span>Application Settings</button>
         <button class="nav-item" data-view="whatif"><span>↔</span>Scenario Builder</button>
@@ -145,7 +146,7 @@
         <button class="nav-item help-nav-item" data-view="help"><span>?</span>Help & Feedback</button>
         <button class="nav-item support-nav-item" data-view="support"><span>♥</span>Support the Project</button>
         <button class="nav-item" data-view="about"><span>ⓘ</span>About</button>
-        <div class="version">Community Edition · Version 1.0.1 · Build 1049 · GitHub Pages</div>
+        <div class="version">Community Edition · Version 1.0.1 · Build 1058 · GitHub Pages</div>
       </div>
     </aside>
 
@@ -410,6 +411,7 @@
                   <label>Customer Email<input id="projectCustomerEmail" value="" readonly placeholder="No email saved"></label>
                   <label>Library Discount<input id="projectCustomerDiscount" value="0%" readonly></label>
                   <label>Quantity<input id="quantity" type="number" min="1" step="1" value="1"></label>
+                  <label>Quantity Pricing<select id="quantityPricingMode"><option value="per-item" selected>Per Item — repeat unit quote</option><option value="batch-job">Batch Job — enter run totals</option></select></label>
                   <label>Material<select id="projectMaterial"><option value="__custom__">Custom / Manual Cost</option></select></label>
                   <label>Blank Cost / Unit<input id="blankCost" type="number" min="0" step=".01" value=".77"></label>
                   <label class="span-2">Project Notes<textarea id="projectNotes" rows="3" placeholder="Customer requests, production notes, artwork details…"></textarea></label>
@@ -417,25 +419,36 @@
               </article>
 
               <article class="panel">
-                <div class="panel-head"><div><h3>Printer Job Estimate</h3><p>Enter totals for the complete production job</p></div><button class="secondary small" id="demoImportBtn">Load Sample Values</button></div>
+                <div class="panel-head"><div><h3>Printer Job Estimate</h3><p id="quantityModeDescription">Enter ink and production time for one item. The calculator multiplies them by quantity.</p></div><button class="secondary small" id="demoImportBtn">Load Sample Values</button></div>
                 <div class="form-grid three">
-                  <label>Total Ink Used for Job (mL)<input id="totalInk" type="number" min="0" step=".01" value=".50"></label>
-                  <label>Print Minutes for Job<input id="printMinutes" type="number" min="0" step=".1" value="16"></label>
-                  <label>Hands-On Minutes for Job<input id="laborMinutes" type="number" min="0" step=".1" value="12"></label>
+                  <label><span id="inkInputLabel">Ink Used / Item (mL)</span><input id="totalInk" type="number" min="0" step=".01" value=".50"></label>
+                  <label><span id="printInputLabel">Print Minutes / Item</span><input id="printMinutes" type="number" min="0" step=".1" value="16"></label>
+                  <label><span id="laborInputLabel">Hands-On Minutes / Item</span><input id="laborMinutes" type="number" min="0" step=".1" value="12"></label>
+                  <label>One-Time Setup Minutes<input id="setupMinutes" type="number" min="0" step=".1" value="0"></label>
                   <label>Packaging / Unit<input id="packagingCost" type="number" min="0" step=".01" value=".70"></label>
                 </div>
-                <div class="import-note"><strong>Total job values:</strong> ink and print time are entered once for the complete run and are not multiplied again by quantity.</div>
+                <div class="consumable-project-box">
+                  <label class="consumable-mode-toggle"><input id="useDetailedConsumables" type="checkbox"> Track usage by consumable for this job</label>
+                  <div id="projectConsumableDetails" hidden>
+                    <div class="form-grid">
+                      <label>Physical Printer<select id="projectPhysicalPrinter"></select></label>
+                      <div class="consumable-job-summary"><span>Estimated consumables</span><strong id="projectConsumableCost">$0.00</strong><small id="projectConsumableAvailability">Choose a printer and enter usage.</small></div>
+                    </div>
+                    <div class="project-consumable-grid" id="projectConsumableGrid"></div>
+                  </div>
+                </div>
+                <div class="import-note" id="quantityModeNote"><strong>Per-item pricing:</strong> the complete one-item calculation repeats with quantity. One-time setup minutes are charged only once.</div>
               </article>
 
               <article class="panel">
                 <div class="panel-head"><div><h3>Pricing Controls</h3><p>Adjust costs, waste, and target margin</p></div></div>
                 <div class="form-grid three">
-                  <label>Primer & Cleaning<input id="primerCost" type="number" min="0" step=".01" value=".35"></label>
+                  <label>Primer / Pretreatment<input id="primerCost" type="number" min="0" step=".01" value=".35"></label>
                   <label>Other Fixed Costs<input id="otherCost" type="number" min="0" step=".01" value="0"></label>
                   <label>Waste Allowance (%)<input id="wastePercent" type="number" min="0" max="100" step=".1" value="5"></label>
                   <label>Target Profit Margin (%)<input id="profitMargin" type="number" min="1" max="95" step=".1" value="45"></label>
                   <label>Sales Tax (%)<input id="projectTax" type="number" min="0" max="100" step=".001" value="0"></label>
-                  <label>Manual Selling Price<input id="manualPrice" type="number" min="0" step=".01" placeholder="Optional" disabled></label>
+                  <label><span id="manualPriceLabel">Manual Selling Price / Unit</span><input id="manualPrice" type="number" min="0" step=".01" placeholder="Optional" disabled></label>
                   <label class="manual-price-toggle"><span>Price Override</span><span><input id="useManualPrice" type="checkbox"> Use manual selling price</span></label>
                   <label>Rounding<select id="rounding"><option value=".01">Nearest cent</option><option value=".50">Nearest $0.50</option><option value="1" selected>Nearest dollar</option><option value="5">Nearest $5</option></select></label>
                 </div>
@@ -487,6 +500,43 @@
                 </div>
               </article>
             </aside>
+          </div>
+        </section>
+
+        <section class="view" id="view-inventory">
+          <div class="section-head workspace-head">
+            <div><h2>Consumables & Ink Center</h2><p>Estimate remaining supplies for each physical printer from completed-job usage and manual inventory updates.</p></div>
+            <div class="action-row"><button class="secondary" id="addPhysicalPrinterBtn">＋ Add Printer</button><button class="primary" id="addConsumableBtn">＋ Add Consumable</button></div>
+          </div>
+          <div class="inventory-disclaimer"><strong>Estimated inventory - not a live printer reading.</strong><span>Reconcile levels manually on a regular schedule.</span></div>
+          <div class="panel inventory-toolbar">
+            <div><span>Active Pricing Profile</span><strong id="inventoryActiveProfileLabel">—</strong></div>
+            <label>Physical Printer<select id="inventoryPrinterSelect"></select><small id="inventoryPrinterCountLabel">0 physical printers configured</small></label>
+            <div><span>Displayed Inventory Printer</span><strong id="inventoryDisplayedPrinterLabel">—</strong></div>
+            <div><span>Last reconciled</span><strong id="inventoryReconciledAt">Never</strong></div>
+            <label class="inventory-show-all"><input id="matchingInventoryPrintersOnly" type="checkbox" checked> Matching profile only</label>
+            <button class="secondary" id="reconcileInventoryBtn">Reconcile Levels</button>
+          </div>
+          <div class="inventory-no-match" id="inventoryNoMatchingPrinter" hidden>
+            <div><strong id="inventoryNoMatchTitle">No matching physical printer</strong><p id="inventoryNoMatchText">Create a physical printer for the active profile to begin tracking its consumables.</p></div>
+            <button class="primary" id="addMatchingPrinterBtn">＋ Add Printer for Active Profile</button>
+          </div>
+          <div class="inventory-gauge-grid" id="inventoryGaugeGrid"></div>
+          <div class="inventory-lower-grid">
+            <article class="panel">
+              <div class="panel-head"><div><h3>Inventory Actions</h3><p>Record replacements, additions, losses, and corrections.</p></div></div>
+              <div class="form-grid">
+                <label>Consumable<select id="inventoryActionConsumable"></select></label>
+                <label>Action<select id="inventoryActionType"><option value="replace">Install New Package</option><option value="add">Add Stock</option><option value="consume">Record Consumption</option><option value="set">Set Exact Level</option></select></label>
+                <label>Amount<input id="inventoryActionAmount" type="number" min="0" step=".01"></label>
+                <label>Reason<input id="inventoryActionReason" placeholder="Manual count, maintenance, spill…"></label>
+              </div>
+              <button class="primary" id="recordInventoryActionBtn">Record Inventory Action</button>
+            </article>
+            <article class="panel">
+              <div class="panel-head"><div><h3>Transaction History</h3><p>Every inventory change is recorded and attributable.</p></div></div>
+              <div class="table-wrap"><table><thead><tr><th>Date</th><th>Consumable</th><th>Change</th><th>Reason</th><th>Balance</th></tr></thead><tbody id="inventoryTransactionBody"></tbody></table></div>
+            </article>
           </div>
         </section>
 
@@ -568,7 +618,7 @@
                 <div class="settings-card-grid">
                   <article class="subpanel" id="cost-ink">
                     <h4>Ink & Cleaning Cartridge Costs</h4>
-                    <p>The active printer profile converts cartridge price and capacity into a cost per mL. Pricing Workspace uses one total job ink value.</p>
+                    <p>The active printer profile converts cartridge price and capacity into a cost per mL. Pricing Workspace supports either one combined ink total or detailed consumable usage by physical printer.</p>
                     <div class="form-grid three">
                       <label>Ink Cartridge Price<input id="inkCartridgePrice" type="number" min="0" step=".01"></label>
                       <label>Ink Cartridge Capacity (mL)<input id="inkCartridgeCapacity" type="number" min="1" step="1"></label>
@@ -578,8 +628,8 @@
                       <label>Cleaning Allowance / Job<input id="rateCleaning" type="number" min="0" step=".01"></label>
                     </div>
                     <div class="settings-help">
-                      <strong>EufyMake E1 default</strong>
-                      <p>CMYKWG cartridges are priced equally, so the calculator only needs the total ink used for the complete job.</p>
+                      <strong id="activeInkCostHelpTitle">EufyMake E1 default</strong>
+                      <p id="activeInkCostHelpText">CMYKWG cartridges are priced equally, so the calculator only needs the total ink used for the complete job.</p>
                     </div>
                   </article>
 
@@ -622,7 +672,7 @@
                 </div>
               </section>
 
-              <section class="settings-panel" id="settings-printer"><div class="panel-head"><div><h3>Printer Profiles</h3><p>Select the printer and edition used for new projects and scenarios.</p></div><span class="section-badge">ACTIVE</span></div><div class="printer-profile-layout"><article class="subpanel"><h4>Active Printer</h4><div class="form-grid"><label>Printer Family<select id="printerFamily"><option value="eufymake-e1">EufyMake E1</option><option value="xtool-o1">xTool O1 Omni Printer</option></select></label><label>Printer Edition<select id="printerEdition"></select></label><label>Profile Name<input id="printerProfileName" value="Main Printer"></label><label>Default Workflow<select id="printerWorkflow"></select></label></div><div class="printer-switch-warning">Switching profiles changes the active cost rates and available options for new calculations. Existing saved project totals remain unchanged.</div></article><article class="subpanel"><h4>Profile Capabilities</h4><div class="profile-capability-grid" id="printerProfileCapabilities"></div><p class="profile-source-note" id="printerProfileNote"></p></article><article class="subpanel"><h4>Profile Cost Status</h4><div class="cost-status-card" id="printerCostStatus"></div><button class="secondary" data-open-settings-panel="costs">Review Active Cost Rates</button></article></div></section>
+              <section class="settings-panel" id="settings-printer"><div class="panel-head"><div><h3>Printer Profiles</h3><p>Select the printer and edition used for new projects and scenarios.</p></div><span class="section-badge">ACTIVE</span></div><div class="printer-profile-layout"><article class="subpanel"><h4>Active Printer</h4><div class="form-grid"><label>Printer Family<select id="printerFamily"><option value="eufymake-e1">EufyMake E1</option><option value="xtool-o1">xTool Omni</option></select></label><label>Printer Edition<select id="printerEdition"></select></label><label>Profile Name<input id="printerProfileName" value="Main Printer"></label><label>Default Workflow<select id="printerWorkflow"></select></label></div><div class="printer-switch-warning">Switching profiles changes the active cost rates and available options for new calculations. Existing saved project totals remain unchanged.</div></article><article class="subpanel"><h4>Profile Capabilities</h4><div class="profile-capability-grid" id="printerProfileCapabilities"></div><p class="profile-source-note" id="printerProfileNote"></p></article><article class="subpanel"><h4>Profile Cost Status</h4><div class="cost-status-card" id="printerCostStatus"></div><button class="secondary" data-open-settings-panel="costs">Review Active Cost Rates</button></article></div></section>
 
               <section class="settings-panel" id="settings-business">
                 <div class="panel-head"><div><h3>Business</h3><p>Manage company identity and customer quote defaults.</p></div></div>
@@ -851,8 +901,10 @@
                   <label>Print Minutes<input id="scPrintMinutes" type="number" min="0" step=".1"></label>
                   <label>Hands-On Minutes<input id="scLaborMinutes" type="number" min="0" step=".1"></label>
                   <label>Extra Setup Minutes<input id="scSetupMinutes" type="number" min="0" step=".1"></label>
-                  <label>Primer & Cleaning<input id="scPrimer" type="number" min="0" step=".01"></label>
+                  <label>Primer / Pretreatment<input id="scPrimer" type="number" min="0" step=".01"></label>
+                  <label>Cleaning Allowance / Job<input id="scCleaning" type="number" min="0" step=".01"></label>
                   <label>Maintenance / Job<input id="scMaintenance" type="number" min="0" step=".01"></label>
+                  <label>Other Fixed Costs<input id="scOtherCost" type="number" min="0" step=".01"></label>
                   <label>Waste Allowance (%)<input id="scWaste" type="number" min="0" max="100" step=".1"></label>
                 </div>
               </article>
@@ -860,9 +912,12 @@
               <article class="panel">
                 <div class="panel-head"><div><h3>Business & Pricing</h3><p>Test changes to labor, overhead, discounts, margin, tax, and price.</p></div></div>
                 <div class="form-grid three">
+                  <label>Ink Cost / mL<input id="scInkRate" type="number" min="0" step=".0001"></label>
                   <label>Labor Rate / Hour<input id="scLaborRate" type="number" min="0" step=".01"></label>
                   <label>Machine Rate / Hour<input id="scMachineRate" type="number" min="0" step=".01"></label>
+                  <label>Electricity / Hour<input id="scElectricRate" type="number" min="0" step=".01"></label>
                   <label>Overhead / Hour<input id="scOverheadRate" type="number" min="0" step=".01"></label>
+                  <label>Service Reserve / Hour<input id="scServiceReserveRate" type="number" min="0" step=".01"></label>
                   <label>Pricing Method<select id="scPricingMode"><option value="margin">Target Margin</option><option value="manual">Manual Order Price</option><option value="profit">Desired Profit</option></select></label>
                   <label>Target Profit Margin (%)<input id="scTargetMargin" type="number" min="1" max="95" step=".1"></label>
                   <label>Customer Discount (%)<input id="scDiscount" type="number" min="0" max="100" step=".1"></label>
@@ -943,7 +998,7 @@
               <h2>Help & Feedback</h2>
               <p>Report problems, suggest improvements, or contact support directly from the application.</p>
             </div>
-            <span class="feedback-build-badge">Version 1.0.1 · Build 1049 · GitHub Pages</span>
+            <span class="feedback-build-badge">Version 1.0.1 · Build 1058 · GitHub Pages</span>
           </div>
 
           <div class="feedback-intro panel">
@@ -1395,7 +1450,7 @@
 
   <footer class="app-build-footer">
     <span>UV Project Calculator Pro · Community Edition</span>
-    <strong>Version 1.0.1 · Build 1049 · GitHub Pages</strong>
+    <strong>Version 1.0.1 · Build 1058 · GitHub Pages</strong>
   <span class="hosted-build-note">Hosted on GitHub Pages</span></footer>
 
   <div class="toast" id="toast"></div>

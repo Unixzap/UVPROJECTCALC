@@ -1,0 +1,63 @@
+UNIVERSAL PROJECT CALCULATOR v1.0.1 - BUILD 1052
+
+PRINTER PROFILE / PHYSICAL INVENTORY SYNCHRONIZATION
+
+ISSUE CORRECTED
+
+- In Build 1051, changing the active pricing profile did not automatically
+  change the physical printer displayed in Consumables & Ink Center.
+- This could leave the EufyMake E1 inventory visible while an xTool pricing
+  profile was active, which made it too easy to view or update the wrong
+  printer's supplies.
+
+NEW BEHAVIOR
+
+- Consumables & Ink Center now filters physical printers by the active printer
+  family and edition.
+- Changing the active profile automatically selects the first matching
+  physical printer.
+- EufyMake E1 balances remain stored and unchanged when another printer profile
+  is active.
+- Switching back to the EufyMake E1 profile displays its physical printer and
+  its existing balances again.
+- The toolbar separately identifies the active pricing profile and the physical
+  printer whose inventory is currently displayed.
+
+NO-MATCH PROTECTION
+
+- When the active profile has no matching physical printer, the Ink Center
+  displays an explanation instead of silently showing a different printer.
+- Inventory action, consumable, and reconciliation controls are disabled until
+  a matching physical printer is available.
+- Added "Add Printer for Active Profile" to create the correct physical printer
+  without manually entering its profile identifiers.
+
+ALL-PRINTERS VIEW
+
+- Added an optional "Show printers from all profiles" checkbox.
+- This is an intentional review mode; the displayed physical printer remains
+  clearly identified.
+- Turning the checkbox off immediately returns the Ink Center to the physical
+  printer matching the active pricing profile.
+
+BUILD MAINTENANCE
+
+- Incremented visible application labels from Build 1051 to Build 1052.
+- Updated the application build constant and JavaScript cachebuster.
+- Updated the service-worker cache identifier.
+- Existing Build 1051 inventory and transaction data remains compatible.
+
+VERIFICATION
+
+- JavaScript syntax checks passed for app.js, boot.js, and service-worker.js.
+- Build 1051 pricing and inventory regression tests passed.
+- Build 1052 tests confirmed xTool selection when xTool is active and E1
+  selection when EufyMake E1 is active.
+- HTML element IDs are unique.
+- JavaScript literal element references resolve to HTML controls.
+
+NOTE
+
+- This is an estimated manual inventory system. It does not read cartridge
+  levels directly from printer hardware.
+- No public-release manual was generated for this interim build.

@@ -1,0 +1,130 @@
+UNIVERSAL PROJECT CALCULATOR v1.0.1 - BUILD 1051
+
+CONSUMABLES & INK CENTER
+
+OVERVIEW
+
+- Added a new Consumables & Ink Center for printer-specific estimated inventory.
+- Inventory values are clearly labeled as estimates, not live printer readings.
+- Inventory is assigned to a physical printer instance instead of being stored
+  globally or only on a printer-profile template.
+- Multiple physical printers can use the same printer profile while retaining
+  separate inventory balances and histories.
+
+DEFAULT EUFYMAKE E1 INVENTORY
+
+- Added Cyan, Magenta, Yellow, Black, White, and Gloss cartridges.
+- Each default ink cartridge starts with:
+  Price: $29.99
+  Capacity: 100 mL
+  Calculated unit cost: $0.2999 per mL
+- Added the Cleaning Cartridge as a separately tracked consumable.
+- The default cleaning capacity follows the existing E1 printer-profile value
+  and remains editable.
+
+PRINTER-PROFILE AND PHYSICAL-PRINTER SUPPORT
+
+- Added physical-printer creation from any installed printer profile.
+- Added creation of a basic custom printer profile when a new profile ID is
+  entered during physical-printer setup.
+- Custom profiles support a model name, workflow, ink rate, machine rate,
+  electricity rate, and maintenance allowance.
+- Printer-family selection in Application Settings is now generated
+  dynamically, so user-created profiles can become active.
+- Consumables are dynamically associated with each physical printer and are not
+  limited to hard-coded EufyMake fields.
+
+CONSUMABLE CONFIGURATION
+
+- Users can add custom consumables to a physical printer.
+- Each consumable records:
+  Name
+  Category
+  Measurement unit
+  Package capacity
+  Package price
+  Remaining quantity
+  Low-stock threshold
+  Whether it is included in project pricing
+- The data model can represent ink, cleaning fluid, primer, film, powder,
+  sheets, or other printer-specific supplies.
+
+PROJECT PRICING INTEGRATION
+
+- Pricing Workspace retains the existing combined Total Ink mode.
+- Added an optional detailed consumables mode for new or edited projects.
+- Detailed mode displays the consumables for the selected physical printer.
+- Users enter usage for the complete job by consumable.
+- Detailed consumable cost is calculated from each package price and capacity.
+- Ink-category quantities are totaled for compatibility with the existing
+  project record and reporting fields.
+- Project records retain:
+  Physical printer ID
+  Usage by consumable
+  Detailed consumable pricing
+  Inventory deduction status
+  Inventory transaction IDs
+
+COMPLETED-JOB INVENTORY DEDUCTION
+
+- Saving a detailed project as Completed offers to deduct its consumables.
+- Projects can also be completed and deducted from the Projects page.
+- A confirmation displays the selected physical printer and recorded usage.
+- Inventory is not deducted from Draft, Estimate, Quoted, Approved, or
+  In Production records.
+- A project cannot deduct inventory twice.
+- A completed deduction can be reversed through a separate ledger transaction.
+- Duplicated projects reset to Draft and do not copy inventory-posted status.
+- Deductions are blocked when estimated remaining inventory is insufficient.
+
+INVENTORY VISUALIZATION
+
+- Added visual level gauges for every consumable on the selected printer.
+- Each gauge displays:
+  Estimated percentage remaining
+  Remaining quantity and unit
+  Package capacity
+  Estimated remaining dollar value
+  Good, review, or low status
+- Added last-reconciled status for each physical printer.
+
+INVENTORY ACTIONS AND LEDGER
+
+- Added the following manual inventory actions:
+  Install New Package
+  Add Stock
+  Record Consumption
+  Set Exact Level
+  Reconcile All Levels
+- Every change creates a dated transaction containing the printer, consumable,
+  change, reason, and resulting balance.
+- Project deductions and reversals are recorded in the same ledger.
+- Inventory values cannot fall below zero.
+
+BACKUP AND COMPATIBILITY
+
+- Complete workspace backups automatically include physical printers,
+  consumables, balances, transaction history, and project deduction records.
+- Added normalization for older complete backups without inventory data.
+- Older projects remain usable in combined-ink mode.
+- No historical project is assigned invented channel-level usage.
+
+BUILD MAINTENANCE
+
+- Incremented application labels from Build 1050 to Build 1051.
+- Updated JavaScript cache-busting identifiers to Build 1051.
+- Updated the service-worker cache identifier to Build 1051.
+
+VERIFICATION
+
+- JavaScript syntax checks passed.
+- Existing Build 1050 pricing regression checks passed.
+- Build 1051 detailed-consumable pricing tests passed.
+- Project inventory deduction and double-deduction protection tests passed.
+- HTML ID uniqueness and JavaScript element-reference checks passed.
+
+IMPORTANT LIMITATION
+
+- Build 1051 inventory is calculated from user-entered project usage and manual
+  adjustments. It is not connected to a printer API and must not be presented
+  as a live hardware measurement.

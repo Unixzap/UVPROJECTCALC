@@ -1,0 +1,45 @@
+UNIVERSAL PROJECT CALCULATOR v1.0.1 - BUILD 1051
+CONSUMABLES & INK CENTER QA REPORT
+
+AUTOMATED RESULTS
+
+[PASS] JavaScript syntax validation
+[PASS] Build 1050 standard pricing regression case
+[PASS] Detailed consumable cost overrides combined-ink cost correctly
+[PASS] Physical-printer inventory deduction
+[PASS] Multiple consumables deducted in one completed project
+[PASS] Project transaction IDs retained
+[PASS] Double-deduction protection
+[PASS] Inventory balances constrained to zero or greater
+[PASS] HTML element IDs are unique
+[PASS] JavaScript literal element references resolve to HTML controls
+[PASS] Build labels, cache key, and JavaScript cachebuster use Build 1051
+
+MANUAL ACCEPTANCE CHECKLIST
+
+[ ] Open Consumables & Ink Center and confirm the Main E1 Printer appears.
+[ ] Confirm CMYKWG gauges begin at 100 mL.
+[ ] Confirm the Cleaning Cartridge uses its configured capacity.
+[ ] Record a manual consumption and confirm the gauge and ledger update.
+[ ] Install a new package and confirm the level returns to package capacity.
+[ ] Reconcile all levels and confirm Last Reconciled is updated.
+[ ] Add a physical printer from the xTool profile.
+[ ] Add a custom consumable with a non-mL measurement unit.
+[ ] Create a custom printer profile and confirm it appears in Settings.
+[ ] Create a detailed-consumable project and enter channel usage.
+[ ] Confirm detailed cost uses each consumable's package price and capacity.
+[ ] Save the project as Draft and confirm inventory is unchanged.
+[ ] Complete and deduct the project and confirm every recorded item is reduced.
+[ ] Attempt to deduct the same project again and confirm it is blocked.
+[ ] Reverse the deduction and confirm compensating ledger entries are created.
+[ ] Duplicate a deducted project and confirm the copy is Draft and not deducted.
+[ ] Export a complete backup, restore it, and confirm balances and history remain.
+[ ] Open an older combined-ink project and confirm it still prices normally.
+
+LIMITATION
+
+The sandbox available during this build did not permit launching the packaged
+site on a localhost web server for a final interactive browser pass. The
+automated source, pricing, inventory, and HTML integrity checks above passed.
+The manual acceptance checklist remains included for a hosted or local-browser
+release-candidate pass before public deployment.

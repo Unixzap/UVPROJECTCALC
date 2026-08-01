@@ -1,0 +1,39 @@
+UNIVERSAL PROJECT CALCULATOR v1.0.1 - BUILD 1055
+XTOOL RETAIL CONSUMABLE PRICING QA
+
+AUTOMATED RESULTS
+
+[PASS] JavaScript syntax validation
+[PASS] Builds 1051-1054 regression suites
+[PASS] UV Essential Set total equals $120.99
+[PASS] UV Essential Set total volume equals 750 mL
+[PASS] UV Essential Set average equals $0.16132 per mL
+[PASS] DT Fabric Set total equals $104.99
+[PASS] DT Fabric Set total volume equals 790 mL
+[PASS] DT Fabric channels are separately represented
+[PASS] UV and DT Maintenance Tanks use $31.99 retail
+[PASS] Primer Wipes use $15 per 50 and calculate to $0.30 each
+[PASS] Preorder prices are excluded from profile costing
+[PASS] Old placeholder ink rates upgrade to confirmed retail
+[PASS] Deliberately user-edited rates remain unchanged
+[PASS] Visible labels and caches use Build 1055
+
+MANUAL ACCEPTANCE CHECKLIST
+
+[ ] Create a new Single UV physical printer and inspect its consumables.
+[ ] Confirm six essential UV inks are 125 mL each.
+[ ] Confirm the six essential package-price allocations total $120.99.
+[ ] Confirm UV Maintenance Tank is $31.99 per tank.
+[ ] Confirm Primer Wipes are $15 per 50 and $0.30 per wipe.
+[ ] Create a UV + DT Fabric physical printer.
+[ ] Confirm DT CMYK are 125 mL and DT White is 290 mL.
+[ ] Confirm DT package allocations total $104.99.
+[ ] Confirm the DT Maintenance Tank is $31.99.
+[ ] Verify preorder prices do not appear in project costing.
+[ ] Verify EufyMake E1 prices and inventory remain unchanged.
+
+LIMITATION
+
+The separate UV Ink Expansion Set retail price has not been supplied. Rigid
+White, Flexible White, Fluorescent Red, and Fluorescent Yellow therefore retain
+editable assumption rates until that set's regular retail price is confirmed.

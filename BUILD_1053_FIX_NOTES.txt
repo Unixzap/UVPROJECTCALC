@@ -1,0 +1,49 @@
+UNIVERSAL PROJECT CALCULATOR v1.0.1 - BUILD 1053
+
+PHYSICAL PRINTER SELECTION USABILITY
+
+ISSUE CORRECTED
+
+- The Build 1052 Physical Printer dropdown could appear unusable because its
+  default filter showed only printers matching the active pricing profile.
+- When only one matching physical printer existed, opening the dropdown offered
+  no additional choice and the reason was not explained.
+
+NEW SELECTION BEHAVIOR
+
+- Replaced "Show printers from all profiles" with the clearer
+  "Matching profile only" filter.
+- The matching-only filter is enabled by default for safer day-to-day use.
+- Turning the filter off lists every configured physical printer.
+- Matching printers are sorted first and labeled "Recommended."
+- The interface now displays the matching and total physical-printer counts.
+
+CROSS-PROFILE SELECTION
+
+- Selecting a physical printer associated with another profile asks whether the
+  active pricing profile should switch to match it.
+- Accepting switches the active profile while keeping the selected physical
+  printer displayed.
+- Declining leaves the pricing profile unchanged and treats the selection as
+  inventory viewing only.
+- Every physical printer retains its own consumable balances and transaction
+  history; E1 and xTool inventory are never combined.
+
+BUILD MAINTENANCE
+
+- Incremented visible application labels from Build 1052 to Build 1053.
+- Updated the application build constant, JavaScript cachebuster, and
+  service-worker cache identifier.
+- Existing Build 1051 and Build 1052 workspace data remains compatible.
+
+VERIFICATION
+
+- JavaScript syntax checks passed.
+- Build 1051 pricing and inventory regression tests passed.
+- Build 1052 active-profile synchronization tests passed.
+- Build 1053 cross-profile physical-printer selection tests passed.
+- HTML element IDs and JavaScript control references passed integrity checks.
+
+NOTE
+
+- No public-release manual was generated for this interim build.

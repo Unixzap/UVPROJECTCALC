@@ -104,7 +104,7 @@ function initializePricingWorkspaceRecalculation(){
 
 
 const UVPC_APP_VERSION='1.0.1';
-const UVPC_BUILD_NUMBER='1049';
+const UVPC_BUILD_NUMBER='1058';
 const UVPC_SUPPORT_EMAIL='MrDon123@gmail.com';
 
 function getCurrentScreenName(){
@@ -302,7 +302,7 @@ const defaults={
  profile:{name:'UV Printer Owner',business:'UV Project Calculator Pro',country:'United States',currency:'USD',setupComplete:false},
  business:{owner:'Donald Youngner',email:'',phone:'',website:'',overhead:0,tax:0,shipping:0,quoteValidity:'14 days',deposit:0,terms:'Thank you for the opportunity to provide this estimate.'},
  printer:{model:'EufyMake E1',profileName:'Main E1 Printer',inkCartridgePrice:29.99,inkCartridgeCapacity:100,cleaningCartridgePrice:29.99,cleaningCartridgeCapacity:380,cleaning:.25,primerDefault:.35,serviceReserve:.50},
- printerProfiles:{'eufymake-e1':{family:'EufyMake E1',editions:{standard:{name:'EufyMake E1',edition:'Standard UV Profile',workflows:['Direct UV','UV DTF','Rotary','3D Texture'],inkFields:['cyan','magenta','yellow','black','white','gloss'],rates:{ink:.2999,cyan:.2999,magenta:.2999,yellow:.2999,black:.2999,white:.2999,gloss:.2999,fluorescent:0,flexWhite:0,dtColor:0,dtWhite:0,machine:5,electric:.30,maintenance:.50,cleaning:.25,primer:.35,serviceReserve:.50},cartridges:{inkPrice:29.99,inkCapacity:100,cleaningPrice:29.99,cleaningCapacity:380},note:'Official US EufyMake pricing effective July 2026: CMYKWG ink cartridges are $29.99 per 100 mL and the cleaning cartridge is $29.99 per 380 mL. Review regional pricing before quoting.'}}},'xtool-o1':{family:'xTool O1 Omni Printer',editions:{'single-uv':{name:'xTool O1 Omni Printer',edition:'Single UV Edition',workflows:['Direct UV','UV DTF'],inkFields:['cyan','magenta','yellow','black','white','gloss'],rates:{cyan:.50,magenta:.50,yellow:.50,black:.50,white:.57,gloss:.56,fluorescent:0,flexWhite:0,dtColor:0,dtWhite:0,machine:7.5,electric:.40,maintenance:.75,cleaning:.35,primer:.35,serviceReserve:.75},note:'Starter rates are editable placeholders until actual xTool cartridge costs are entered.'},'dual-uv':{name:'xTool O1 Omni Printer',edition:'Dual-Head UV Edition',workflows:['Direct UV','UV DTF','Fluorescent Effects','Flexible White'],inkFields:['cyan','magenta','yellow','black','white','gloss','fluorescent','flexWhite'],rates:{cyan:.50,magenta:.50,yellow:.50,black:.50,white:.57,gloss:.56,fluorescent:.65,flexWhite:.65,dtColor:0,dtWhite:0,machine:10,electric:.50,maintenance:1,cleaning:.45,primer:.35,serviceReserve:1},note:'Adds fluorescent and flexible-white channels. Review all starter rates.'},'uv-dt-fabric':{name:'xTool O1 Omni Printer',edition:'UV + DT Fabric Edition',workflows:['Direct UV','UV DTF','DTG','DTF'],inkFields:['cyan','magenta','yellow','black','white','gloss','dtColor','dtWhite'],rates:{cyan:.50,magenta:.50,yellow:.50,black:.50,white:.57,gloss:.56,fluorescent:0,flexWhite:0,dtColor:.55,dtWhite:.60,machine:10,electric:.55,maintenance:1.1,cleaning:.50,primer:.35,serviceReserve:1.1},note:'Adds DT color and white channels for fabric work. Review all starter rates.'}}}},
+ printerProfiles:{'eufymake-e1':{family:'EufyMake E1',editions:{standard:{name:'EufyMake E1',edition:'Standard UV Profile',workflows:['Direct UV','UV DTF','Rotary','3D Texture'],inkFields:['cyan','magenta','yellow','black','white','gloss'],rates:{ink:.2999,cyan:.2999,magenta:.2999,yellow:.2999,black:.2999,white:.2999,gloss:.2999,fluorescent:0,flexWhite:0,dtColor:0,dtWhite:0,machine:5,electric:.30,maintenance:.50,cleaning:.25,primer:.35,serviceReserve:.50},cartridges:{inkPrice:29.99,inkCapacity:100,cleaningPrice:29.99,cleaningCapacity:380},note:'Official US EufyMake pricing effective July 2026: CMYKWG ink cartridges are $29.99 per 100 mL and the cleaning cartridge is $29.99 per 380 mL. Review regional pricing before quoting.'}}},'xtool-o1':{family:'xTool Omni',editions:{'single-uv':{name:'xTool Omni',edition:'Single UV Edition',bestFor:'Entry-level makers for rigid material personalization',workingArea:'Standard bed: 13 × 4.8 in (330 × 122 mm); large bed: 13 × 16.5 in (330 × 420 mm)',printHeads:'1 × Epson F1080',resolution:'720 × 1440 dpi',inkChannels:'CMYKWW; 3-in-1 varnish supports matte, gloss, and foil effects',workflows:['Direct UV','UV DTF','Varnish Effects'],inkFields:['cyan','magenta','yellow','black','white','varnish'],inkLabels:{varnish:'3-in-1 Varnish'},rates:{cyan:.50,magenta:.50,yellow:.50,black:.50,white:.57,varnish:.56,machine:7.5,electric:.40,maintenance:.75,cleaning:.35,primer:.35,serviceReserve:.75},cartridges:{inkCapacity:125,capacities:{}},note:'Hardware specifications confirmed from the supplied xTool Omni comparison. Ink and operating costs remain editable planning assumptions until official prices are available.'},'dual-uv':{name:'xTool Omni',edition:'Dual-Head UV Edition',bestFor:'Creators focused on advanced UV applications and exclusive neon effects',workingArea:'Standard bed: 13 × 4.8 in (330 × 122 mm); large bed: 13 × 16.5 in (330 × 420 mm)',printHeads:'2 × Epson F1080',resolution:'720 × 1440 dpi',inkChannels:'CMYKWW + rigid white, flexible white, fluorescent red, fluorescent yellow, and 3-in-1 varnish',workflows:['Direct UV','UV DTF','Fluorescent Effects','Flexible White','Varnish Effects'],inkFields:['cyan','magenta','yellow','black','white','rigidWhite','flexWhite','fluorescentRed','fluorescentYellow','varnish'],inkLabels:{rigidWhite:'Rigid White',flexWhite:'Flexible White',fluorescentRed:'Fluorescent Red',fluorescentYellow:'Fluorescent Yellow',varnish:'3-in-1 Varnish'},rates:{cyan:.50,magenta:.50,yellow:.50,black:.50,white:.57,rigidWhite:.57,flexWhite:.65,fluorescentRed:.65,fluorescentYellow:.65,varnish:.56,machine:10,electric:.50,maintenance:1,cleaning:.45,primer:.35,serviceReserve:1},cartridges:{inkCapacity:125,capacities:{white:290,rigidWhite:290,flexWhite:290}},note:'Hardware specifications confirmed from the supplied xTool Omni comparison. Ink and operating costs remain editable planning assumptions until official prices are available.'},'uv-dt-fabric':{name:'xTool Omni',edition:'UV + DT Fabric Edition',bestFor:'Creators with both apparel and hard-goods printing needs',workingArea:'Standard bed: 13 × 4.8 in (330 × 122 mm); large bed: 13 × 16.5 in (330 × 420 mm); DTG platen: 11.8 × 15.4 in (300 × 390 mm)',printHeads:'2 × Epson F1080',resolution:'720 × 1440 dpi',inkChannels:'UV: CMYKWWDT; fabric: CMYKWW; 3-in-1 varnish supports matte, gloss, and foil effects',workflows:['Direct UV','DT Fabric','UV DTF','Varnish Effects'],inkFields:['cyan','magenta','yellow','black','white','dtColor','dtWhite','varnish'],inkLabels:{dtColor:'DT Color',dtWhite:'DT White',varnish:'3-in-1 Varnish'},rates:{cyan:.50,magenta:.50,yellow:.50,black:.50,white:.57,dtColor:.55,dtWhite:.60,varnish:.56,machine:10,electric:.55,maintenance:1.1,cleaning:.50,primer:.35,serviceReserve:1.1},cartridges:{inkCapacity:125,capacities:{white:290,dtWhite:290}},note:'Hardware specifications confirmed from the supplied xTool Omni comparison. Ink and operating costs remain editable planning assumptions until official prices are available.'}}}},
  activePrinter:{family:'eufymake-e1',edition:'standard',workflow:'Direct UV'},
  preferences:{numberFormat:'us',autosave:true,lastCustomer:false,showCosts:true,confirmDelete:true,defaultStatus:'Draft',rounding:'1',welcomeMode:'updates',lastWelcomeVersion:''},
  activities:[
@@ -322,6 +322,18 @@ const defaults={
   {name:'Faux Leather Patch',category:'Leather',cost:1.15,supplier:'Patch Vendor',sku:'LP-BRN',note:'Brown adhesive-back'},
   {name:'Clear Acrylic Plate',category:'Acrylic',cost:3.40,supplier:'Acrylic Vendor',sku:'ACR-CLR',note:'Small sign blank'}
  ],
+ physicalPrinters:[
+  {id:'e1-main',name:'Main E1 Printer',family:'eufymake-e1',edition:'standard',lastReconciledAt:'',consumables:[
+   {id:'cyan',name:'Cyan',category:'Ink',unit:'mL',capacity:100,packagePrice:29.99,remaining:100,lowThreshold:20,color:'#16c7d9',includeInPricing:true},
+   {id:'magenta',name:'Magenta',category:'Ink',unit:'mL',capacity:100,packagePrice:29.99,remaining:100,lowThreshold:20,color:'#ec4c9a',includeInPricing:true},
+   {id:'yellow',name:'Yellow',category:'Ink',unit:'mL',capacity:100,packagePrice:29.99,remaining:100,lowThreshold:20,color:'#f1c40f',includeInPricing:true},
+   {id:'black',name:'Black',category:'Ink',unit:'mL',capacity:100,packagePrice:29.99,remaining:100,lowThreshold:20,color:'#3d4853',includeInPricing:true},
+   {id:'white',name:'White',category:'Ink',unit:'mL',capacity:100,packagePrice:29.99,remaining:100,lowThreshold:20,color:'#dfe8f0',includeInPricing:true},
+   {id:'gloss',name:'Gloss',category:'Ink',unit:'mL',capacity:100,packagePrice:29.99,remaining:100,lowThreshold:20,color:'#8bd6ff',includeInPricing:true},
+   {id:'cleaning',name:'Cleaning Cartridge',category:'Cleaning',unit:'mL',capacity:380,packagePrice:29.99,remaining:380,lowThreshold:76,color:'#7ad9a6',includeInPricing:false}
+  ]}
+ ],
+ inventoryTransactions:[],
  projects:[
   {id:1,status:'Approved',notes:'',name:'Custom Leather Patch',customer:'James Walker',qty:10,cost:73.25,price:125,margin:41.4,date:'Jul 10, 2026'},
   {id:2,status:'Quoted',notes:'',name:'Coasters - Eagle Design',customer:'Walk-in Customer',qty:4,cost:47.45,price:86.75,margin:45.3,date:'Jul 9, 2026'},
@@ -330,12 +342,58 @@ const defaults={
   {id:5,status:'Estimate',notes:'',name:'4-Inch Ceramic Coaster',customer:'Walk-in Customer',qty:1,cost:9.42,price:31,margin:69.6,date:'Jul 12, 2026'}
  ]
 };
+function installXtoolRetailCatalog(){
+ const editions=defaults.printerProfiles['xtool-o1'].editions;
+ const essentialRate=120.99/750,essentialBottle=120.99/6;
+ const essentialRates={cyan:essentialRate,magenta:essentialRate,yellow:essentialRate,black:essentialRate,white:essentialRate,varnish:essentialRate};
+ const essentialPrices={cyan:essentialBottle,magenta:essentialBottle,yellow:essentialBottle,black:essentialBottle,white:essentialBottle,varnish:essentialBottle};
+ const commonConsumables=[
+  {id:'uvMaintenanceTank',name:'UV Maintenance Tank',category:'Maintenance',unit:'mL',capacity:260,packagePrice:31.99,color:'#7c8ca5',includeInPricing:true},
+  {id:'primerWipes',name:'UV Printing Primer Wipes',category:'Primer',unit:'wipe',capacity:50,packagePrice:15,color:'#59c98a',includeInPricing:true}
+ ];
+ Object.assign(editions['single-uv'],{
+  confirmedRateFields:Object.keys(essentialRates),rates:{...editions['single-uv'].rates,...essentialRates},
+  cartridges:{inkCapacity:125,capacities:{},prices:essentialPrices,sets:{uvEssential:{name:'UV Ink Essential Set',retailPrice:120.99,totalVolume:750}}},
+  additionalConsumables:structuredClone(commonConsumables),
+  note:'Confirmed retail: UV Ink Essential Set $120.99 (six 125 mL inks), UV Maintenance Tank $31.99, and Primer Wipes $15 per 50. Machine and other operating rates remain editable planning assumptions.'
+ });
+ Object.assign(editions['dual-uv'],{
+  confirmedRateFields:Object.keys(essentialRates),rates:{...editions['dual-uv'].rates,...essentialRates},
+  cartridges:{inkCapacity:125,capacities:{rigidWhite:290,flexWhite:290},prices:essentialPrices,sets:{uvEssential:{name:'UV Ink Essential Set',retailPrice:120.99,totalVolume:750}}},
+  additionalConsumables:structuredClone(commonConsumables),
+  note:'Confirmed retail: UV Ink Essential Set $120.99, UV Maintenance Tank $31.99, and Primer Wipes $15 per 50. Expansion-set ink prices and operating rates remain editable assumptions.'
+ });
+ const fabricRate=104.99/790,dtRates={dtCyan:fabricRate,dtMagenta:fabricRate,dtYellow:fabricRate,dtBlack:fabricRate,dtWhite:fabricRate};
+ const dtPrices={dtCyan:fabricRate*125,dtMagenta:fabricRate*125,dtYellow:fabricRate*125,dtBlack:fabricRate*125,dtWhite:fabricRate*290};
+ Object.assign(editions['uv-dt-fabric'],{
+  inkFields:['cyan','magenta','yellow','black','white','varnish','dtCyan','dtMagenta','dtYellow','dtBlack','dtWhite'],
+  inkLabels:{varnish:'3-in-1 Varnish',dtCyan:'DT Cyan',dtMagenta:'DT Magenta',dtYellow:'DT Yellow',dtBlack:'DT Black',dtWhite:'DT White'},
+  confirmedRateFields:[...Object.keys(essentialRates),...Object.keys(dtRates)],
+  rates:{...editions['uv-dt-fabric'].rates,...essentialRates,...dtRates},
+  cartridges:{inkCapacity:125,capacities:{dtWhite:290},prices:{...essentialPrices,...dtPrices},sets:{uvEssential:{name:'UV Ink Essential Set',retailPrice:120.99,totalVolume:750},dtFabric:{name:'DT Fabric Ink Set',retailPrice:104.99,totalVolume:790}}},
+  additionalConsumables:[...structuredClone(commonConsumables),{id:'dtMaintenanceTank',name:'DT Maintenance Tank',category:'Maintenance',unit:'mL',capacity:260,packagePrice:31.99,color:'#647b6c',includeInPricing:true}],
+  note:'Confirmed retail: UV Ink Essential Set $120.99, DT Fabric Ink Set $104.99, UV/DT Maintenance Tanks $31.99 each, and Primer Wipes $15 per 50. Machine and other operating rates remain editable assumptions.'
+ });
+}
+installXtoolRetailCatalog();
 let state=window.__UVPC_INITIAL_STATE__||structuredClone(defaults);
 state.profile={...defaults.profile,...(state.profile||{})};
 state.activities=state.activities||structuredClone(defaults.activities);
 state.business={...defaults.business,...(state.business||{})};
 state.printer={...defaults.printer,...(state.printer||{})};
 state.printerProfiles=state.printerProfiles||structuredClone(defaults.printerProfiles);
+function upgradeConfirmedXtoolProfiles(){
+ const confirmed=defaults.printerProfiles['xtool-o1'],saved=state.printerProfiles['xtool-o1']||{};
+ const editions={...(saved.editions||{})};
+ const legacyRates={cyan:.50,magenta:.50,yellow:.50,black:.50,white:.57,varnish:.56,dtColor:.55,dtWhite:.60};
+ Object.entries(confirmed.editions).forEach(([id,spec])=>{
+  const previous=editions[id]||{},rates={...spec.rates,...(previous.rates||{})};
+  (spec.confirmedRateFields||[]).forEach(field=>{const old=previous.rates?.[field];if(old===undefined||Math.abs(Number(old)-Number(legacyRates[field]))<.000001)rates[field]=spec.rates[field]});
+  editions[id]={...previous,...structuredClone(spec),rates,cartridges:{...(previous.cartridges||{}),...spec.cartridges,capacities:{...(previous.cartridges?.capacities||{}),...(spec.cartridges?.capacities||{})},prices:{...(previous.cartridges?.prices||{}),...(spec.cartridges?.prices||{})},sets:{...(previous.cartridges?.sets||{}),...(spec.cartridges?.sets||{})}}};
+ });
+ state.printerProfiles['xtool-o1']={...saved,...confirmed,editions};
+}
+upgradeConfirmedXtoolProfiles();
 state.activePrinter={...defaults.activePrinter,...(state.activePrinter||{})};
 state.preferences={...defaults.preferences,...(state.preferences||{})};
 
@@ -354,7 +412,17 @@ state.printer={
 };
 
 state.materials=(state.materials||[]).map(m=>({supplier:'',sku:'',note:'',...m}));
-state.projects=(state.projects||[]).map(p=>({status:'Draft',notes:'',printer:'EufyMake E1 — Standard UV Profile',printerFamily:'eufymake-e1',printerEdition:'standard',...p}));
+state.projects=(state.projects||[]).map(p=>({status:'Draft',notes:'',printer:'EufyMake E1 — Standard UV Profile',printerFamily:'eufymake-e1',printerEdition:'standard',...p,inputs:p.inputs?{quantityPricingMode:'batch-job',setupMinutes:0,...p.inputs}:p.inputs}));
+state.physicalPrinters=(state.physicalPrinters||structuredClone(defaults.physicalPrinters)).map(printer=>({...printer,consumables:(printer.consumables||[]).map(item=>({category:'Ink',unit:'mL',capacity:100,packagePrice:0,remaining:0,lowThreshold:20,color:'#2997ff',includeInPricing:true,...item}))}));
+state.inventoryTransactions=state.inventoryTransactions||[];
+function normalizeInventoryState(){
+ state.printerProfiles=state.printerProfiles||structuredClone(defaults.printerProfiles);upgradeConfirmedXtoolProfiles();
+ state.physicalPrinters=(Array.isArray(state.physicalPrinters)&&state.physicalPrinters.length?state.physicalPrinters:structuredClone(defaults.physicalPrinters)).map(printer=>({...printer,consumables:(printer.consumables||[]).map(item=>({category:'Ink',unit:'mL',capacity:100,packagePrice:0,remaining:0,lowThreshold:20,color:'#2997ff',includeInPricing:true,...item}))}));
+ state.inventoryTransactions=Array.isArray(state.inventoryTransactions)?state.inventoryTransactions:[];
+ state.physicalPrinters.filter(printer=>printer.family==='xtool-o1').forEach(synchronizeConfirmedXtoolConsumables);
+ state.projects=(state.projects||[]).map(project=>({...project,inventoryDeducted:!!project.inventoryDeducted,inventoryTransactionIds:project.inventoryTransactionIds||[]}));
+}
+normalizeInventoryState();
 let editingId=null;
 let scenarioOriginal=null;
 let scenarioSourceId=null;
@@ -373,6 +441,7 @@ const titles={
  calculator:['Pricing Workspace','Build accurate quotes using your real production costs.'],
  customers:['Customers Library','Manage customer details, discounts, and contact information.'],
  materials:['Material Library','Maintain reusable blanks, supplies, suppliers, SKUs, and unit costs.'],
+ inventory:['Consumables & Ink Center','Estimate remaining supplies by physical printer and completed job.'],
  global:['Application Settings','Manage cost rates, printer, business, backup, preferences, appearance, setup, readiness, and reset options.'],
  whatif:['Scenario Builder','Experiment freely without changing the original project.'],
  reports:['Reports','Review selling prices, production costs, profit, and project performance.'],
@@ -606,8 +675,11 @@ function renderProjects(){
     <button class="secondary small" onclick="editProject(${p.id})">Open</button>
     <button class="secondary small" onclick="emailProjectQuote(${p.id})">Email Quote</button>
     <button class="secondary small" onclick="duplicateProject(${p.id})">Duplicate</button>
+    ${p.inputs?.detailedConsumablesEnabled&&!p.inventoryDeducted?`<button class="primary small" onclick="completeProjectInventory(${p.id})">Complete & Deduct</button>`:''}
+    ${p.inventoryDeducted?`<button class="secondary small" onclick="reverseProjectInventory(${p.id})">Reverse Inventory</button>`:''}
     <button class="danger small" onclick="deleteProject(${p.id})">Delete</button>
    </div>
+   ${p.inventoryDeducted?'<div class="inventory-posted-badge">✓ Inventory deducted</div>':''}
   </article>`;
  }).join('')||'<p>No matching projects.</p>';
 }
@@ -663,6 +735,180 @@ window.emailProjectQuote=id=>{
  $('#emailQuoteModal').hidden=false;
  setTimeout(()=>$('#emailQuoteTo').focus(),0);
 };
+
+function consumableUnitCost(item){return clampNumber(item.packagePrice)/Math.max(.0001,clampNumber(item.capacity,.0001))}
+function getPhysicalPrinter(id){return state.physicalPrinters.find(printer=>printer.id===id)||null}
+function activePhysicalPrinters(){
+ const matches=state.physicalPrinters.filter(printer=>printer.family===state.activePrinter.family&&printer.edition===state.activePrinter.edition);
+ return matches.length?matches:state.physicalPrinters;
+}
+function populateProjectPhysicalPrinters(selected=''){
+ const select=$('#projectPhysicalPrinter');if(!select)return;
+ const printers=activePhysicalPrinters();
+ select.innerHTML=printers.map(printer=>`<option value="${esc(printer.id)}">${esc(printer.name)}</option>`).join('');
+ select.value=printers.some(p=>p.id===selected)?selected:(printers[0]?.id||'');
+}
+function renderProjectConsumableFields(usage={}){
+ const printer=getPhysicalPrinter($('#projectPhysicalPrinter')?.value);
+ const grid=$('#projectConsumableGrid');if(!grid)return;
+ if(!printer){grid.innerHTML='<p>No physical printer is configured for this profile.</p>';return}
+ const perItem=$('#quantityPricingMode')?.value!=='batch-job',scope=perItem?'per item':'for complete batch';
+ grid.innerHTML=printer.consumables.map(item=>`<label class="project-consumable-field"><span><i style="background:${esc(item.color)}"></i>${esc(item.name)} <small>${clampNumber(item.remaining).toFixed(2)} ${esc(item.unit)} left</small></span><input class="project-consumable-usage" data-consumable-id="${esc(item.id)}" type="number" min="0" step=".01" value="${clampNumber(usage[item.id])}"><em>${esc(item.unit)} ${scope} · ${money(consumableUnitCost(item))}/${esc(item.unit)}</em></label>`).join('');
+ $$('.project-consumable-usage').forEach(field=>field.addEventListener('input',()=>{updateProjectConsumableSummary();calculate()}));
+ updateProjectConsumableSummary();
+}
+function updateProjectConsumableSummary(){
+ const printer=getPhysicalPrinter($('#projectPhysicalPrinter')?.value);if(!printer)return;
+ const multiplier=$('#quantityPricingMode')?.value==='batch-job'?1:Math.max(1,Math.round(val('quantity')));
+ let cost=0,shortages=[];
+ $$('.project-consumable-usage').forEach(field=>{const item=printer.consumables.find(x=>x.id===field.dataset.consumableId),used=clampNumber(field.value)*multiplier;if(!item)return;if(item.includeInPricing)cost+=used*consumableUnitCost(item);if(used>item.remaining)shortages.push(item.name)});
+ if($('#projectConsumableCost'))$('#projectConsumableCost').textContent=money(cost);
+ if($('#projectConsumableAvailability'))$('#projectConsumableAvailability').textContent=shortages.length?`Insufficient estimated inventory: ${shortages.join(', ')}`:'Estimated inventory is sufficient for this job.';
+}
+function recordInventoryTransaction(printer,item,change,reason,projectId=null,kind='manual'){
+ const previous=clampNumber(item.remaining),next=Math.max(0,previous+change),appliedChange=next-previous;
+ item.remaining=next;
+ const tx={id:`tx-${Date.now()}-${Math.random().toString(36).slice(2,7)}`,printerId:printer.id,consumableId:item.id,consumableName:item.name,change:appliedChange,balance:item.remaining,reason,projectId,kind,createdAt:new Date().toISOString()};
+ state.inventoryTransactions.unshift(tx);return tx;
+}
+function deductProjectInventory(project){
+ if(project.inventoryDeducted)return false;
+ const printer=getPhysicalPrinter(project.physicalPrinterId||project.inputs?.physicalPrinterId);if(!printer)return false;
+ const usage=project.consumableUsage||project.inputs?.consumableUsage||{},multiplier=project.inputs?.quantityPricingMode==='per-item'?Math.max(1,Number(project.qty)||1):1,ids=[];
+ if(printer.consumables.some(item=>clampNumber(usage[item.id])*multiplier>clampNumber(item.remaining)))return false;
+ printer.consumables.forEach(item=>{const amount=clampNumber(usage[item.id])*multiplier;if(amount>0){const tx=recordInventoryTransaction(printer,item,-amount,`Completed project: ${project.name}`,project.id,'project');ids.push(tx.id)}});
+ project.inventoryDeducted=true;project.inventoryTransactionIds=ids;project.status='Completed';project.inventoryDeductedAt=new Date().toISOString();return true;
+}
+window.completeProjectInventory=id=>{
+ const project=state.projects.find(p=>p.id===id);if(!project||project.inventoryDeducted)return;
+ const printer=getPhysicalPrinter(project.physicalPrinterId||project.inputs?.physicalPrinterId);
+ if(!printer){showToast('The physical printer is no longer available');return}
+ const usage=project.consumableUsage||project.inputs?.consumableUsage||{},multiplier=project.inputs?.quantityPricingMode==='per-item'?Math.max(1,Number(project.qty)||1):1;
+ const summary=printer.consumables.filter(item=>clampNumber(usage[item.id])>0).map(item=>`${item.name}: ${clampNumber(usage[item.id])*multiplier} ${item.unit}`).join('\n');
+ if(!confirm(`Complete this project and deduct these estimated consumables from ${printer.name}?\n\n${summary||'No usage recorded'}`))return;
+ if(deductProjectInventory(project)){save('Project completed and inventory deducted');renderAll()}else alert('Inventory was not deducted because one or more estimated consumables are insufficient.');
+};
+window.reverseProjectInventory=id=>{
+ const project=state.projects.find(p=>p.id===id);if(!project?.inventoryDeducted)return;
+ if(!confirm(`Reverse the inventory deductions for ${project.name}?`))return;
+ const original=state.inventoryTransactions.filter(tx=>(project.inventoryTransactionIds||[]).includes(tx.id));
+ original.forEach(tx=>{const printer=getPhysicalPrinter(tx.printerId),item=printer?.consumables.find(x=>x.id===tx.consumableId);if(printer&&item)recordInventoryTransaction(printer,item,Math.abs(tx.change),`Reversal: ${project.name}`,project.id,'reversal')});
+ project.inventoryDeducted=false;project.inventoryTransactionIds=[];project.inventoryDeductedAt='';save('Project inventory deduction reversed');renderAll();
+};
+function inventorySelectedPrinter(){return getPhysicalPrinter($('#inventoryPrinterSelect')?.value)||null}
+function inventoryPrinterMatchesActive(printer){return !!printer&&printer.family===state.activePrinter.family&&printer.edition===state.activePrinter.edition}
+function inventoryPrintersForActiveProfile(){return state.physicalPrinters.filter(printer=>printer.family===state.activePrinter.family&&printer.edition===state.activePrinter.edition)}
+function selectInventoryForActiveProfile(){
+ const match=inventoryPrintersForActiveProfile()[0],select=$('#inventoryPrinterSelect');
+ if(select&&match)select.value=match.id;
+ renderInventory();
+}
+function renderInventory(){
+ const select=$('#inventoryPrinterSelect');if(!select)return;
+ const old=select.value;
+ const activeProfile=getActivePrinterProfile(),matchingOnly=!!$('#matchingInventoryPrintersOnly')?.checked;
+ const matching=inventoryPrintersForActiveProfile();
+ const visible=matchingOnly?matching:[...state.physicalPrinters].sort((a,b)=>Number(inventoryPrinterMatchesActive(b))-Number(inventoryPrinterMatchesActive(a)));
+ $('#inventoryActiveProfileLabel').textContent=`${activeProfile.name} — ${activeProfile.edition}`;
+ select.innerHTML=visible.map(printer=>`<option value="${esc(printer.id)}">${esc(printer.name)}${inventoryPrinterMatchesActive(printer)?' — Recommended':''}</option>`).join('');
+ $('#inventoryPrinterCountLabel').textContent=matchingOnly?`${matching.length} matching · ${state.physicalPrinters.length} total physical printer${state.physicalPrinters.length===1?'':'s'}`:`${state.physicalPrinters.length} physical printer${state.physicalPrinters.length===1?'':'s'} configured`;
+ select.disabled=!visible.length;
+ select.value=visible.some(p=>p.id===old)?old:(visible[0]?.id||'');
+ const printer=inventorySelectedPrinter();
+ const noMatch=!matching.length;
+ $('#inventoryNoMatchingPrinter').hidden=!noMatch;
+ if(noMatch){
+  $('#inventoryNoMatchTitle').textContent=`No physical ${activeProfile.name} — ${activeProfile.edition} printer is configured`;
+  $('#inventoryNoMatchText').textContent='The active pricing profile has no matching physical printer. Add one before assigning detailed job usage or deducting inventory.';
+ }
+ $('#addConsumableBtn').disabled=!printer;$('#reconcileInventoryBtn').disabled=!printer;$('#recordInventoryActionBtn').disabled=!printer;
+ if(!printer){$('#inventoryDisplayedPrinterLabel').textContent='None';$('#inventoryReconciledAt').textContent='Never';$('#inventoryGaugeGrid').innerHTML='<div class="panel inventory-empty-state">No matching inventory printer is displayed.</div>';$('#inventoryActionConsumable').innerHTML='';$('#inventoryTransactionBody').innerHTML='<tr><td colspan="5">No inventory printer selected.</td></tr>';return}
+ const profile=state.printerProfiles[printer.family],edition=profile?.editions?.[printer.edition];
+ $('#inventoryDisplayedPrinterLabel').textContent=`${printer.name} (${edition?`${edition.name} — ${edition.edition}`:`${printer.family} — ${printer.edition}`})`;
+ $('#inventoryReconciledAt').textContent=printer.lastReconciledAt?new Date(printer.lastReconciledAt).toLocaleString():'Never';
+ $('#inventoryGaugeGrid').innerHTML=printer.consumables.map(item=>{const capacity=Math.max(.01,clampNumber(item.capacity,.01)),remaining=clampNumber(item.remaining),pct=Math.max(0,Math.min(100,remaining/capacity*100)),level=pct<=item.lowThreshold/capacity*100?'low':pct<=40?'review':'good';return `<article class="panel inventory-gauge-card ${level}"><div class="inventory-gauge-head"><span class="consumable-swatch" style="background:${esc(item.color)}"></span><div><h3>${esc(item.name)}</h3><small>${esc(item.category)} · ${esc(item.unit)}</small></div><strong>${pct.toFixed(1)}%</strong></div><div class="inventory-tank"><div style="height:${pct}%;background:${esc(item.color)}"></div></div><div class="inventory-gauge-values"><strong>${remaining.toFixed(2)} ${esc(item.unit)}</strong><span>of ${capacity.toFixed(2)} ${esc(item.unit)}</span><small>${money(remaining*consumableUnitCost(item))} estimated value</small></div></article>`}).join('');
+ $('#inventoryActionConsumable').innerHTML=printer.consumables.map(item=>`<option value="${esc(item.id)}">${esc(item.name)}</option>`).join('');
+ const transactions=state.inventoryTransactions.filter(tx=>tx.printerId===printer.id);
+ $('#inventoryTransactionBody').innerHTML=transactions.slice(0,100).map(tx=>`<tr><td>${new Date(tx.createdAt).toLocaleString()}</td><td>${esc(tx.consumableName)}</td><td class="${tx.change<0?'inventory-negative':'positive'}">${tx.change>0?'+':''}${Number(tx.change).toFixed(2)}</td><td>${esc(tx.reason)}</td><td>${Number(tx.balance).toFixed(2)}</td></tr>`).join('')||'<tr><td colspan="5">No inventory transactions yet.</td></tr>';
+}
+function profileConsumables(family,edition){
+ const profile=state.printerProfiles[family]?.editions?.[edition],cartridge=profile?.cartridges||{},fields=profile?.inkFields||[];
+ const colors={cyan:'#16c7d9',magenta:'#ec4c9a',yellow:'#f1c40f',black:'#3d4853',white:'#dfe8f0',rigidWhite:'#eef3f7',flexWhite:'#d5e6ef',fluorescentRed:'#ff385d',fluorescentYellow:'#dfff36',varnish:'#8bd6ff',gloss:'#8bd6ff',dtColor:'#b06cff',dtCyan:'#16c7d9',dtMagenta:'#ec4c9a',dtYellow:'#f1c40f',dtBlack:'#3d4853',dtWhite:'#f4f4f4'};
+ const inks=fields.map(id=>{const capacity=Number(cartridge.capacities?.[id])||Number(cartridge.inkCapacity)||100;return {id,name:profile.inkLabels?.[id]||id.replace(/([A-Z])/g,' $1').replace(/^./,c=>c.toUpperCase()),category:'Ink',unit:'mL',capacity,packagePrice:Number(cartridge.prices?.[id])||Number(cartridge.inkPrice)||((Number(profile.rates[id])||Number(profile.rates.ink)||0)*capacity),remaining:capacity,lowThreshold:capacity*.2,color:colors[id]||'#2997ff',includeInPricing:true}});
+ const extras=(profile.additionalConsumables||[]).map(item=>({...item,remaining:Number(item.capacity)||1,lowThreshold:(Number(item.capacity)||1)*.2}));
+ return [...inks,...extras];
+}
+function createPhysicalPrinter(name,family,edition){
+ const printer={id:`printer-${Date.now()}-${Math.random().toString(36).slice(2,7)}`,name:name.trim(),family,edition,lastReconciledAt:'',consumables:profileConsumables(family,edition)};
+ state.physicalPrinters.push(printer);return printer;
+}
+function synchronizeConfirmedXtoolConsumables(printer){
+ const aliases=printer.edition==='dual-uv'?{gloss:'varnish',fluorescent:'fluorescentRed'}:printer.edition==='uv-dt-fabric'?{gloss:'varnish',dtColor:'dtCyan'}:{gloss:'varnish'};
+ Object.entries(aliases).forEach(([oldId,newId])=>{
+  const oldItem=printer.consumables.find(item=>item.id===oldId),newItem=printer.consumables.find(item=>item.id===newId);
+  if(oldItem&&!newItem)oldItem.id=newId;
+  state.inventoryTransactions.filter(tx=>tx.printerId===printer.id&&tx.consumableId===oldId).forEach(tx=>{tx.consumableId=newId});
+ });
+ const confirmed=profileConsumables(printer.family,printer.edition);
+ confirmed.forEach(spec=>{
+  const item=printer.consumables.find(existing=>existing.id===spec.id);
+  if(!item){printer.consumables.push(spec);return}
+  const previousCapacity=Number(item.capacity)||100;
+  if(Math.abs(previousCapacity-spec.capacity)>.0001){
+   const fraction=Math.max(0,Math.min(1,(Number(item.remaining)||0)/previousCapacity));
+   item.capacity=spec.capacity;item.remaining=spec.capacity*fraction;item.lowThreshold=spec.lowThreshold;
+  }
+  item.name=spec.name;item.category=spec.category;item.unit=spec.unit;item.color=spec.color;item.packagePrice=spec.packagePrice;item.includeInPricing=spec.includeInPricing;
+ });
+}
+function addPhysicalPrinter(){
+ const name=prompt('Name this physical printer (for example, Main E1 Printer):');if(!name?.trim())return;
+ let family=prompt(`Printer profile family ID:\n${Object.keys(state.printerProfiles).join('\n')}\n\nEnter a new ID to create a custom profile.`,state.activePrinter.family);if(!family)return;
+ family=family.trim().toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+ if(!state.printerProfiles[family]){
+  const displayName=prompt('Custom printer manufacturer and model:',name.trim())||name.trim();
+  const workflow=prompt('Primary workflow:','Direct UV')||'Custom';
+  const inkRate=clampNumber(prompt('Default ink cost per mL:','0.2999'));
+  state.printerProfiles[family]={family:displayName,editions:{standard:{name:displayName,edition:'Custom Profile',workflows:[workflow],inkFields:[],rates:{ink:inkRate,machine:clampNumber(prompt('Machine cost per hour:','5')),electric:clampNumber(prompt('Electricity cost per hour:','0.30')),maintenance:clampNumber(prompt('Maintenance allowance per job:','0.50')),cleaning:0,primer:0,serviceReserve:0},note:'User-created custom printer profile.'}}};
+ }
+ const editions=Object.keys(state.printerProfiles[family].editions),edition=prompt(`Edition ID:\n${editions.join('\n')}`,editions[0]);if(!edition||!state.printerProfiles[family].editions[edition]){alert('Edition not found.');return}
+ const printer=createPhysicalPrinter(name,family,edition);save('Physical printer added');
+ if(!inventoryPrinterMatchesActive(printer))$('#matchingInventoryPrintersOnly').checked=false;
+ renderInventory();$('#inventoryPrinterSelect').value=printer.id;renderInventory();populateProjectPhysicalPrinters();
+}
+function addMatchingPhysicalPrinter(){
+ const profile=getActivePrinterProfile(),name=prompt(`Name this physical ${profile.name} printer:`,`${profile.name} Printer`);if(!name?.trim())return;
+ const printer=createPhysicalPrinter(name,state.activePrinter.family,state.activePrinter.edition);
+ $('#matchingInventoryPrintersOnly').checked=true;save('Matching physical printer added');renderInventory();$('#inventoryPrinterSelect').value=printer.id;renderInventory();populateProjectPhysicalPrinters();
+}
+function changeInventoryPrinter(){
+ const printer=inventorySelectedPrinter();if(!printer)return;
+ if(!inventoryPrinterMatchesActive(printer)){
+  const profile=state.printerProfiles[printer.family]?.editions?.[printer.edition];
+  if(confirm(`${printer.name} uses ${profile?.name||printer.family} — ${profile?.edition||printer.edition}.\n\nSwitch the active pricing profile to match this physical printer?`)){
+   switchPrinterProfile(printer.family,printer.edition);
+   $('#inventoryPrinterSelect').value=printer.id;renderInventory();
+   return;
+  }
+  showToast('Viewing inventory only; active pricing profile unchanged');
+ }
+ renderInventory();
+}
+function addConsumable(){
+ const printer=inventorySelectedPrinter();if(!printer){showToast('Add a printer first');return}
+ const name=prompt('Consumable name:');if(!name?.trim())return;
+ const unit=prompt('Measurement unit (mL, g, sheet, ft, m, use):','mL')||'mL';
+ const capacity=clampNumber(prompt('Package capacity:','100'),.01),packagePrice=clampNumber(prompt('Package price:','29.99')),category=prompt('Category:','Ink')||'Other';
+ printer.consumables.push({id:`custom-${Date.now()}`,name:name.trim(),category,unit,capacity,packagePrice,remaining:capacity,lowThreshold:capacity*.2,color:'#2997ff',includeInPricing:confirm('Include this consumable in project pricing?')});
+ save('Consumable added');renderInventory();renderProjectConsumableFields({});
+}
+function recordInventoryAction(){
+ const printer=inventorySelectedPrinter(),item=printer?.consumables.find(x=>x.id===$('#inventoryActionConsumable').value);if(!printer||!item)return;
+ const type=$('#inventoryActionType').value,amount=clampNumber($('#inventoryActionAmount').value),reason=$('#inventoryActionReason').value.trim()||type;
+ let change=0;if(type==='replace')change=clampNumber(item.capacity)-clampNumber(item.remaining);else if(type==='add')change=amount;else if(type==='consume')change=-amount;else change=amount-clampNumber(item.remaining);
+ recordInventoryTransaction(printer,item,change,reason,null,type);if(type==='set'||type==='replace')printer.lastReconciledAt=new Date().toISOString();
+ $('#inventoryActionAmount').value='';$('#inventoryActionReason').value='';save('Inventory action recorded');renderInventory();
+}
 function closeEmailQuoteModal(){
  $('#emailQuoteModal').hidden=true;
  emailQuoteProjectId=null;
@@ -699,6 +945,10 @@ window.duplicateProject=id=>{
   id:Date.now(),
   name:p.name+' Copy',
   inputs:p.inputs?{...p.inputs}:undefined,
+  inventoryDeducted:false,
+  inventoryTransactionIds:[],
+  inventoryDeductedAt:'',
+  status:'Draft',
   createdAt:new Date().toISOString(),
   updatedAt:new Date().toISOString(),
   date:new Date().toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})
@@ -709,14 +959,22 @@ window.duplicateProject=id=>{
 };
 
 function capturePricingInputs(){
+ const detailed=!!$('#useDetailedConsumables')?.checked;
+ const consumableUsage={};
+ $$('.project-consumable-usage').forEach(field=>{consumableUsage[field.dataset.consumableId]=clampNumber(field.value)});
+ const physicalPrinter=getPhysicalPrinter($('#projectPhysicalPrinter')?.value);
+ const detailedInkCost=detailed&&physicalPrinter?physicalPrinter.consumables.reduce((sum,item)=>sum+(item.includeInPricing?clampNumber(consumableUsage[item.id])*consumableUnitCost(item):0),0):null;
+ const detailedInkTotal=detailed&&physicalPrinter?physicalPrinter.consumables.reduce((sum,item)=>sum+(item.category==='Ink'?clampNumber(consumableUsage[item.id]):0),0):null;
  return {
   quantity:Math.max(1,val('quantity')),
+  quantityPricingMode:$('#quantityPricingMode')?.value||'per-item',
   materialName:$('#projectMaterial')?.value==='__custom__'?'':($('#projectMaterial option:checked')?.textContent||''),
   materialLibraryIndex:$('#projectMaterial')?.value==='__custom__'?'':Number($('#projectMaterial')?.value),
   blankCost:val('blankCost'),
-  totalInk:val('totalInk'),
+  totalInk:detailed?detailedInkTotal:val('totalInk'),
   printMinutes:val('printMinutes'),
   laborMinutes:val('laborMinutes'),
+  setupMinutes:val('setupMinutes'),
   packagingCost:val('packagingCost'),
   primerCost:val('primerCost'),
   otherCost:val('otherCost'),
@@ -725,7 +983,11 @@ function capturePricingInputs(){
   salesTax:val('projectTax'),
   manualPriceEnabled:!!$('#useManualPrice')?.checked,
   manualPrice:$('#manualPrice')?.value===''?'':val('manualPrice'),
-  rounding:$('#rounding')?.value||'1'
+  rounding:$('#rounding')?.value||'1',
+  detailedConsumablesEnabled:detailed,
+  physicalPrinterId:detailed?($('#projectPhysicalPrinter')?.value||''):'',
+  consumableUsage,
+  detailedInkCost
  };
 }
 
@@ -778,11 +1040,13 @@ function populateProjectMaterialSelector(selectedName='',preserveCost=true){
 
 function restorePricingInputs(project){
  const inputs=project.inputs||{};
+ if($('#quantityPricingMode'))$('#quantityPricingMode').value=inputs.quantityPricingMode||'batch-job';
  populateProjectMaterialSelector(project.materialName||inputs.materialName||'',true);
  if($('#blankCost'))$('#blankCost').value=Number.isFinite(Number(inputs.blankCost))?inputs.blankCost:$('#blankCost').value;
  if($('#totalInk'))$('#totalInk').value=Number.isFinite(Number(inputs.totalInk))?inputs.totalInk:$('#totalInk').value;
  if($('#printMinutes'))$('#printMinutes').value=Number.isFinite(Number(inputs.printMinutes))?inputs.printMinutes:$('#printMinutes').value;
  if($('#laborMinutes'))$('#laborMinutes').value=Number.isFinite(Number(inputs.laborMinutes))?inputs.laborMinutes:$('#laborMinutes').value;
+ if($('#setupMinutes'))$('#setupMinutes').value=Number.isFinite(Number(inputs.setupMinutes))?inputs.setupMinutes:0;
  if($('#packagingCost'))$('#packagingCost').value=Number.isFinite(Number(inputs.packagingCost))?inputs.packagingCost:$('#packagingCost').value;
  if($('#primerCost'))$('#primerCost').value=Number.isFinite(Number(inputs.primerCost))?inputs.primerCost:$('#primerCost').value;
  if($('#otherCost'))$('#otherCost').value=Number.isFinite(Number(inputs.otherCost))?inputs.otherCost:$('#otherCost').value;
@@ -790,6 +1054,11 @@ function restorePricingInputs(project){
  if($('#profitMargin'))$('#profitMargin').value=Number.isFinite(Number(inputs.profitMargin))?inputs.profitMargin:$('#profitMargin').value;
  if($('#projectTax'))$('#projectTax').value=Number.isFinite(Number(inputs.salesTax))?inputs.salesTax:(Number(state.business.tax)||0);
  if($('#rounding'))$('#rounding').value=inputs.rounding||$('#rounding').value;
+ if($('#useDetailedConsumables'))$('#useDetailedConsumables').checked=!!inputs.detailedConsumablesEnabled;
+ populateProjectPhysicalPrinters(inputs.physicalPrinterId||'');
+ renderProjectConsumableFields(inputs.consumableUsage||{});
+ if($('#projectConsumableDetails'))$('#projectConsumableDetails').hidden=!inputs.detailedConsumablesEnabled;
+ if($('#totalInk'))$('#totalInk').disabled=!!inputs.detailedConsumablesEnabled;
 
  // Only restore a manual quote when the user explicitly entered one.
  // Older projects did not record whether the quote was manual, so they reopen in automatic pricing mode.
@@ -798,6 +1067,18 @@ function restorePricingInputs(project){
   $('#manualPrice').value=inputs.manualPriceEnabled&&inputs.manualPrice!==''?inputs.manualPrice:'';
   $('#manualPrice').disabled=!$('#useManualPrice')?.checked;
  }
+ updateQuantityPricingModeUI();
+}
+
+function updateQuantityPricingModeUI(){
+ const perItem=$('#quantityPricingMode')?.value!=='batch-job';
+ if($('#quantityModeDescription'))$('#quantityModeDescription').textContent=perItem?'Enter ink and production time for one item. The calculator multiplies them by quantity.':'Enter ink and production time once for the complete batch.';
+ if($('#inkInputLabel'))$('#inkInputLabel').textContent=perItem?'Ink Used / Item (mL)':'Total Ink Used for Batch (mL)';
+ if($('#printInputLabel'))$('#printInputLabel').textContent=perItem?'Print Minutes / Item':'Total Print Minutes for Batch';
+ if($('#laborInputLabel'))$('#laborInputLabel').textContent=perItem?'Hands-On Minutes / Item':'Total Hands-On Minutes for Batch';
+ if($('#manualPriceLabel'))$('#manualPriceLabel').textContent=perItem?'Manual Selling Price / Unit':'Manual Selling Price / Batch';
+ if($('#quantityModeNote'))$('#quantityModeNote').innerHTML=perItem?'<strong>Per-item pricing:</strong> the complete one-item calculation repeats with quantity. One-time setup minutes are charged only once.':'<strong>Batch-job pricing:</strong> ink and production time are totals for the complete run and are not multiplied by quantity.';
+ if($('#useDetailedConsumables')?.checked){const usage={};$$('.project-consumable-usage').forEach(field=>{usage[field.dataset.consumableId]=field.value});renderProjectConsumableFields(usage)}
 }
 
 window.editProject=id=>{
@@ -829,7 +1110,7 @@ function populate(){
  populateProjectCustomerSelector(currentCustomer);
 }
 
-const fieldIds=['quantity','blankCost','totalInk','printMinutes','laborMinutes','packagingCost','primerCost','otherCost','wastePercent','profitMargin','projectTax','useManualPrice','manualPrice','rounding'];
+const fieldIds=['quantity','quantityPricingMode','blankCost','totalInk','printMinutes','laborMinutes','setupMinutes','packagingCost','primerCost','otherCost','wastePercent','profitMargin','projectTax','useManualPrice','manualPrice','rounding'];
 fieldIds.forEach(id=>{
  const field=$('#'+id);
  if(field){
@@ -837,6 +1118,7 @@ fieldIds.forEach(id=>{
   field.addEventListener('change',calculate);
  }
 });
+if($('#quantityPricingMode'))$('#quantityPricingMode').addEventListener('change',updateQuantityPricingModeUI);
 if($('#customerName'))$('#customerName').addEventListener('change',()=>renderProjectCustomerDetails(customerSnapshotFromSelection()));
 if($('#projectMaterial'))$('#projectMaterial').addEventListener('change',()=>{
  const value=$('#projectMaterial').value;
@@ -996,15 +1278,18 @@ function applyProjectPrinterChange(){
  loadRates();
  renderPrinterProfile();
  $('#projectPrinter').value=activePrinterLabel();
+ populateProjectPhysicalPrinters();
+ renderProjectConsumableFields({});
  calculate();
  renderDashboard();
  $('#projectPrinterModal').hidden=true;
  save(`Project printer changed to ${profile.name} ${profile.edition}`);
+ selectInventoryForActiveProfile();
 }
 
 function getActivePrinterProfile(){const fam=state.printerProfiles[state.activePrinter.family]||state.printerProfiles['eufymake-e1'];return fam.editions[state.activePrinter.edition]||Object.values(fam.editions)[0]}
 function activePrinterLabel(){const p=getActivePrinterProfile();return `${p.name} — ${p.edition}`}
-function populatePrinterEditionOptions(){const fs=$('#printerFamily'),es=$('#printerEdition');if(!fs||!es)return;fs.value=state.activePrinter.family;const fam=state.printerProfiles[fs.value];es.innerHTML=Object.entries(fam.editions).map(([k,p])=>`<option value="${k}">${esc(p.edition)}</option>`).join('');es.value=fam.editions[state.activePrinter.edition]?state.activePrinter.edition:Object.keys(fam.editions)[0]}
+function populatePrinterEditionOptions(){const fs=$('#printerFamily'),es=$('#printerEdition');if(!fs||!es)return;fs.innerHTML=Object.entries(state.printerProfiles).map(([key,family])=>`<option value="${esc(key)}">${esc(family.family||Object.values(family.editions)[0]?.name||key)}</option>`).join('');fs.value=state.printerProfiles[state.activePrinter.family]?state.activePrinter.family:Object.keys(state.printerProfiles)[0];const fam=state.printerProfiles[fs.value];es.innerHTML=Object.entries(fam.editions).map(([k,p])=>`<option value="${k}">${esc(p.edition)}</option>`).join('');es.value=fam.editions[state.activePrinter.edition]?state.activePrinter.edition:Object.keys(fam.editions)[0]}
 function applyProfileRates(p){
  const r=p.rates,cartridge=p.cartridges||{};
  const channelRates=[r.cyan,r.magenta,r.yellow,r.black,r.white,r.gloss].map(Number).filter(Number.isFinite);
@@ -1012,44 +1297,93 @@ function applyProfileRates(p){
  state.printer={...state.printer,model:p.name,inkCartridgePrice:Number(cartridge.inkPrice)||state.printer.inkCartridgePrice,inkCartridgeCapacity:Number(cartridge.inkCapacity)||state.printer.inkCartridgeCapacity,cleaningCartridgePrice:Number(cartridge.cleaningPrice)||state.printer.cleaningCartridgePrice,cleaningCartridgeCapacity:Number(cartridge.cleaningCapacity)||state.printer.cleaningCartridgeCapacity,cleaning:r.cleaning,primerDefault:r.primer,serviceReserve:r.serviceReserve};
  state.rates={...state.rates,ink:inkRate,color:inkRate,white:inkRate,varnish:inkRate,machine:r.machine,electric:r.electric,maintenance:r.maintenance};
 }
-function switchPrinterProfile(f,e){state.activePrinter.family=f;state.activePrinter.edition=e;const p=getActivePrinterProfile();state.activePrinter.workflow=p.workflows[0];applyProfileRates(p);save(`Active printer changed to ${p.name} ${p.edition}`);loadRates();renderAll()}
-function renderPrinterProfile(){const p=getActivePrinterProfile();populatePrinterEditionOptions();if($('#printerWorkflow')){$('#printerWorkflow').innerHTML=p.workflows.map(w=>`<option>${esc(w)}</option>`).join('');$('#printerWorkflow').value=state.activePrinter.workflow}if($('#activePrinterName'))$('#activePrinterName').textContent=p.name;if($('#activePrinterEdition'))$('#activePrinterEdition').textContent=p.edition;if($('#activePrinterCapabilities'))$('#activePrinterCapabilities').innerHTML=p.workflows.map(w=>`<span class="capability-chip">${esc(w)}</span>`).join('');const topBanner=$('#activePrinterBanner');if(topBanner){topBanner.classList.remove('eufymake','xtool');topBanner.classList.add(state.activePrinter.family==='xtool-o1'?'xtool':'eufymake')}if($('#activePrinterBannerMark'))$('#activePrinterBannerMark').textContent=state.activePrinter.family==='xtool-o1'?'xT':'E1';if($('#printerProfileCapabilities'))$('#printerProfileCapabilities').innerHTML=p.workflows.map(w=>`<div><strong>${esc(w)}</strong><small>Available in this edition</small></div>`).join('');if($('#printerProfileNote'))$('#printerProfileNote').textContent=p.note;if($('#printerCostStatus'))$('#printerCostStatus').innerHTML=`<strong>${esc(p.name)} — ${esc(p.edition)}</strong><span>${esc(p.note)}</span>`;if($('#costPrinterBadge'))$('#costPrinterBadge').textContent=p.edition;if($('#projectPrinter'))$('#projectPrinter').value=activePrinterLabel();if($('#scPrinter'))$('#scPrinter').value=activePrinterLabel()}
-function roundTo(n,step){return Math.ceil(n/step)*step}
+function switchPrinterProfile(f,e){state.activePrinter.family=f;state.activePrinter.edition=e;const p=getActivePrinterProfile();state.activePrinter.workflow=p.workflows[0];applyProfileRates(p);save(`Active printer changed to ${p.name} ${p.edition}`);loadRates();renderAll();selectInventoryForActiveProfile()}
+function renderPrinterProfile(){
+ const p=getActivePrinterProfile();populatePrinterEditionOptions();
+ if($('#printerWorkflow')){$('#printerWorkflow').innerHTML=p.workflows.map(w=>`<option>${esc(w)}</option>`).join('');$('#printerWorkflow').value=state.activePrinter.workflow}
+ if($('#activePrinterName'))$('#activePrinterName').textContent=p.name;
+ if($('#activePrinterEdition'))$('#activePrinterEdition').textContent=p.edition;
+ if($('#activePrinterCapabilities'))$('#activePrinterCapabilities').innerHTML=p.workflows.map(w=>`<span class="capability-chip">${esc(w)}</span>`).join('');
+ const topBanner=$('#activePrinterBanner');if(topBanner){topBanner.classList.remove('eufymake','xtool');topBanner.classList.add(state.activePrinter.family==='xtool-o1'?'xtool':'eufymake')}
+ if($('#activePrinterBannerMark'))$('#activePrinterBannerMark').textContent=state.activePrinter.family==='xtool-o1'?'xT':'E1';
+ if($('#printerProfileCapabilities')){
+  const technical=[['Best for',p.bestFor],['Working area',p.workingArea],['Print head',p.printHeads],['Resolution',p.resolution],['Ink channels',p.inkChannels]].filter(([,value])=>value);
+  $('#printerProfileCapabilities').innerHTML=(technical.length?technical.map(([label,value])=>`<div><strong>${esc(label)}</strong><small>${esc(value)}</small></div>`):p.workflows.map(w=>`<div><strong>${esc(w)}</strong><small>Available in this edition</small></div>`)).join('');
+ }
+ if($('#printerProfileNote'))$('#printerProfileNote').textContent=p.note;
+ if($('#printerCostStatus'))$('#printerCostStatus').innerHTML=`<strong>${esc(p.name)} — ${esc(p.edition)}</strong><span>${esc(p.note)}</span>`;
+ if($('#activeInkCostHelpTitle'))$('#activeInkCostHelpTitle').textContent=state.activePrinter.family==='xtool-o1'?'xTool Omni planning values':'EufyMake E1 default';
+ if($('#activeInkCostHelpText'))$('#activeInkCostHelpText').textContent=state.activePrinter.family==='xtool-o1'?'Confirmed retail prices are used for the UV Essential Set, DT Fabric Set, maintenance tanks, and primer wipes where applicable. Expansion-set pricing remains editable until confirmed.':'CMYKWG cartridges are priced equally, so the calculator only needs the total ink used for the complete job.';
+ if($('#costPrinterBadge'))$('#costPrinterBadge').textContent=p.edition;
+ if($('#projectPrinter'))$('#projectPrinter').value=activePrinterLabel();
+ if($('#scPrinter'))$('#scPrinter').value=activePrinterLabel();
+}
+function clampNumber(value,min=0,max=Number.POSITIVE_INFINITY){
+ const number=Number(value);
+ return Math.min(max,Math.max(min,Number.isFinite(number)?number:0));
+}
+function roundTo(n,step){
+ const safeNumber=clampNumber(n);
+ const safeStep=clampNumber(step,.01)||.01;
+ if(safeNumber===0)return 0;
+ return Math.ceil((safeNumber-Number.EPSILON)/safeStep)*safeStep;
+}
 function calculateProjectPricing(inputs,rates){
- const q=Math.max(1,Number(inputs.quantity)||1);
- const blanks=(Number(inputs.blankCost)||0)*q;
- const ink=(Number(inputs.totalInk)||0)*(Number(rates.ink)||0);
- const pack=(Number(inputs.packagingCost)||0)*q;
- const labor=(Number(inputs.laborMinutes)||0)/60*(Number(rates.labor)||0);
- const machine=(Number(inputs.printMinutes)||0)/60*(Number(rates.machine)||0);
- const electric=(Number(inputs.printMinutes)||0)/60*(Number(rates.electric)||0);
- const maintenance=Number(rates.maintenance)||0;
- const primer=Number(inputs.primerCost)||0;
- const other=Number(inputs.otherCost)||0;
- const base=blanks+ink+pack+labor+machine+electric+maintenance+primer+other;
- const waste=base*Math.max(0,Number(inputs.wastePercent)||0)/100;
+ const q=Math.max(1,Math.round(clampNumber(inputs.quantity,1)));
+ const quantityPricingMode=inputs.quantityPricingMode==='per-item'?'per-item':'batch-job';
+ const multiplier=quantityPricingMode==='per-item'?q:1;
+ const blankCost=clampNumber(inputs.blankCost);
+ const totalInk=clampNumber(inputs.totalInk);
+ const packagingCost=clampNumber(inputs.packagingCost);
+ const laborMinutes=clampNumber(inputs.laborMinutes);
+ const setupMinutes=clampNumber(inputs.setupMinutes);
+ const printMinutes=clampNumber(inputs.printMinutes);
+ const blanks=blankCost*q;
+ const ink=(inputs.detailedConsumablesEnabled&&Number.isFinite(Number(inputs.detailedInkCost))?clampNumber(inputs.detailedInkCost):totalInk*clampNumber(rates.ink))*multiplier;
+ const pack=packagingCost*q;
+ const labor=(laborMinutes*multiplier+setupMinutes)/60*clampNumber(rates.labor);
+ const machine=printMinutes*multiplier/60*clampNumber(rates.machine);
+ const electric=printMinutes*multiplier/60*clampNumber(rates.electric);
+ const overhead=(printMinutes*multiplier+laborMinutes*multiplier+setupMinutes)/60*clampNumber(rates.overhead);
+ const serviceReserve=printMinutes*multiplier/60*clampNumber(rates.serviceReserve);
+ const maintenance=clampNumber(rates.maintenance)*multiplier;
+ const cleaning=clampNumber(rates.cleaning)*multiplier;
+ const shipping=clampNumber(rates.shipping)*multiplier;
+ const primer=clampNumber(inputs.primerCost)*multiplier;
+ const other=clampNumber(inputs.otherCost)*multiplier;
+ const base=blanks+ink+pack+labor+machine+electric+overhead+serviceReserve+maintenance+cleaning+shipping+primer+other;
+ const wastePercent=clampNumber(inputs.wastePercent,0,100);
+ const waste=base*wastePercent/100;
  const cost=base+waste;
- const targetMargin=Math.min(.95,Math.max(0,Number(inputs.profitMargin)||0)/100);
- const recommended=roundTo(cost/(1-targetMargin),Number(inputs.rounding)||.01);
+ const targetMargin=clampNumber(inputs.profitMargin,0,95)/100;
+ const roundingStep=clampNumber(inputs.rounding,.01);
+ const recommended=quantityPricingMode==='per-item'?roundTo(cost/q/(1-targetMargin),roundingStep)*q:roundTo(cost/(1-targetMargin),roundingStep);
  const manualEnabled=!!inputs.manualPriceEnabled;
- const manualValue=Number(inputs.manualPrice)||0;
- const price=manualEnabled&&manualValue>0?manualValue:recommended;
+ const manualValue=clampNumber(inputs.manualPrice);
+ const price=manualEnabled&&manualValue>0?(quantityPricingMode==='per-item'?manualValue*q:manualValue):recommended;
  const profit=price-cost;
  const margin=price?profit/price*100:0;
- const taxRate=Math.max(0,Number(inputs.salesTax)||0);
+ const taxRate=clampNumber(inputs.salesTax,0,100);
  const taxAmount=price*taxRate/100;
  const customerTotal=price+taxAmount;
- return {q,qty:q,blanks,ink,pack,labor,machine,electric,maintenance,primer,other,base,waste,cost,total:cost,price,priceBeforeTax:price,profit,margin,taxRate,taxAmount,customerTotal};
+ return {q,qty:q,quantityPricingMode,multiplier,setupMinutes,blanks,ink,pack,labor,machine,electric,overhead,serviceReserve,maintenance,cleaning,shipping,primer,other,base,waste,cost,total:cost,price,priceBeforeTax:price,profit,margin,taxRate,taxAmount,customerTotal};
 }
 function calculate(){
  const inputs=capturePricingInputs();
- const result=calculateProjectPricing(inputs,state.rates);
- const {q,blanks,ink,pack,labor,machine,electric,maintenance,primer,other,waste,price,profit,taxAmount,customerTotal}=result;
+ if(inputs.detailedConsumablesEnabled)updateProjectConsumableSummary();
+ const appliedRates={...state.rates,overhead:state.business.overhead,shipping:state.business.shipping,cleaning:state.printer.cleaning,serviceReserve:state.printer.serviceReserve};
+ const result=calculateProjectPricing(inputs,appliedRates);
+ const {q,quantityPricingMode,setupMinutes,blanks,ink,pack,labor,machine,electric,overhead,serviceReserve,maintenance,cleaning,shipping,primer,other,waste,price,profit,taxAmount,customerTotal}=result;
  const total=result.cost,actual=result.margin,currentTax=result.taxRate;
  const manualEnabled=inputs.manualPriceEnabled;
  const inkRate=Number(state.rates.ink)||0;
- const marginLabel=(Number(inputs.profitMargin)||0).toFixed(1).replace(/\.0$/,'');
- $('#costBreakdown').innerHTML=`<div class="cost-group"><h4>MATERIALS</h4>${line(`Blanks (${q} × ${money(Number(inputs.blankCost)||0)})`,blanks)}${line(`Total Job Ink (${Number(inputs.totalInk)||0} mL × ${money(inkRate)}/mL)`,ink)}${line(`Packaging (${q} × ${money(Number(inputs.packagingCost)||0)})`,pack)}${line('Subtotal',blanks+ink+pack,true)}</div><div class="cost-group"><h4>PRODUCTION</h4>${line('Labor',labor)}${line('Machine Use',machine)}${line('Electricity',electric)}${line('Subtotal',labor+machine+electric,true)}</div><div class="cost-group"><h4>FIXED JOB COSTS</h4>${line('Maintenance',maintenance)}${line('Primer & Cleaning',primer)}${line('Other Fixed Costs',other)}${line('Waste Allowance',waste)}${line('Subtotal',maintenance+primer+other+waste,true)}</div><div class="cost-total"><span>Total Production Cost</span><strong>${money(total)}</strong></div><div class="cost-group"><h4>CUSTOMER QUOTE — TARGET MARGIN METHOD</h4>${line(`Quote Before Tax (${marginLabel}% target margin)`,price)}${line(`Sales Tax (${currentTax.toFixed(3).replace(/\.?0+$/,'')}%)`,taxAmount)}${line('Customer Quote — Amount Due',customerTotal,true)}</div>`;
+ const targetMarginValue=clampNumber(inputs.profitMargin,0,95);
+ const marginLabel=targetMarginValue.toFixed(1).replace(/\.0$/,'');
+ const perItem=quantityPricingMode==='per-item';
+ const inkLabel=inputs.detailedConsumablesEnabled?(perItem?`Detailed Consumables (${q} items)`:`Detailed Consumables (complete batch)`):(perItem?`Ink (${q} × ${clampNumber(inputs.totalInk)} mL/item × ${money(inkRate)}/mL)`:`Total Batch Ink (${clampNumber(inputs.totalInk)} mL × ${money(inkRate)}/mL)`);
+ const laborLabel=setupMinutes>0?`Labor (includes ${setupMinutes} setup min)`:'Labor';
+ const extraHeading=perItem?'REPEATED PER-ITEM COSTS':'FIXED JOB COSTS';
+ $('#costBreakdown').innerHTML=`<div class="cost-group"><h4>MATERIALS</h4>${line(`Blanks (${q} × ${money(clampNumber(inputs.blankCost))})`,blanks)}${line(inkLabel,ink)}${line(`Packaging (${q} × ${money(clampNumber(inputs.packagingCost))})`,pack)}${line('Subtotal',blanks+ink+pack,true)}</div><div class="cost-group"><h4>PRODUCTION</h4>${line(laborLabel,labor)}${line('Machine Use',machine)}${line('Electricity',electric)}${line('Overhead',overhead)}${line('Service Reserve',serviceReserve)}${line('Subtotal',labor+machine+electric+overhead+serviceReserve,true)}</div><div class="cost-group"><h4>${extraHeading}</h4>${line('Maintenance',maintenance)}${line('Cleaning Allowance',cleaning)}${line('Primer / Pretreatment',primer)}${line('Shipping',shipping)}${line('Other Costs',other)}${line('Waste Allowance',waste)}${line('Subtotal',maintenance+cleaning+primer+shipping+other+waste,true)}</div><div class="cost-total"><span>Total Production Cost</span><strong>${money(total)}</strong></div><div class="cost-group"><h4>CUSTOMER QUOTE — TARGET MARGIN METHOD</h4>${line(`Quote Before Tax (${marginLabel}% target margin)`,price)}${line(`Sales Tax (${currentTax.toFixed(3).replace(/\.?0+$/,'')}%)`,taxAmount)}${line('Customer Quote — Amount Due',customerTotal,true)}</div>`;
  $('#recommendedPrice').textContent=money(customerTotal);
  if($('#manualPrice'))$('#manualPrice').disabled=!manualEnabled;
  $('#perUnitPrice').textContent=money(customerTotal/q)+' per unit including tax';
@@ -1063,11 +1397,11 @@ function calculate(){
  $('#quoteProfitPerUnit').textContent=money(profit/q);
  $('#quoteQuantityLine').textContent=`${q} ${q===1?'item':'items'} at ${money(customerTotal/q)} each including tax`;
  $('#quoteGuidanceText').textContent=`Customer quote: ${money(customerTotal)} total (${money(price)} before tax + ${money(taxAmount)} sales tax at ${currentTax.toFixed(3).replace(/\.?0+$/,'')}%). Profit is calculated from the before-tax amount.`;
- applyPricingProfitStatus(profit,actual,val('profitMargin'),total,price);
+ applyPricingProfitStatus(profit,actual,targetMarginValue,total,price);
  return result;
 }
 function line(name,n,subtotal=false){return `<div class="cost-line ${subtotal?'subtotal':''}"><span>${name}</span><strong>${money(n)}</strong></div>`}
-function resetForm(){if($('#projectPrinter'))$('#projectPrinter').value=activePrinterLabel();populateProjectMaterialSelector('',false);populateProjectCustomerSelector({name:'Walk-in Customer',type:'Walk-in',email:'',discount:0});$('#projectName').value='Untitled Project';$('#quantity').value=1;$('#projectStatus').value=state.preferences.defaultStatus||'Draft';$('#projectNotes').value='';$('#blankCost').value=0;$('#totalInk').value=.50;$('#printMinutes').value=16;$('#laborMinutes').value=12;$('#packagingCost').value=0;$('#primerCost').value=.35;$('#otherCost').value=0;$('#wastePercent').value=state.rates.waste;$('#profitMargin').value=state.rates.margin;$('#projectTax').value=Math.max(0,Number(state.business.tax)||0);if($('#useManualPrice'))$('#useManualPrice').checked=false;$('#manualPrice').value='';$('#manualPrice').disabled=true;$('#rounding').value=state.preferences.rounding||'1';calculate()}
+function resetForm(){if($('#projectPrinter'))$('#projectPrinter').value=activePrinterLabel();populateProjectMaterialSelector('',false);populateProjectCustomerSelector({name:'Walk-in Customer',type:'Walk-in',email:'',discount:0});$('#projectName').value='Untitled Project';$('#quantity').value=1;$('#quantityPricingMode').value='per-item';$('#projectStatus').value=state.preferences.defaultStatus||'Draft';$('#projectNotes').value='';$('#blankCost').value=0;$('#totalInk').value=.50;$('#totalInk').disabled=false;$('#printMinutes').value=16;$('#laborMinutes').value=12;$('#setupMinutes').value=0;$('#packagingCost').value=0;$('#primerCost').value=.35;$('#otherCost').value=0;$('#wastePercent').value=state.rates.waste;$('#profitMargin').value=state.rates.margin;$('#projectTax').value=Math.max(0,Number(state.business.tax)||0);if($('#useManualPrice'))$('#useManualPrice').checked=false;$('#manualPrice').value='';$('#manualPrice').disabled=true;$('#rounding').value=state.preferences.rounding||'1';if($('#useDetailedConsumables'))$('#useDetailedConsumables').checked=false;if($('#projectConsumableDetails'))$('#projectConsumableDetails').hidden=true;populateProjectPhysicalPrinters();renderProjectConsumableFields({});updateQuantityPricingModeUI();calculate()}
 $('#resetFormBtn').onclick=()=>{editingId=null;resetForm()};
 $('#demoImportBtn').onclick=()=>{$('#totalInk').value=4.13;$('#printMinutes').value=39.6;calculate();showToast('Sample estimate applied')};
 $('#saveProjectBtn').onclick=()=>{
@@ -1097,12 +1431,17 @@ $('#saveProjectBtn').onclick=()=>{
   customerTotal:c.customerTotal,
   margin:c.margin,
   pricing:createPricingSnapshot(c),
-  pricingRates:{ink:state.rates.ink,labor:state.rates.labor,machine:state.rates.machine,electric:state.rates.electric,maintenance:state.rates.maintenance},
+  pricingRates:{ink:state.rates.ink,labor:state.rates.labor,machine:state.rates.machine,electric:state.rates.electric,maintenance:state.rates.maintenance,overhead:state.business.overhead,shipping:state.business.shipping,cleaning:state.printer.cleaning,serviceReserve:state.printer.serviceReserve},
   inputs:capturePricingInputs(),
+  physicalPrinterId:capturePricingInputs().physicalPrinterId||existing?.physicalPrinterId||'',
+  consumableUsage:capturePricingInputs().consumableUsage||existing?.consumableUsage||{},
+  inventoryDeducted:!!existing?.inventoryDeducted,
+  inventoryTransactionIds:existing?.inventoryTransactionIds||[],
   createdAt:existing?.createdAt||new Date().toISOString(),
   updatedAt:new Date().toISOString(),
   date:new Date().toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})
  };
+ if(project.status==='Completed'&&project.inputs.detailedConsumablesEnabled&&!project.inventoryDeducted&&confirm('Complete this project and deduct its recorded consumables from the selected physical printer?'))deductProjectInventory(project);
  if(editingId){
   state.projects=state.projects.map(p=>p.id===editingId?project:p);
  }else{
@@ -1364,7 +1703,7 @@ async function applyPendingImport(){
   const kind=String(payload.kind||'').toLowerCase();
   if(kind==='all'){
    if(!payload.data||typeof payload.data!=='object'||Array.isArray(payload.data))throw new Error('Complete backup data is invalid.');
-   state=payload.data;
+   state=payload.data;normalizeInventoryState();
   }else if(kind==='materials'){
    if(!Array.isArray(payload.data))throw new Error('Materials import must contain a materials list.');
    state.materials=payload.data.map(m=>({supplier:'',sku:'',note:'',...m,cost:Number(m.cost)||0}));
@@ -1448,16 +1787,11 @@ function loadSampleBusinessData(){
   {name:'Gift Box',category:'Packaging',cost:1.40,supplier:'Packaging Supply Co.',sku:'BOX-GIFT-MED',note:'Medium presentation gift box'}
  ];
  const makeProject=(id,name,customer,status,qty,materialName,blankCost,packagingCost,totalInk,printMinutes,laborMinutes,taxRate,targetMargin,daysAgo,notes)=>{
-  const labor=(laborMinutes/60)*Number(state.rates.labor||27);
-  const machine=(printMinutes/60)*Number(state.rates.machine||5);
-  const ink=totalInk*Number(state.rates.ink||.2999);
-  const base=qty*blankCost+qty*packagingCost+ink+labor+machine+Number(state.rates.maintenance||.5)+Number(state.printer.primerDefault||.35);
-  const cost=base*(1+Number(state.rates.waste||5)/100);
-  const raw=cost/(1-targetMargin/100);
-  const rounding=Number(state.preferences.rounding)||1;
-  const priceBeforeTax=Math.ceil(raw/rounding)*rounding;
-  const pricing=createPricingSnapshot({cost,priceBeforeTax,taxRate});
-  return {id,projectType:'production',name,customer,status,notes,qty,materialName,printer:activePrinterLabel(),printerFamily:state.activePrinter.family,printerEdition:state.activePrinter.edition,cost:pricing.cost,price:pricing.priceBeforeTax,taxRate:pricing.taxRate,taxAmount:pricing.taxAmount,customerTotal:pricing.customerTotal,profit:pricing.profit,margin:pricing.margin,pricing,inputs:{quantity:qty,blankCost,totalInk,printMinutes,laborMinutes,packagingCost,primerCost:Number(state.printer.primerDefault||.35),otherCost:0,wastePercent:Number(state.rates.waste||5),profitMargin:targetMargin,projectTax:taxRate,rounding:String(state.preferences.rounding||'1'),manualPrice:'',manualPricing:false},createdAt:iso(daysAgo),updatedAt:iso(daysAgo),date:dateLabel(daysAgo)};
+  const inputs={quantity:qty,quantityPricingMode:'batch-job',setupMinutes:0,blankCost,totalInk,printMinutes,laborMinutes,packagingCost,primerCost:clampNumber(state.printer.primerDefault),otherCost:0,wastePercent:clampNumber(state.rates.waste,0,100),profitMargin:targetMargin,salesTax:taxRate,rounding:String(state.preferences.rounding||'1'),manualPrice:'',manualPriceEnabled:false};
+  const pricingRates={ink:state.rates.ink,labor:state.rates.labor,machine:state.rates.machine,electric:state.rates.electric,maintenance:state.rates.maintenance,overhead:state.business.overhead,shipping:state.business.shipping,cleaning:state.printer.cleaning,serviceReserve:state.printer.serviceReserve};
+  const calculated=calculateProjectPricing(inputs,pricingRates);
+  const pricing=createPricingSnapshot(calculated);
+  return {id,projectType:'production',name,customer,status,notes,qty,materialName,printer:activePrinterLabel(),printerFamily:state.activePrinter.family,printerEdition:state.activePrinter.edition,cost:pricing.cost,price:pricing.priceBeforeTax,taxRate:pricing.taxRate,taxAmount:pricing.taxAmount,customerTotal:pricing.customerTotal,profit:pricing.profit,margin:pricing.margin,pricing,pricingRates,inputs,createdAt:iso(daysAgo),updatedAt:iso(daysAgo),date:dateLabel(daysAgo)};
  };
  const baseId=Date.now();
  state.projects=[
@@ -1515,7 +1849,7 @@ $$('[data-reset-kind]').forEach(b=>b.onclick=()=>{
 });
 
 
-const scIds=['scPricingMode','scProjectName','scCustomer','scStatus','scQuantity','scMaterial','scBlankCost','scPackaging','scShipping','scTotalInk','scPrintMinutes','scLaborMinutes','scSetupMinutes','scPrimer','scMaintenance','scWaste','scLaborRate','scMachineRate','scOverheadRate','scTargetMargin','scDiscount','scTax','scManualPrice','scDesiredProfit','scRounding','scBudget','scMinimumProfit'];
+const scIds=['scPricingMode','scProjectName','scCustomer','scStatus','scQuantity','scMaterial','scBlankCost','scPackaging','scShipping','scTotalInk','scPrintMinutes','scLaborMinutes','scSetupMinutes','scPrimer','scCleaning','scMaintenance','scOtherCost','scWaste','scInkRate','scLaborRate','scMachineRate','scElectricRate','scOverheadRate','scServiceReserveRate','scTargetMargin','scDiscount','scTax','scManualPrice','scDesiredProfit','scRounding','scBudget','scMinimumProfit'];
 function populateScenarioSelectors(){
  if(!$('#scenarioProjectSelect'))return;
  const old=$('#scenarioProjectSelect').value;
@@ -1525,48 +1859,54 @@ function populateScenarioSelectors(){
 }
 function projectToScenario(p){
  const inputs=p.inputs||{};
+ const savedRates=p.pricingRates||{};
+ const pricing=getProjectPricing(p);
+ if(p.scenarioInputs){
+  return {...structuredClone(p.scenarioInputs),sourceId:p.id,printer:p.printer||p.scenarioInputs.printer||activePrinterLabel(),name:p.name,customer:p.customer,status:p.status||'Draft'};
+ }
  return {
-  sourceId:p.id,printer:p.printer||activePrinterLabel(),name:p.name,customer:p.customer,status:p.status||'Draft',qty:p.qty||inputs.quantity||1,
+  sourceId:p.id,printer:p.printer||activePrinterLabel(),name:p.name,customer:p.customer,status:p.status||'Draft',qty:Math.max(1,Math.round(clampNumber(p.qty??inputs.quantity,1))),
   materialIndex:Math.max(0,state.materials.findIndex(m=>m.name===(p.materialName||''))),
   materialName:p.materialName||'',
-  blankCost:Number(inputs.blankCost)||0,packaging:Number(inputs.packagingCost)||0,shipping:state.business.shipping||0,
-  totalInk:.50,printMinutes:16,laborMinutes:12,setupMinutes:0,
-  primer:state.printer.primerDefault||.35,maintenance:state.rates.maintenance||.5,waste:state.rates.waste||5,
-  laborRate:state.rates.labor||27,machineRate:state.rates.machine||5,overheadRate:state.business.overhead||0,
-  pricingMode:'margin',targetMargin:state.rates.margin||45,discount:0,tax:state.business.tax||0,manualPrice:0,desiredProfit:0,
-  rounding:state.preferences.rounding||'1',budget:0,minimumProfit:0
+  blankCost:clampNumber(inputs.blankCost),packaging:clampNumber(inputs.packagingCost),shipping:clampNumber(savedRates.shipping??state.business.shipping),
+  totalInk:clampNumber(inputs.totalInk),printMinutes:clampNumber(inputs.printMinutes),laborMinutes:clampNumber(inputs.laborMinutes),setupMinutes:0,
+  primer:clampNumber(inputs.primerCost??state.printer.primerDefault),cleaning:clampNumber(savedRates.cleaning??state.printer.cleaning),maintenance:clampNumber(savedRates.maintenance??state.rates.maintenance),otherCost:clampNumber(inputs.otherCost),waste:clampNumber(inputs.wastePercent??state.rates.waste,0,100),
+  inkRate:clampNumber(savedRates.ink??state.rates.ink),laborRate:clampNumber(savedRates.labor??state.rates.labor),machineRate:clampNumber(savedRates.machine??state.rates.machine),electricRate:clampNumber(savedRates.electric??state.rates.electric),overheadRate:clampNumber(savedRates.overhead??state.business.overhead),serviceReserveRate:clampNumber(savedRates.serviceReserve??state.printer.serviceReserve),
+  pricingMode:inputs.manualPriceEnabled?'manual':'margin',targetMargin:clampNumber(inputs.profitMargin??state.rates.margin,0,95),discount:0,tax:clampNumber(inputs.salesTax??pricing.taxRate??state.business.tax,0,100),manualPrice:inputs.manualPriceEnabled?clampNumber(inputs.manualPrice??pricing.price):0,desiredProfit:0,
+  rounding:String(inputs.rounding??state.preferences.rounding??'1'),budget:0,minimumProfit:0
  };
 }
 function writeScenario(s){
  $('#scPrinter').value=s.printer||activePrinterLabel();$('#scProjectName').value=s.name;$('#scCustomer').value=s.customer;$('#scStatus').value=s.status;$('#scQuantity').value=s.qty;
  $('#scMaterial').value=s.materialIndex;$('#scBlankCost').value=s.blankCost;$('#scPackaging').value=s.packaging;$('#scShipping').value=s.shipping;
  $('#scTotalInk').value=s.totalInk;$('#scPrintMinutes').value=s.printMinutes;$('#scLaborMinutes').value=s.laborMinutes;$('#scSetupMinutes').value=s.setupMinutes;
- $('#scPrimer').value=s.primer;$('#scMaintenance').value=s.maintenance;$('#scWaste').value=s.waste;$('#scLaborRate').value=s.laborRate;$('#scMachineRate').value=s.machineRate;$('#scOverheadRate').value=s.overheadRate;
+ $('#scPrimer').value=s.primer;$('#scCleaning').value=s.cleaning;$('#scMaintenance').value=s.maintenance;$('#scOtherCost').value=s.otherCost;$('#scWaste').value=s.waste;$('#scInkRate').value=s.inkRate;$('#scLaborRate').value=s.laborRate;$('#scMachineRate').value=s.machineRate;$('#scElectricRate').value=s.electricRate;$('#scOverheadRate').value=s.overheadRate;$('#scServiceReserveRate').value=s.serviceReserveRate;
  $('#scPricingMode').value=s.pricingMode||'margin';$('#scTargetMargin').value=s.targetMargin;$('#scDiscount').value=s.discount;$('#scTax').value=s.tax;$('#scManualPrice').value=s.manualPrice||'';$('#scDesiredProfit').value=s.desiredProfit||'';
  $('#scRounding').value=s.rounding;$('#scBudget').value=s.budget||'';$('#scMinimumProfit').value=s.minimumProfit||'';
 }
 function readScenario(){
  const n=id=>Number($('#'+id).value)||0;
- return {printer:$('#scPrinter').value||activePrinterLabel(),name:$('#scProjectName').value||'Scenario Project',customer:$('#scCustomer').value||'Walk-in Customer',status:$('#scStatus').value,qty:Math.max(1,n('scQuantity')),materialIndex:Number($('#scMaterial').value)||0,materialName:(state.materials[Number($('#scMaterial').value)||0]?.name||'Custom Material'),blankCost:n('scBlankCost'),packaging:n('scPackaging'),shipping:n('scShipping'),totalInk:n('scTotalInk'),printMinutes:n('scPrintMinutes'),laborMinutes:n('scLaborMinutes'),setupMinutes:n('scSetupMinutes'),primer:n('scPrimer'),maintenance:n('scMaintenance'),waste:n('scWaste'),laborRate:n('scLaborRate'),machineRate:n('scMachineRate'),overheadRate:n('scOverheadRate'),pricingMode:$('#scPricingMode').value,targetMargin:n('scTargetMargin'),discount:n('scDiscount'),tax:n('scTax'),manualPrice:n('scManualPrice'),desiredProfit:n('scDesiredProfit'),rounding:$('#scRounding').value,budget:n('scBudget'),minimumProfit:n('scMinimumProfit')};
+ return {printer:$('#scPrinter').value||activePrinterLabel(),name:$('#scProjectName').value||'Scenario Project',customer:$('#scCustomer').value||'Walk-in Customer',status:$('#scStatus').value,qty:Math.max(1,Math.round(clampNumber(n('scQuantity'),1))),materialIndex:Number($('#scMaterial').value)||0,materialName:(state.materials[Number($('#scMaterial').value)||0]?.name||'Custom Material'),blankCost:clampNumber(n('scBlankCost')),packaging:clampNumber(n('scPackaging')),shipping:clampNumber(n('scShipping')),totalInk:clampNumber(n('scTotalInk')),printMinutes:clampNumber(n('scPrintMinutes')),laborMinutes:clampNumber(n('scLaborMinutes')),setupMinutes:clampNumber(n('scSetupMinutes')),primer:clampNumber(n('scPrimer')),cleaning:clampNumber(n('scCleaning')),maintenance:clampNumber(n('scMaintenance')),otherCost:clampNumber(n('scOtherCost')),waste:clampNumber(n('scWaste'),0,100),inkRate:clampNumber(n('scInkRate')),laborRate:clampNumber(n('scLaborRate')),machineRate:clampNumber(n('scMachineRate')),electricRate:clampNumber(n('scElectricRate')),overheadRate:clampNumber(n('scOverheadRate')),serviceReserveRate:clampNumber(n('scServiceReserveRate')),pricingMode:$('#scPricingMode').value,targetMargin:clampNumber(n('scTargetMargin'),0,95),discount:clampNumber(n('scDiscount'),0,100),tax:clampNumber(n('scTax'),0,100),manualPrice:clampNumber(n('scManualPrice')),desiredProfit:clampNumber(n('scDesiredProfit')),rounding:$('#scRounding').value,budget:clampNumber(n('scBudget')),minimumProfit:clampNumber(n('scMinimumProfit'))};
 }
 function calcScenario(s){
- const r=state.rates,q=s.qty;
- const materials=s.blankCost*q+s.packaging*q+s.shipping;
- const ink=s.totalInk*r.ink;
+ const q=Math.max(1,Math.round(clampNumber(s.qty,1)));
+ const materials=clampNumber(s.blankCost)*q+clampNumber(s.packaging)*q+clampNumber(s.shipping);
+ const ink=clampNumber(s.totalInk)*clampNumber(s.inkRate);
  const labor=(s.laborMinutes+s.setupMinutes)/60*s.laborRate;
  const machine=s.printMinutes/60*s.machineRate;
- const electric=s.printMinutes/60*r.electric;
+ const electric=s.printMinutes/60*clampNumber(s.electricRate);
  const overhead=(s.printMinutes+s.laborMinutes+s.setupMinutes)/60*s.overheadRate;
- const base=materials+ink+labor+machine+electric+overhead+s.primer+s.maintenance;
- const waste=base*s.waste/100,totalCost=base+waste;
- const targetPrice=roundTo(totalCost/(1-Math.min(.95,s.targetMargin/100)),Number(s.rounding)||.01);
- const desiredPrice=s.desiredProfit?roundTo(totalCost+s.desiredProfit,Number(s.rounding)||.01):0;
+ const serviceReserve=s.printMinutes/60*s.serviceReserveRate;
+ const base=materials+ink+labor+machine+electric+overhead+serviceReserve+s.primer+s.cleaning+s.maintenance+s.otherCost;
+ const waste=base*clampNumber(s.waste,0,100)/100,totalCost=base+waste;
+ const targetPrice=roundTo(totalCost/(1-clampNumber(s.targetMargin,0,95)/100),clampNumber(s.rounding,.01));
+ const desiredPrice=s.desiredProfit?roundTo(totalCost+s.desiredProfit,clampNumber(s.rounding,.01)):0;
  let orderPrice=targetPrice;
  if(s.pricingMode==='manual' && s.manualPrice>0) orderPrice=s.manualPrice;
  if(s.pricingMode==='profit' && s.desiredProfit>0) orderPrice=desiredPrice;
- orderPrice=orderPrice*(1-s.discount/100);
+ orderPrice=orderPrice*(1-clampNumber(s.discount,0,100)/100);
  const profit=orderPrice-totalCost,margin=orderPrice?profit/orderPrice*100:0;
- return {materials,ink,labor,machine,electric,overhead,waste,totalCost,targetPrice,desiredPrice,orderPrice,profit,margin,withTax:orderPrice*(1+s.tax/100),unitPrice:orderPrice/q,profitPerItem:profit/q,profitPerHour:(s.laborMinutes+s.setupMinutes)?profit/((s.laborMinutes+s.setupMinutes)/60):profit,minimumPrice:roundTo(totalCost,Number(s.rounding)||.01),wholesalePrice:roundTo(totalCost/(1-.30),Number(s.rounding)||.01)};
+ return {materials,ink,labor,machine,electric,overhead,serviceReserve,waste,totalCost,targetPrice,desiredPrice,orderPrice,profit,margin,withTax:orderPrice*(1+clampNumber(s.tax,0,100)/100),unitPrice:orderPrice/q,profitPerItem:profit/q,profitPerHour:(s.laborMinutes+s.setupMinutes)?profit/((s.laborMinutes+s.setupMinutes)/60):profit,minimumPrice:roundTo(totalCost,clampNumber(s.rounding,.01)),wholesalePrice:roundTo(totalCost/(1-.30),clampNumber(s.rounding,.01))};
 }
 function cloneScenarioFromSelected(){
  if(!state.projects.length){showToast('Create a project first');return}
@@ -1623,8 +1963,25 @@ $('#scMaterial').onchange=()=>{
  if(m){$('#scBlankCost').value=Number(m.cost)||0;if(scenarioOriginal){scenarioOriginal.materialIndex=Number(select.value)||0;scenarioOriginal.materialName=m.name}}
  renderScenario();
 };
-$('#saveScenarioBtn').onclick=()=>{if(!scenarioOriginal)return;const s=readScenario(),c=calcScenario(s),pricing=createPricingSnapshot({cost:c.totalCost,priceBeforeTax:c.orderPrice,taxRate:s.tax,customerTotal:c.withTax,profit:c.profit,margin:c.margin});state.projects.push({id:Date.now(),projectType:'scenario',name:`${s.name} — ${$('#scenarioName').value||'Scenario'}`,customer:s.customer,status:s.status,notes:'Created in Scenario Builder',qty:s.qty,materialName:s.materialName,cost:pricing.cost,price:pricing.priceBeforeTax,taxRate:pricing.taxRate,taxAmount:pricing.taxAmount,customerTotal:pricing.customerTotal,margin:pricing.margin,pricing,createdAt:new Date().toISOString(),updatedAt:new Date().toISOString(),date:new Date().toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})});save('Scenario saved as new project');renderAll();populateScenarioSelectors();showToast('Scenario saved as a new project')};
-$('#replaceOriginalBtn').onclick=()=>{if(!scenarioOriginal||!scenarioSourceId)return;if(state.preferences.confirmDelete&&!confirm('Replace the original project with this scenario?'))return;const s=readScenario(),c=calcScenario(s),pricing=createPricingSnapshot({cost:c.totalCost,priceBeforeTax:c.orderPrice,taxRate:s.tax,customerTotal:c.withTax,profit:c.profit,margin:c.margin});state.projects=state.projects.map(p=>p.id===scenarioSourceId?{...p,name:s.name,customer:s.customer,status:s.status,qty:s.qty,materialName:s.materialName,cost:pricing.cost,price:pricing.priceBeforeTax,taxRate:pricing.taxRate,taxAmount:pricing.taxAmount,customerTotal:pricing.customerTotal,margin:pricing.margin,pricing,notes:'Updated from Scenario Builder',updatedAt:new Date().toISOString()}:p);save('Original project replaced from scenario');renderAll();populateScenarioSelectors();cloneScenarioFromSelected()};
+function scenarioProjectData(s,c){
+ const pricing=createPricingSnapshot({cost:c.totalCost,priceBeforeTax:c.orderPrice,taxRate:s.tax,customerTotal:c.withTax,profit:c.profit,margin:c.margin});
+ const inputs={quantity:s.qty,blankCost:s.blankCost,totalInk:s.totalInk,printMinutes:s.printMinutes,laborMinutes:s.laborMinutes+s.setupMinutes,packagingCost:s.packaging,primerCost:s.primer,otherCost:s.otherCost,wastePercent:s.waste,profitMargin:s.targetMargin,salesTax:s.tax,manualPriceEnabled:true,manualPrice:c.orderPrice,rounding:String(s.rounding)};
+ const pricingRates={ink:s.inkRate,labor:s.laborRate,machine:s.machineRate,electric:s.electricRate,maintenance:s.maintenance,overhead:s.overheadRate,shipping:s.shipping,cleaning:s.cleaning,serviceReserve:s.serviceReserveRate};
+ return {pricing,inputs,pricingRates,scenarioInputs:structuredClone(s)};
+}
+$('#saveScenarioBtn').onclick=()=>{
+ if(!scenarioOriginal)return;
+ const s=readScenario(),c=calcScenario(s),saved=scenarioProjectData(s,c),now=new Date();
+ state.projects.push({id:Date.now(),projectType:'scenario',name:`${s.name} — ${$('#scenarioName').value||'Scenario'}`,customer:s.customer,status:s.status,notes:'Created in Scenario Builder',qty:s.qty,materialName:s.materialName,cost:saved.pricing.cost,price:saved.pricing.priceBeforeTax,taxRate:saved.pricing.taxRate,taxAmount:saved.pricing.taxAmount,customerTotal:saved.pricing.customerTotal,margin:saved.pricing.margin,...saved,createdAt:now.toISOString(),updatedAt:now.toISOString(),date:now.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})});
+ save('Scenario saved as new project');renderAll();populateScenarioSelectors();showToast('Scenario saved as a new project');
+};
+$('#replaceOriginalBtn').onclick=()=>{
+ if(!scenarioOriginal||!scenarioSourceId)return;
+ if(state.preferences.confirmDelete&&!confirm('Replace the original project with this scenario?'))return;
+ const s=readScenario(),c=calcScenario(s),saved=scenarioProjectData(s,c);
+ state.projects=state.projects.map(p=>p.id===scenarioSourceId?{...p,name:s.name,customer:s.customer,status:s.status,qty:s.qty,materialName:s.materialName,cost:saved.pricing.cost,price:saved.pricing.priceBeforeTax,taxRate:saved.pricing.taxRate,taxAmount:saved.pricing.taxAmount,customerTotal:saved.pricing.customerTotal,margin:saved.pricing.margin,...saved,notes:'Updated from Scenario Builder',updatedAt:new Date().toISOString()}:p);
+ save('Original project replaced from scenario');renderAll();populateScenarioSelectors();cloneScenarioFromSelected();
+};
 
 
 function renderReports(){const t=totals();$('#reportProjects').textContent=state.projects.length;$('#reportRevenue').textContent=money(t.revenue);$('#reportCost').textContent=money(t.cost);$('#reportProfit').textContent=money(t.profit);const values=state.projects.map(p=>({p,pricing:getProjectPricing(p)}));const max=Math.max(...values.map(x=>x.pricing.price),1);$('#barChart').innerHTML=values.slice(-8).map(({p,pricing})=>`<div class="bar-item"><div class="bar" style="height:${Math.max(8,pricing.price/max*240)}px"><span>${money(pricing.price)}</span></div>${esc(p.name.split(' ').slice(0,2).join(' '))}</div>`).join('')}
@@ -1656,7 +2013,7 @@ $('#accountBtn').onclick=e=>{e.stopPropagation();$('#accountMenu').hidden=!$('#a
 $('#accountSettingsBtn').onclick=()=>{$('#accountMenu').hidden=true;navigate('global')};
 document.addEventListener('click',e=>{if(!$('#accountMenu').contains(e.target)&&e.target!==$('#accountBtn'))$('#accountMenu').hidden=true});
 
-function renderAll(){populate();renderDashboard();renderProjects();renderReports();renderGlobalLibraries();populateScenarioSelectors();renderDashboardProjectSnapshot();renderSetupProfile();applyAppearanceState();renderPrinterProfile()}
+function renderAll(){populate();renderDashboard();renderProjects();renderReports();renderGlobalLibraries();populateScenarioSelectors();renderDashboardProjectSnapshot();renderSetupProfile();applyAppearanceState();renderPrinterProfile();renderInventory()}
 loadRates();resetForm();renderAll();initializeConsolidatedSettings();initializeFeedbackCenter();initializePricingWorkspaceRecalculation();initializeBackupProtection();runTerminologyAudit();if(state.projects.length)cloneScenarioFromSelected();if(!state.profile.setupComplete)setTimeout(()=>showWizard(),250);
 
 
@@ -1692,5 +2049,18 @@ if($('#dashboardBackupBtn'))$('#dashboardBackupBtn').onclick=()=>{openSettingsPa
 
 if($('#inkCartridgePrice'))$('#inkCartridgePrice').addEventListener('input',updateCalculatedInkRate);
 if($('#inkCartridgeCapacity'))$('#inkCartridgeCapacity').addEventListener('input',updateCalculatedInkRate);
+if($('#useDetailedConsumables'))$('#useDetailedConsumables').addEventListener('change',event=>{const enabled=event.target.checked;$('#projectConsumableDetails').hidden=!enabled;$('#totalInk').disabled=enabled;populateProjectPhysicalPrinters($('#projectPhysicalPrinter').value);renderProjectConsumableFields({});calculate()});
+if($('#projectPhysicalPrinter'))$('#projectPhysicalPrinter').addEventListener('change',()=>{renderProjectConsumableFields({});calculate()});
+if($('#inventoryPrinterSelect'))$('#inventoryPrinterSelect').addEventListener('change',changeInventoryPrinter);
+if($('#matchingInventoryPrintersOnly'))$('#matchingInventoryPrintersOnly').addEventListener('change',event=>{if(event.target.checked)selectInventoryForActiveProfile();else renderInventory()});
+if($('#addPhysicalPrinterBtn'))$('#addPhysicalPrinterBtn').addEventListener('click',addPhysicalPrinter);
+if($('#addMatchingPrinterBtn'))$('#addMatchingPrinterBtn').addEventListener('click',addMatchingPhysicalPrinter);
+if($('#addConsumableBtn'))$('#addConsumableBtn').addEventListener('click',addConsumable);
+if($('#recordInventoryActionBtn'))$('#recordInventoryActionBtn').addEventListener('click',recordInventoryAction);
+if($('#reconcileInventoryBtn'))$('#reconcileInventoryBtn').addEventListener('click',()=>{
+ const printer=inventorySelectedPrinter();if(!printer)return;
+ printer.consumables.forEach(item=>{const value=prompt(`Counted level for ${item.name} (${item.unit}):`,String(item.remaining));if(value!==null){const exact=clampNumber(value),change=exact-clampNumber(item.remaining);recordInventoryTransaction(printer,item,change,'Manual reconciliation',null,'reconcile')}});
+ printer.lastReconciledAt=new Date().toISOString();save('Inventory reconciled');renderInventory();
+});
 
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){if(!$('#emailQuoteModal').hidden)closeEmailQuoteModal();if(!$('#materialModal').hidden)closeMaterialModal();if(!$('#deleteMaterialModal').hidden)closeDeleteMaterialModal();}});

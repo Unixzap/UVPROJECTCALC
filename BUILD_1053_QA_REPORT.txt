@@ -1,0 +1,35 @@
+UNIVERSAL PROJECT CALCULATOR v1.0.1 - BUILD 1053
+PHYSICAL PRINTER SELECTION QA
+
+AUTOMATED RESULTS
+
+[PASS] JavaScript syntax validation
+[PASS] Existing standard pricing regression
+[PASS] Existing detailed consumable pricing regression
+[PASS] Existing completed-job inventory deduction regression
+[PASS] Build 1052 E1/xTool active-profile synchronization
+[PASS] Mismatched physical-printer selection requests a profile switch
+[PASS] Accepted switch retains the selected physical printer
+[PASS] Matching-only filter, printer counts, and Recommended labels are present
+[PASS] HTML element IDs are unique
+[PASS] JavaScript literal element references resolve to HTML controls
+[PASS] Build labels, cache key, and JavaScript cachebuster use Build 1053
+
+MANUAL ACCEPTANCE CHECKLIST
+
+[ ] Confirm "Matching profile only" is enabled when the Ink Center opens.
+[ ] Confirm the matching and total physical-printer counts are displayed.
+[ ] Confirm a matching E1 printer is labeled Recommended.
+[ ] Turn off "Matching profile only."
+[ ] Confirm all configured physical printers become available.
+[ ] Select an xTool physical printer while E1 pricing is active.
+[ ] Accept the prompt and confirm the active profile changes to xTool.
+[ ] Repeat and decline the prompt; confirm this becomes inventory viewing only.
+[ ] Confirm E1 and xTool balances remain separate after both actions.
+[ ] Turn "Matching profile only" on and confirm the matching printer returns.
+
+LIMITATION
+
+The available sandbox does not permit an interactive localhost browser pass.
+Automated state-transition, regression, syntax, and HTML integrity checks
+passed. The checklist remains for a hosted or unrestricted browser pass.
