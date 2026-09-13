@@ -1,0 +1,90 @@
+UNIVERSAL PROJECT CALCULATOR v1.0.1 - BUILD 1059
+
+XTOOL O1 OMNI PUBLIC-RELEASE PROFILE AUDIT
+
+AUDIT SOURCES
+
+- Official xTool O1 Omni product page
+- Official xTool O1 Omni Support FAQ, updated August 15, 2026
+- Official xTool O1 Omni user manual
+- Official xTool O1 Omni package list
+- Public specifications audited September 12, 2026
+
+OFFICIAL PRODUCT IDENTITY
+
+- Updated the profile-family name to xTool O1 Omni Printer.
+- Marked all three editions as publicly released:
+  Single UV Edition
+  Dual-Head UV Edition
+  UV + DT Fabric Edition
+- Added a notice that editions are factory configured. Printhead and ink-system
+  editions cannot be upgraded into another edition after purchase.
+
+FINALIZED INK PATHS
+
+- Single UV: UV CMYKWV
+  Cyan, Magenta, Yellow, Black, White, and Varnish
+- Dual-Head UV:
+  Head 1: CMYKWV
+  Head 2: Rigid White, Flexible White, Fluorescent Red, Fluorescent Yellow
+- UV + DT Fabric:
+  UV printhead: CMYKWV
+  Separate DT fabric printhead: CMYKWW
+- Replaced ambiguous preorder-era ink-path wording with the finalized public
+  manual terminology.
+
+ADDED OFFICIAL SPECIFICATIONS
+
+- Maximum print resolution: 720 × 1440 dpi
+- Pixel-Scan Vision System resolution: 1440 × 1200 dpi
+- Positioning accuracy: ±0.2 mm
+- Maximum embossed print height: 7 mm (0.28 in)
+- Main-unit dimensions: 28.1 × 14.7 × 18.4 in
+  (714 × 374 × 468.5 mm)
+- Single UV weight: 89.5 lb (40.6 kg)
+- Dual UV and UV + DT weights: 90.7 lb (41.12 kg)
+- Supported operating systems: macOS and Windows
+- Remote app cleaning and control
+- Automatic white-ink stirring and circulation
+- Automatic printhead moisture protection
+
+WORKFLOW AND MATERIAL CLARITY
+
+- Single UV: basic rigid materials, direct UV, UV DTF with a laminator,
+  varnish effects, and 3D texture.
+- Dual UV: rigid and compatible flexible materials, fluorescent effects,
+  rigid/flexible white, UV DTF with a laminator, varnish, and 3D texture.
+- UV + DT: rigid and fabric work with distinct Direct UV, DTG, DTF fabric,
+  UV DTF with a laminator, varnish, and 3D texture workflows.
+- Added edition-specific material descriptions.
+
+SAFETY AND CERTIFICATION METADATA
+
+- Added the official non-reprotoxic ink description.
+- Added GREENGUARD certification metadata for UV inks.
+- Added OEKO-TEX certification metadata for DT fabric ink where applicable.
+
+DATA AND PRICING SAFETY
+
+- Existing physical-printer inventory, transaction history, project records,
+  retail consumable prices, and user-edited operating rates are preserved.
+- Previously confirmed retail consumable information remains installed.
+- Machine and other shop-specific operating rates remain editable.
+- Public storefront machine pricing is not automatically converted into a
+  project machine-hour rate; users should configure depreciation appropriate
+  to their own business.
+
+BUILD MAINTENANCE
+
+- Incremented application and cache identifiers to Build 1059.
+- Retained Microsoft Clarity project ID xs2n3qhjcn.
+- Retained Build 1058 Per Item and Batch Job pricing modes.
+- No public-release manual was generated in this profile-audit build.
+
+VERIFICATION
+
+- JavaScript syntax checks passed.
+- Build 1051-1058 regression suites passed.
+- All three public-edition ink paths and weights passed automated assertions.
+- Workflow, positioning, vision, dimensions, certification, and non-upgradeable
+  edition metadata passed automated assertions.

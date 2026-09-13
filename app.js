@@ -104,7 +104,7 @@ function initializePricingWorkspaceRecalculation(){
 
 
 const UVPC_APP_VERSION='1.0.1';
-const UVPC_BUILD_NUMBER='1058';
+const UVPC_BUILD_NUMBER='1059';
 const UVPC_SUPPORT_EMAIL='MrDon123@gmail.com';
 
 function getCurrentScreenName(){
@@ -376,6 +376,35 @@ function installXtoolRetailCatalog(){
  });
 }
 installXtoolRetailCatalog();
+function installXtoolPublicLaunchSpecifications(){
+ const family=defaults.printerProfiles['xtool-o1'],editions=family.editions;
+ family.family='xTool O1 Omni Printer';
+ const common={
+  name:'xTool O1 Omni Printer',resolution:'Up to 720 × 1440 dpi',embossedHeight:'Up to 7 mm (0.28 in)',visionSystem:'Pixel-Scan™ Vision System — 1440 × 1200 dpi',positioningAccuracy:'±0.2 mm',dimensions:'28.1 × 14.7 × 18.4 in (714 × 374 × 468.5 mm)',supportedOS:'macOS and Windows',remoteManagement:'App remote cleaning and control',automatedMaintenance:'Automatic white-ink stirring and circulation; automatic printhead moisture protection',upgradeNotice:'Factory-configured edition — printhead and ink-system editions cannot be upgraded later.',launchStatus:'Publicly released',officialSource:'xTool product page, support FAQ, and O1 user manual; audited September 2026'
+ };
+ Object.assign(editions['single-uv'],common,{
+  inkChannels:'UV printhead: CMYKWV (Cyan, Magenta, Yellow, Black, White, Varnish)',
+  materials:'Basic rigid materials: acrylic, wood, metal, glass, ceramic, and compatible plastics',
+  certifications:'Non-reprotoxic ink; GREENGUARD® certified UV ink',weight:'89.5 lb (40.6 kg)',
+  workflows:['Direct UV','UV DTF (requires laminator)','Varnish Effects','3D Texture'],
+  note:`${editions['single-uv'].note} Official public-launch specifications audited September 2026. This edition is factory configured and cannot be upgraded to another printhead edition.`
+ });
+ Object.assign(editions['dual-uv'],common,{
+  inkChannels:'UV head 1: CMYKWV; UV head 2: Rigid White, Flexible White, Fluorescent Red, Fluorescent Yellow',
+  materials:'Rigid and flexible materials: acrylic, leather, wood, canvas, metal, glass, ceramic, and compatible plastics',
+  certifications:'Non-reprotoxic ink; GREENGUARD® Gold certified UV ink',weight:'90.7 lb (41.12 kg)',
+  workflows:['Direct UV','UV DTF (requires laminator)','Fluorescent Effects','Rigid White','Flexible White','Varnish Effects','3D Texture'],
+  note:`${editions['dual-uv'].note} Official public-launch specifications audited September 2026. This edition is factory configured and cannot be upgraded to another printhead edition.`
+ });
+ Object.assign(editions['uv-dt-fabric'],common,{
+  inkChannels:'UV printhead: CMYKWV; DT fabric printhead: CMYKWW',
+  materials:'Rigid and fabric materials: acrylic, wood, metal, glass, ceramic, leather, canvas, cotton, polyester, and compatible fabrics',
+  certifications:'Non-reprotoxic ink; GREENGUARD® Gold certified UV ink; OEKO-TEX® certified DT fabric ink',weight:'90.7 lb (41.12 kg)',
+  workflows:['Direct UV','UV DTF (requires laminator)','DTG Direct-to-Garment','DTF Fabric Transfer','Varnish Effects','3D Texture'],
+  note:`${editions['uv-dt-fabric'].note} Official public-launch ink paths are UV CMYKWV plus a separate DT CMYKWW printhead. This edition is factory configured and cannot be upgraded to another printhead edition.`
+ });
+}
+installXtoolPublicLaunchSpecifications();
 let state=window.__UVPC_INITIAL_STATE__||structuredClone(defaults);
 state.profile={...defaults.profile,...(state.profile||{})};
 state.activities=state.activities||structuredClone(defaults.activities);
@@ -1307,7 +1336,7 @@ function renderPrinterProfile(){
  const topBanner=$('#activePrinterBanner');if(topBanner){topBanner.classList.remove('eufymake','xtool');topBanner.classList.add(state.activePrinter.family==='xtool-o1'?'xtool':'eufymake')}
  if($('#activePrinterBannerMark'))$('#activePrinterBannerMark').textContent=state.activePrinter.family==='xtool-o1'?'xT':'E1';
  if($('#printerProfileCapabilities')){
-  const technical=[['Best for',p.bestFor],['Working area',p.workingArea],['Print head',p.printHeads],['Resolution',p.resolution],['Ink channels',p.inkChannels]].filter(([,value])=>value);
+  const technical=[['Launch status',p.launchStatus],['Best for',p.bestFor],['Materials',p.materials],['Working area',p.workingArea],['Print head',p.printHeads],['Resolution',p.resolution],['Ink paths',p.inkChannels],['Embossed height',p.embossedHeight],['Vision system',p.visionSystem],['Positioning accuracy',p.positioningAccuracy],['Automated maintenance',p.automatedMaintenance],['Supported systems',p.supportedOS],['Remote management',p.remoteManagement],['Dimensions',p.dimensions],['Weight',p.weight],['Safety & certifications',p.certifications],['Edition upgrade',p.upgradeNotice],['Specification source',p.officialSource]].filter(([,value])=>value);
   $('#printerProfileCapabilities').innerHTML=(technical.length?technical.map(([label,value])=>`<div><strong>${esc(label)}</strong><small>${esc(value)}</small></div>`):p.workflows.map(w=>`<div><strong>${esc(w)}</strong><small>Available in this edition</small></div>`)).join('');
  }
  if($('#printerProfileNote'))$('#printerProfileNote').textContent=p.note;

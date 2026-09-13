@@ -1,0 +1,41 @@
+UNIVERSAL PROJECT CALCULATOR v1.0.1 - BUILD 1059
+XTOOL O1 OMNI PUBLIC-RELEASE PROFILE QA
+
+AUTOMATED RESULTS
+
+[PASS] JavaScript syntax validation
+[PASS] Build 1051-1058 regression suites
+[PASS] Product family is xTool O1 Omni Printer
+[PASS] Single UV ink path is CMYKWV
+[PASS] Dual UV paths are CMYKWV + RW/FW/FR/FY
+[PASS] UV + DT paths are separate UV CMYKWV and DT CMYKWW
+[PASS] Single UV weight is 89.5 lb (40.6 kg)
+[PASS] Dual UV and UV + DT weight is 90.7 lb (41.12 kg)
+[PASS] Positioning accuracy is ±0.2 mm
+[PASS] Embossed print height is up to 7 mm
+[PASS] Pixel-Scan vision resolution is 1440 × 1200 dpi
+[PASS] Main-unit dimensions are recorded
+[PASS] Edition-specific workflows are recorded
+[PASS] UV DTF identifies the laminator requirement
+[PASS] Editions identify that factory configurations cannot be upgraded
+[PASS] Certification metadata is edition appropriate
+[PASS] Build identifiers use Build 1059
+[PASS] Microsoft Clarity ID remains xs2n3qhjcn
+
+MANUAL ACCEPTANCE CHECKLIST
+
+[ ] Review each xTool edition under Settings > Printer Profiles.
+[ ] Confirm Launch Status says Publicly released.
+[ ] Confirm each edition displays its finalized ink paths.
+[ ] Confirm UV + DT displays distinct UV and DT fabric printheads.
+[ ] Confirm material compatibility changes with edition.
+[ ] Confirm physical-printer consumables and balances remain intact.
+[ ] Confirm an existing Build 1058 project retains its saved total.
+[ ] Confirm a new Per Item project still produces $13 × 25 = $325.
+[ ] Confirm Batch Job mode retains its total-run calculation.
+
+KNOWN PRICING LIMITATION
+
+The separate Dual-Head UV Expansion Ink Set retail price has not been confirmed
+in the supplied project data. Its affected ink rates remain editable rather than
+being represented as confirmed retail figures.

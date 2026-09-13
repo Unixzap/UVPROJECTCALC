@@ -1,4 +1,4 @@
-const CACHE='uvpc-v1-0-1-rc2-build-1058';
+const CACHE='uvpc-v1-0-1-rc2-build-1059';
 const ASSETS=['./','./index.html','./styles.css','./storage.js','./boot.js','./app.js','./manifest.webmanifest','./assets/icon.svg','./docs/UV_Project_Calculator_Pro_User_Guide.pdf'];
 self.addEventListener('install',event=>{self.skipWaiting();event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(ASSETS)))});
 self.addEventListener('activate',event=>event.waitUntil(Promise.all([self.clients.claim(),caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==CACHE).map(key=>caches.delete(key))))])));
